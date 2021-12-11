@@ -1,0 +1,3 @@
+https://github.com/kartikn27/nlp-question-detection
+https://www.kaggle.com/akarshsinghh/is-the-sentence-a-question-nltk-model
+https://github.com/rishikksh20/Identify-Question-Type
