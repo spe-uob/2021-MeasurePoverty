@@ -33,6 +33,10 @@ Flow Steps:
 3. Construct and populate a multilingual question database.
 4. Upload and make the results available on the web.
 
+
+
+### Outline of Front-End and Back-End Implementations 
+
 <img width="1350" alt="image" src="https://user-images.githubusercontent.com/72454289/145710454-b866d069-bfb2-47e5-80f1-c973cb69be0f.png">
 
 
