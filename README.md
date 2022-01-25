@@ -35,5 +35,31 @@ Flow Steps:
 
 
 
+### key words to identify each question listed below
+
+1. Two meals a day - 
+2. Meat, fish or vegetarian equivalent every other day - 
+3. Fresh fruit or vegetables every other day -
+4. A roast join (or vegetarian equivalent) once a week -
+5. A warm waterproof coat
+6. An outfit to wear for social or family occasions such as parties and weddings
+7. Appropriate clothes to wear for job interviews
+8. Two pairs of all-weather shoes
+9. Do you have two pairs of properly fitting shoes, including a pair of all weather shoes?
+10. enough clothes-CLARIFY
+11. Replace worn out clothes with new (not second hand) ones
+12. Some new (not second hand or handed-down) clothes
+13. Bought second hand clothes for yourself instead of new?
+14. doctors and medicines -CLARIFY
+15. All recommended dental work/treatment
+16. Opitcal Health- CLARIFY 
+17. Private health insurance 
+18. Were there any deductions from your last wage/salary as shown on this card?Private medical insurance
+19. Able to buy cleaning products (soap, wax, etc.)
+20. Hair done or cut regularly
+
+
+
+
 
 
