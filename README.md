@@ -33,7 +33,9 @@ Flow Steps:
 3. Construct and populate a multilingual question database.
 4. Upload and make the results available on the web.
 
-
+### Structure
+The using logic:
+For users, choose one language -> choose one question -> show the question in the chosen question -> (optional) show the whole pdf in the chosen language
 
 ### Outline of Front-End and Back-End Implementations 
 
