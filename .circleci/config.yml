@@ -1,9 +1,10 @@
 version:2.1
+
 workflows:
   test-deploy:
-  jobs:
-    - test
-job:
+    jobs:
+      - test
+jobs:
   test:
     docker:
       - image: cimg/python:3.10.2
