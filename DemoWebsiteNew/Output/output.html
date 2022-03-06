@@ -6,24 +6,90 @@
 
 <body>
     <script>
-        function myFunction(x) {
-          x.classList.toggle("change");
-        }
-        </script>
-        
-    
+        function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
-    <div class="container" onclick="myFunction(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
 
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
 
+  // Show the current tab, and add an "active" class to the link that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 <div class="navbar">
   <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
-  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+  <a href="#"><i class="fa fa-fw fa-file"></i> Upload</a>  
 </div>
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Belgium')">Belgium</button>
+    <button class="tablinks" onclick="openCity(event, 'Bulgaria')">Bulgaria</button>
+    <button class="tablinks" onclick="openCity(event, 'Denmark')">Denmark</button>
+    <button class="tablinks" onclick="openCity(event, 'Germany')">Germany</button>
+    <button class="tablinks" onclick="openCity(event, 'Estonia')">Estonia</button>
+    <button class="tablinks" onclick="openCity(event, 'Ireland')">Ireland</button>
+    <button class="tablinks" onclick="openCity(event, 'Greece')">Greece</button>
+    <button class="tablinks" onclick="openCity(event, 'Spain')">Spain</button>
+    <button class="tablinks" onclick="openCity(event, 'France')">France</button>
+    <button class="tablinks" onclick="openCity(event, 'Croatia')">Croatia</button>
+    <button class="tablinks" onclick="openCity(event, 'Italy')">Italy</button>
+    <button class="tablinks" onclick="openCity(event, 'Cyprus')">Cyprus</button>
+    <button class="tablinks" onclick="openCity(event, 'Latvia')">Latvia</button>
+    <button class="tablinks" onclick="openCity(event, 'Lithuania')">Lithuania</button>
+    <button class="tablinks" onclick="openCity(event, 'Luxembourg')">Luxembourg</button>
+    <button class="tablinks" onclick="openCity(event, 'Hungary')">Hungary</button>
+    <button class="tablinks" onclick="openCity(event, 'Malta')">Malta</button>
+    <button class="tablinks" onclick="openCity(event, 'Netherlands')">Netherlands</button>
+    <button class="tablinks" onclick="openCity(event, 'Austria')">Austria</button>
+    <button class="tablinks" onclick="openCity(event, 'Poland')">Poland</button>
+    <button class="tablinks" onclick="openCity(event, 'Portugal')">Portugal</button>
+    <button class="tablinks" onclick="openCity(event, 'Romania')">Romania</button>
+    <button class="tablinks" onclick="openCity(event, 'Slovenia')">Slovenia</button>
+    <button class="tablinks" onclick="openCity(event, 'Slovakia')">Slovakia</button>
+    <button class="tablinks" onclick="openCity(event, 'Finland')">Finland</button>
+    <button class="tablinks" onclick="openCity(event, 'Sweden')">Sweden</button>
+    <button class="tablinks" onclick="openCity(event, 'Iceland')">Iceland</button>
+    <button class="tablinks" onclick="openCity(event, 'Norway')">Switzerland</button>
+    <button class="tablinks" onclick="openCity(event, 'United Kingdom')">United Kingdom</button>
+  </div>
+  
+  <div id="Belgium" class="tabcontent">
+    <ul>
+        <li><a href="#">2009</a></li>
+        <li><a href="#">2010</a></li>
+        <li><a href="#">2011</a></li>
+        <li><a href="#">2012</a></li>
+        <li><a href="#">2013</a></li>
+        <li><a href="#">2014</a></li>
+        <li><a href="#">2015</a></li>
+        <li><a href="#">2016</a></li>
+        <li><a href="#">2017</a></li>
+        <li><a href="#">2018</a></li>
+        <li><a href="#">2019</a></li>
+    </ul>
+  </div>
+  
+  <div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+  </div>
+  
+  <div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
 
 </body>
 </html> 
