@@ -77,7 +77,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   outline: none;
   text-align: left;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
   font-size: larger;
 }
 
@@ -110,9 +110,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
     padding: 5px 10px;
     text-align: center;
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
     margin: 10px 30px;
     cursor: pointer;
+}
+
+.tabcontent button:hover{
+    background-color: blue;
 }
 
 .tabcontent h1{
