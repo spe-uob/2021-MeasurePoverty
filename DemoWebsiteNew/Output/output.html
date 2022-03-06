@@ -26,11 +26,33 @@
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+//search function implementation from this point
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
 </script>
 <div class="navbar">
   <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
-  <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-  <a href="#"><i class="fa fa-fw fa-file"></i> Upload</a>  
+  <a href="#"><i class="fa fa-fw fa-search"></i>Search</a>
+  <a href="#"><i class="fa fa-fw fa-file"></i> Upload</a>
+  
+  <input type="text" id="Search" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 </div>
 
 <div class="tab">
@@ -66,6 +88,7 @@
   </div>
   
   <div id="Belgium" class="tabcontent">
+      <h1>Belgium</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -82,6 +105,7 @@
   </div>
   
   <div id="Bulgaria" class="tabcontent">
+      <h1>Bulgaria</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -98,6 +122,7 @@
   </div>
   
   <div id="Denmark" class="tabcontent">
+      <h1>Denmark</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -114,6 +139,7 @@
   </div>
 
   <div id="Germany" class="tabcontent">
+      <h1>Germany</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -130,6 +156,7 @@
   </div>
 
   <div id="Estonia" class="tabcontent">
+      <h1>Estonia</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -146,6 +173,7 @@
   </div>
 
   <div id="Ireland" class="tabcontent">
+      <h1>Ireland</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -162,6 +190,7 @@
   </div>
 
   <div id="Greece" class="tabcontent">
+      <h1>Greece</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -178,6 +207,7 @@
   </div>
 
   <div id="Spain" class="tabcontent">
+      <h1>Spain</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -194,6 +224,7 @@
   </div>
 
   <div id="France" class="tabcontent">
+      <h1>France</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -210,6 +241,7 @@
   </div>
 
   <div id="Croatia" class="tabcontent">
+      <h1>Croatia</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -226,6 +258,7 @@
   </div>
 
   <div id="Italy" class="tabcontent">
+      <h1>Italy</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -242,6 +275,7 @@
   </div>
 
   <div id="Cyprus" class="tabcontent">
+      <h1>Cyprus</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -258,6 +292,7 @@
   </div>
 
   <div id="Latvia" class="tabcontent">
+      <h1>Latvia</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -274,6 +309,7 @@
   </div>
 
   <div id="Lithuania" class="tabcontent">
+      <h1>Lithuania</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -290,6 +326,7 @@
   </div>
 
   <div id="Luxembourg" class="tabcontent">
+      <h1>Luxembourg</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -306,6 +343,7 @@
   </div>
 
   <div id="Hungary" class="tabcontent">
+      <h1>Hungary</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -322,6 +360,7 @@
   </div>
   
   <div id="Malta" class="tabcontent">
+      <h1>Malta</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -338,6 +377,7 @@
   </div>
 
   <div id="Netherlands" class="tabcontent">
+      <h1>Netherlands</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -354,6 +394,7 @@
   </div>
 
   <div id="Austria" class="tabcontent">
+      <h1>Austria</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -370,6 +411,7 @@
   </div>
 
   <div id="Poland" class="tabcontent">
+      <h1>Poland</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -386,6 +428,7 @@
   </div>
 
   <div id="Portugal" class="tabcontent">
+      <h1>Portugal</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -402,6 +445,7 @@
   </div>
 
   <div id="Romania" class="tabcontent">
+      <h1>Romania</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -418,6 +462,7 @@
   </div>
 
   <div id="Slovenia" class="tabcontent">
+      <h1>Slovenia</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -434,6 +479,7 @@
   </div>
 
   <div id="Slovakia" class="tabcontent">
+      <h1>Slovakia</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -450,6 +496,7 @@
   </div>
 
   <div id="Finland" class="tabcontent">
+      <h1>Finland</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -466,6 +513,7 @@
   </div>
 
   <div id="Sweden" class="tabcontent">
+      <h1>Sweden</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -482,6 +530,7 @@
   </div>
 
   <div id="Iceland" class="tabcontent">
+      <h1>Iceland</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -498,6 +547,7 @@
   </div>
 
   <div id="Switzerland" class="tabcontent">
+      <h1>Switzerland</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
@@ -514,6 +564,7 @@
   </div>
 
   <div id="United Kingdom" class="tabcontent">
+      <h1>United Kingdom</h1>
     <ul>
         <button href="#" >2009</button>
         <button href="#" >2010</button>
