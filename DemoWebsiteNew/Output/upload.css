@@ -43,8 +43,8 @@
 	border: 4px dashed #009578;
 	border-radius: 10px;
 	position: absolute;
-	left: 518px;
-	top: 95px;
+	left: 41%;
+	top: 17%;
 	overflow: hidden;
   }
   
@@ -76,6 +76,7 @@
 	background: rgba(0, 0, 0, 0.75);
 	font-size: 14px;
 	text-align: center;
+	
   }
 
   .button {
@@ -89,8 +90,8 @@
 	font-size: 16px;
 	margin: 4px 2px;
     cursor: pointer;
-	position: fixed;
-	right: 570px;
-	top: 380px;
+	position: absolute;
+	right: 45%;
+	top: 63%;
   }
 
