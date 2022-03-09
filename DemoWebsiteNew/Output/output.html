@@ -9,14 +9,12 @@
 <div class="navbar">
   <a class="active" href="output.html"><i class="fa fa-fw fa-home"></i> Home</a>  
   <a href="upload.html"><i class="fa fa-fw fa-file"></i> Upload</a>
-  <button><a href="search.html">
-    <i class="fa fa-fw fa-search"></i> Search</a>
-  </button>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
   <a href="#" class="frontpage"> Back To Front Page</a>
 </div>
 
 
-<ul class="tab">
+<ul id="tab">
     <button class="tablinks" onclick="openCity(event, 'Belgium')">Belgium</button>
     <button class="tablinks" onclick="openCity(event, 'Bulgaria')">Bulgaria</button>
     <button class="tablinks" onclick="openCity(event, 'Denmark')">Denmark</button>
