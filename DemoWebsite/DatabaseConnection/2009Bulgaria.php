@@ -1,5 +1,6 @@
 <?php
-$servername = "localhost";
+//$servername = "localhost";
+$servername = "172.23.66.8";
 $username = "root";
 $password = "";
 $dbname = "SPEtest";
