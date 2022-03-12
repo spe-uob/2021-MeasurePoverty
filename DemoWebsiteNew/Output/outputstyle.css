@@ -145,3 +145,29 @@ body {font-family: Arial, Helvetica, sans-serif;}
     font-size: xx-large;
     text-align: center;
 }
+
+
+
+/* searchYear class implementation */
+.searchYear{
+  text-align: center;
+}
+
+.searchYear button{
+  background-color: white; 
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  color: green;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.searchYear button:hover{
+  background-color: orange;
+}
