@@ -9,8 +9,8 @@ div{
 	background-color: #555;
 	overflow: auto;
 	margin: 0px;
-	font-size: 18.05px;
 	padding: 0;
+	font-size: 18.05px;
   }
   
   .navbar a {
@@ -18,21 +18,18 @@ div{
 	padding: 12px;
 	color: white;
 	text-decoration: none;
-	font-size: 17px;
   }
   
   .navbar a:hover {
 	background-color: #000;
-	
   }
   
-  .navbar button{
+   .navbar button{
 	background-color: #555;
 	border-style: none;
-	text-align: left;
-	height: 5px;
-	
-  }
+	text-align: center;
+	height: 1px;
+  } 
 
   .upload{
 	  background-color: rgb(8, 172, 108);
