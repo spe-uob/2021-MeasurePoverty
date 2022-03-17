@@ -9,6 +9,7 @@ jobs:
       - image: cimg/python:3.10.1
     steps:
       - checkout
+      - run: pip freeze > requirements.txt
       - python/install-packages:
           pkg-manager: pip
       - run:
