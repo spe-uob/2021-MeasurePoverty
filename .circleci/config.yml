@@ -5,6 +5,7 @@ orbs:
 
 jobs:
   build_and_test: # this can be any name you choose
+    working_directory: ~/repo
     docker:
       - image: cimg/python:3.10.1
     steps:
@@ -12,6 +13,7 @@ jobs:
       - run: pip freeze > requirements.txt
       - python/install-packages:
           pkg-manager: pip
+      - run: pip install -U pytest
       - run:
           name: Run tests
           command: python -m pytest
@@ -30,12 +32,9 @@ jobs:
           force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
 
 workflows:
-  test_my_app:
+  test_project:
     jobs:
       - build_and_test
       - deploy:
           requires:
             - build_and_test # only deploy if the build_and_test job has completed
-          filters:
-            branches:
-              only: main # only deploy when on main
