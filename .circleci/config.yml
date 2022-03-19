@@ -8,14 +8,14 @@ jobs:
       
     steps:
       - checkout
-      - run: python3 main.ipynb
+      - run: python main.ipynb
   test:
     working_directory: ~/circleci-python
     docker:
       - image: cimg/python:3.9.7
     steps:
       - checkout
-      - run: python3 main-test.ipynb
+      - run: python main-test.ipynb
 
 workflows:
   build_and_test:
