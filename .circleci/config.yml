@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/circleci-python
+    docker:
+      - image: cimg/python:3.9.7
+      
+    steps:
+      - checkout
+      - run: python main.ipynb
+  test:
+    working_directory: ~/circleci-python
+    docker:
+      - image: cimg/python:3.9.7
+    steps:
+      - checkout
+      - run: python main-test.ipynb
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
