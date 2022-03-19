@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/circleci-python
     docker:
-      - image: cimg/python:3.10.1
+      - image: cimg/python:3.9.7
       
     steps:
       - checkout
@@ -12,7 +12,7 @@ jobs:
   test:
     working_directory: ~/circleci-python
     docker:
-      - image: cimg/python:3.10.1
+      - image: cimg/python:3.9.7
     steps:
       - checkout
       - run: python3 main-test.ipynb
