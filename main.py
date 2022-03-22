@@ -8,7 +8,9 @@ import PyPDF2
 import re
 import operator
 import numpy as np
+from nltk.translate.bleu_score import corpus_bleu
 from nltk.translate.bleu_score import sentence_bleu
+from nltk.translate import bleu
 
 
 
@@ -106,16 +108,26 @@ def translate_document(pages):
 
 
 
-def bleu_implementation(question,array):
-   
+
+#BLEU allows to compare set of references with a candidate,
+# so if you want to use it you should set the list of lists of sentences as a list of references.
+# In other words, even if you take only one reference it should be a list of lists
+# (in my example reference should be [reference]:
+
+
+def bleu_implementation(array,original_question):
+
     array_of_scores = []
+    print(array)
     for item in array:
-        score = sentence_bleu(item,question,weights=(0.25,0.25,0.25,0.25,0.25))
+        print(item)
+        score = sentence_bleu([item],original_question)
+        array_of_scores.append(item)
         array_of_scores.append(score)
     print(array_of_scores)
 
 
-bleu_implementation("hello my name is lipi", ["hello my name is lipples","hello my name is lipi"])
+bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
 
 
 def main():
