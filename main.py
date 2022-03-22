@@ -145,18 +145,52 @@ def main():
             Text = page_number.extract_text()
             if re.findall(word,Text,re.IGNORECASE):
                 pages.add(i)
-    print(pages)
-    print('here one')
+    #print(pages)
     clean_translations = flatten_list(translate_document(list(pages)))
-    # d = {'Translated Questions':translate_document(pages)}
-    print("here 2")
-    d = {'Translated Questions':clean_translations}
-    DftranslatedDoc=pd.DataFrame(data =d)
+
+
+
+    #NEW METHOD TO IMPLEMENT:
+    '''
+    NEW METHOD TO IMPELMENT BELOW: AND MAYBE CALL IT OR KEEP IT IN MAIN (DECIDE LATER)
+    create  a dictionary of quesion from keywords question  to an array of its highest BLEU scored question eg 
+    {"do you have a washing machine": [0.999999999, " do you own a washing machine"] , "do you have a coloured tv" : [0.1294327394823958, " coloured TV do you own"] }
+    
+    
+    to do this we need to:
+        1.iterate through each question of DF, calcualte BLEU score, if it ==1, add 
+        2.calculate BLEU score for each quesion and add to array of scores
+        3.meanwhile, check if score is 1, if so, add to the finalised dictionary and break
+        3.else, continue and then at the end find the question with the highest bleu socre and add to the final dictionary 
+        4.turn the final dicionary into a dataframe and return  
+    '''
+
+
+
+    quesions_to_scores = defaultdict()
+    for question in keywords().questions():
+        bleu_implementation(clean_translations,question)
+
+    #CONVERT INTO A DATAFRAME LATER ON
+    #d = {'Translated Questions':clean_translations}
+    #DftranslatedDoc=pd.DataFrame(data =d)
     #DftranslatedDoc.to_csv('out_translation.csv',index=False)
-    for column in DftranslatedDoc:
+    '''
+        for column in DftranslatedDoc.iterrows():
+        print(column)
         for word in column:
             #if word is not an english word then remove it from the sentence
-        print(DftranslatedDoc[column])
+            if word not in words.words():
+                print("here")
+                column = column.replace(word,'')
+        #print(DftranslatedDoc[column])
+            print("here 2 ")
+        print("here", column)
+    
+    '''
+
+
+
 #hopefully then we have a df of only questions whcih we can use to calculate the BLEU score
 main()
 
