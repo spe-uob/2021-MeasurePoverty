@@ -8,9 +8,8 @@ import PyPDF2
 import re
 import operator
 import numpy as np
-from nltk.translate.bleu_score import corpus_bleu
 from nltk.translate.bleu_score import sentence_bleu
-from nltk.translate import bleu
+from nltk.corpus import words
 
 
 
@@ -113,26 +112,31 @@ def translate_document(pages):
 # so if you want to use it you should set the list of lists of sentences as a list of references.
 # In other words, even if you take only one reference it should be a list of lists
 # (in my example reference should be [reference]:
+#reference: https://stackoverflow.com/questions/68926574/i-compare-two-identical-sentences-with-bleu-nltk-and-dont-get-1-0-why
 
-
-def bleu_implementation(array,original_question):
+def bleu_implementation(array_of_questions_to_compare,original_question):
 
     array_of_scores = []
-    print(array)
-    for item in array:
+    for item in array_of_questions_to_compare:
         print(item)
         score = sentence_bleu([item],original_question)
         array_of_scores.append(item)
         array_of_scores.append(score)
-    print(array_of_scores)
+    return array_of_scores
 
 
-bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
+##bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
+
+
+
+#reference : https://stackoverflow.com/questions/3788870/how-to-check-if-a-word-is-an-english-word-with-python
+
+
 
 
 def main():
     translated_keywords = keywords().keys()
-    pages = []
+    pages = set()
     pdf = pdfplumber.open("france.pdf")
     for word in translated_keywords:
         word = word.lower()
@@ -140,16 +144,21 @@ def main():
             page_number = pdf.pages[i]
             Text = page_number.extract_text()
             if re.findall(word,Text,re.IGNORECASE):
-                pages.append(i)
+                pages.add(i)
     print(pages)
-    clean_translations = flatten_list(translate_document(pages))
+    print('here one')
+    clean_translations = flatten_list(translate_document(list(pages)))
     # d = {'Translated Questions':translate_document(pages)}
+    print("here 2")
     d = {'Translated Questions':clean_translations}
     DftranslatedDoc=pd.DataFrame(data =d)
-    DftranslatedDoc.to_csv('out_translation.csv',index=False)
-
-
-#main()
+    #DftranslatedDoc.to_csv('out_translation.csv',index=False)
+    for column in DftranslatedDoc:
+        for word in column:
+            #if word is not an english word then remove it from the sentence
+        print(DftranslatedDoc[column])
+#hopefully then we have a df of only questions whcih we can use to calculate the BLEU score
+main()
 
 
 
