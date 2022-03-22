@@ -110,7 +110,7 @@ def bleu_implementation(question,array):
    
     array_of_scores = []
     for item in array:
-        score = sentence_bleu(question,item,weights=(0.25,0.25,0.25,0.25,0.25))
+        score = sentence_bleu(item,question,weights=(0.25,0.25,0.25,0.25,0.25))
         array_of_scores.append(score)
     print(array_of_scores)
 
