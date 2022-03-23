@@ -64,6 +64,8 @@ def clean(text):
 #contains the kwyrods for each poverty question and translates them into the target language - change later so that
 #you can change the language we are using
 def keywords():
+
+    global questions_to_keywords
     questions_to_keywords={
         "holiday":"Can your whole household afford to go for a week’s annual holiday, away from home?",
         "vegetarian":"Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?",
@@ -114,15 +116,24 @@ def translate_document(pages):
 # (in my example reference should be [reference]:
 #reference: https://stackoverflow.com/questions/68926574/i-compare-two-identical-sentences-with-bleu-nltk-and-dont-get-1-0-why
 
+
+
+
+
 def bleu_implementation(array_of_questions_to_compare,original_question):
 
-    array_of_scores = []
+    max_score = 0
+    question_name = ""
     for item in array_of_questions_to_compare:
-        print(item)
         score = sentence_bleu([item],original_question)
-        array_of_scores.append(item)
-        array_of_scores.append(score)
-    return array_of_scores
+        if score == 1:
+            max_score = 1
+            question_name += item
+        elif score > max_score:
+            max_score = score
+            question_name += item
+
+    return max_score
 
 
 ##bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
@@ -148,28 +159,12 @@ def main():
     #print(pages)
     clean_translations = flatten_list(translate_document(list(pages)))
 
+    #dictionary of quesion to its highest BLEU score
+    question_to_scores = defaultdict()
+    for question in questions_to_keywords.values():
+        question_to_scores[question] = bleu_implementation(clean_translations,question)
+    print(question_to_scores)
 
-
-    #NEW METHOD TO IMPLEMENT:
-    '''
-    NEW METHOD TO IMPELMENT BELOW: AND MAYBE CALL IT OR KEEP IT IN MAIN (DECIDE LATER)
-    create  a dictionary of quesion from keywords question  to an array of its highest BLEU scored question eg 
-    {"do you have a washing machine": [0.999999999, " do you own a washing machine"] , "do you have a coloured tv" : [0.1294327394823958, " coloured TV do you own"] }
-    
-    
-    to do this we need to:
-        1.iterate through each question of DF, calcualte BLEU score, if it ==1, add 
-        2.calculate BLEU score for each quesion and add to array of scores
-        3.meanwhile, check if score is 1, if so, add to the finalised dictionary and break
-        3.else, continue and then at the end find the question with the highest bleu socre and add to the final dictionary 
-        4.turn the final dicionary into a dataframe and return  
-    '''
-
-
-
-    quesions_to_scores = defaultdict()
-    for question in keywords().questions():
-        bleu_implementation(clean_translations,question)
 
     #CONVERT INTO A DATAFRAME LATER ON
     #d = {'Translated Questions':clean_translations}
