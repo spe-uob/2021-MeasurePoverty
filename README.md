@@ -1,30 +1,30 @@
 # 2021-MeasurePoverty
 
-### Overview
+## Overview
 Scrape the relevant data from the questionnaires of each country in EUROSTAT and automate the identification of the conceptually translated question text in each language. Upon completion, construct and populate a multilingual database, and upload results on the web.
 
-### Table of Contents
+## Table of Contents
 
 
 
-### User Guide
+## User Guide
 The using logic:
 For users, choose one language -> choose one question -> show the question in the chosen question -> (optional) show the whole pdf in the chosen language
 
 #### Manual setups
 
-##### Requirements
+#### Requirements
 
-##### Building 
-
-
-##### Running
+#### Building 
 
 
+#### Running
 
 
 
-### Developer Guide
+
+
+## Developer Guide
 
 
 
@@ -36,14 +36,14 @@ Flow Steps:
 
 
 
-### Outline of Front-End and Back-End Implementations 
+## Outline of Front-End and Back-End Implementations 
 
 <img width="1350" alt="image" src="https://user-images.githubusercontent.com/72454289/145710454-b866d069-bfb2-47e5-80f1-c973cb69be0f.png">
 
 
-### Database Construction 
+## Database Construction 
 
 
-### References / Resources
+## References / Resources
 
 
