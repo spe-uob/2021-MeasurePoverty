@@ -135,6 +135,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
     cursor: pointer;
 }
 
+.text {
+  text-decoration: none;
+  color: green;
+}
+
 .tabcontent button:hover{
     background-color: orange;
 }
