@@ -23,13 +23,6 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 
 
 
-Flow Steps:
-1. Scrape the annual questionnaires from each country from the EUROSTAT website
-2. Translate the questions by Google translator, match the same or similar question of different languages through keywords identification and statistical lexical matching.
-3. Construct and populate a multilingual question database.
-4. Upload and make the results available on the web.
-
-
 
 
 
@@ -71,6 +64,14 @@ pip install regex
 
 
 ## Architecture & Workflow 
+
+Our Approach:
+1. Extract text from the questionnaire, translate into English, and identify questions based on whether they end with a quesiton mark
+2. Narrow down the questions that contain the keywords that are included in the set list of poverty questions 
+3. Use NLP and BLEU analysis to determinte the questions are poverty themed, and populate database
+4. Upload and make the database available on the web, as well as open sourced for furture developments in the NLP algorithm 
+
+
 
 ### architecture
 
