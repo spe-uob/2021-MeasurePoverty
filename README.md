@@ -53,7 +53,12 @@ pip install deep-translator
 pip install regex 
 ```
 
+To be able to determine which words are part of the English dictionary, we have used the NLTK data package "words". To install this, run python and type the following into the command line:
 
+```
+>>> import nltk
+>>> nltk.download("words")
+```
 
 
 
@@ -70,11 +75,14 @@ Our Approach:
 
 
 
-### architecture
+### Architecture
 
-### workflow 
+### User Flowchart
 
 ## References / Resources
+Most reference contained in source code.
+
+BLEU theory/information:
 
 
 ## Contribution Guide 
