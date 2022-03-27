@@ -1,9 +1,20 @@
 # 2021-MeasurePoverty
 
+
+## Table of Contents
+
+
 ## Overview
 Scrape the relevant data from the questionnaires of each country in EUROSTAT and automate the identification of the conceptually translated question text in each language. Upon completion, construct and populate a multilingual database, and upload results on the web.
 
-## Table of Contents
+
+### Context 
+
+### User Stories 
+
+
+
+
 
 
 
