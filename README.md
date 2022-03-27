@@ -5,6 +5,7 @@ http://2021-measure-poverty.vercel.app/
 
 ## Overview
 Organizaton:University of Bristol working with UNICEF
+
 Client: Dr David Gordon
 
 
@@ -44,7 +45,9 @@ It is essential to have python 3.9 and pip installed on your device.
 To run the source code, run the following to install the necessary libraries:
 
 
-
+```
+this is a code block
+```
 
 
 
@@ -62,14 +65,11 @@ To run the source code, run the following to install the necessary libraries:
 
 
 
-
-## Outline of Front-End and Back-End Implementations 
-
-<img width="1350" alt="image" src="https://user-images.githubusercontent.com/72454289/145710454-b866d069-bfb2-47e5-80f1-c973cb69be0f.png">
-
-
 ## Architecutre & Workflow 
 
+### architecture
+
+### workflow 
 
 ## References / Resources
 
