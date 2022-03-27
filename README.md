@@ -40,7 +40,7 @@ For users, choose one language -> choose one question -> show the question in th
 
 ### Manual setups
 
-### Requirements
+#### Requirements
 It is essential to have python 3.9 and pip installed on your device. 
 To run the source code, run the following to install the necessary libraries:
 
@@ -51,11 +51,7 @@ this is a code block
 
 
 
-
-### Building 
-
-
-### Running
+#### Running
 
 
 
@@ -65,7 +61,7 @@ this is a code block
 
 
 
-## Architecutre & Workflow 
+## Architecture & Workflow 
 
 ### architecture
 
