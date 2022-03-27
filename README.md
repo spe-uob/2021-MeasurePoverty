@@ -1,6 +1,7 @@
 # 2021-MeasurePoverty
 
-
+## Deployment
+http://2021-measure-poverty.vercel.app/
 
 ## Overview
 Organizaton:University of Bristol working with UNICEF
