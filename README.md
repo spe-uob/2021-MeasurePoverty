@@ -1,41 +1,24 @@
 # 2021-MeasurePoverty
 
 
-## Table of Contents
-
 
 ## Overview
-Scrape the relevant data from the questionnaires of each country in EUROSTAT and automate the identification of the conceptually translated question text in each language. Upon completion, construct and populate a multilingual database, and upload results on the web.
+Organizaton:University of Bristol working with UNICEF
+Client: Dr David Gordon
+
 
 
 ### Context 
 
+The Bristol Poverty Institue(University of Bristol) is working with UNICEF to develop a short question module to help improve the measurement of child and adult poverty in countries. 
+The measure poverty project aims to match questions 
+
+
+Scrape the relevant data from the questionnaires of each country in EUROSTAT and automate the identification of the conceptually translated question text in each language. Upon completion, construct and populate a multilingual database, and upload results on the web.
+
+
 ### User Stories 
 
-
-
-
-
-
-
-## User Guide
-The using logic:
-For users, choose one language -> choose one question -> show the question in the chosen question -> (optional) show the whole pdf in the chosen language
-
-#### Manual setups
-
-#### Requirements
-
-#### Building 
-
-
-#### Running
-
-
-
-
-
-## Developer Guide
 
 
 
@@ -47,12 +30,44 @@ Flow Steps:
 
 
 
+
+
+## User Guide/Deployment 
+The using logic:
+For users, choose one language -> choose one question -> show the question in the chosen question -> (optional) show the whole pdf in the chosen language
+
+### Manual setups
+
+### Requirements
+It is essential to have python 3.9 and pip installed on your device. 
+To run the source code, run the following to install the necessary libraries:
+
+
+
+
+
+
+
+### Building 
+
+
+### Running
+
+
+
+
+
+## Developer Guide
+
+
+
+
 ## Outline of Front-End and Back-End Implementations 
 
 <img width="1350" alt="image" src="https://user-images.githubusercontent.com/72454289/145710454-b866d069-bfb2-47e5-80f1-c973cb69be0f.png">
 
 
-## Database Construction 
+## Architecutre & Workflow 
 
 
 ## References / Resources
