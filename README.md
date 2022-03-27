@@ -51,7 +51,6 @@ pip install --user -U numpy
 pip install pdfplumber 
 pip install deep-translator
 pip install regex 
-
 ```
 
 
