@@ -46,7 +46,12 @@ To run the source code, run the following to install the necessary libraries:
 
 
 ```
-this is a code block
+pip install --user -U nltk
+pip install --user -U numpy
+pip install pdfplumber 
+pip install deep-translator
+pip install regex 
+
 ```
 
 
