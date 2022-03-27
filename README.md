@@ -84,6 +84,25 @@ Most reference contained in source code.
 
 BLEU theory/information:
 
+http://www.lrec-conf.org/proceedings/lrec2006/pdf/413_pdf.pdf
+
+text pre-processing:
+https://www.analyticsvidhya.com/blog/2021/09/essential-text-pre-processing-techniques-for-nlp/
+
+
+NLP keywords extraction:
+
+https://www.analyticsvidhya.com/blog/2022/03/keyword-extraction-methods-from-documents-in-nlp/
+
+
+NLP topic modelling: 
+
+https://www.analyticsvidhya.com/blog/2021/05/topic-modelling-in-natural-language-processing/
+
+
+
+
+
 
 ## Contribution Guide 
 
