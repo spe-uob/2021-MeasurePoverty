@@ -35,6 +35,9 @@ http://2021-measure-poverty.vercel.app/
 
 The user is able to choose a country, and see the pages which contain the poverty questions, as well as the poverty questions in english and the native language
 
+
+## Developer Guide
+
 ### Manual setups
 
 #### Requirements
@@ -54,9 +57,6 @@ pip install regex
 
 
 
-
-
-## Developer Guide
 
 
 
