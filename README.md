@@ -51,6 +51,7 @@ pip install --user -U numpy
 pip install pdfplumber 
 pip install deep-translator
 pip install regex 
+pip install pyenchant
 ```
 
 To be able to determine which words are part of the English dictionary, we have used the NLTK data package "words". To install this, run python and type the following into the command line:
