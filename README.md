@@ -33,10 +33,7 @@ To access the website to view the poverty questions, use the following link
 
 http://2021-measure-poverty.vercel.app/
 
-
-
-The using logic:
-For users, choose one language -> choose one question -> show the question in the chosen question -> (optional) show the whole pdf in the chosen language
+The user is able to choose a country, and see the pages which contain the poverty questions, as well as the poverty questions in english and the native language
 
 ### Manual setups
 
