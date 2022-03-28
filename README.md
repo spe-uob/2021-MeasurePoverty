@@ -73,7 +73,10 @@ brew install enchant
 
 In the event of any difficulties while installing pyenchant:
 
+```
 https://pyenchant.github.io/pyenchant/install.html
+```
+
 
 
 
