@@ -2,15 +2,13 @@
 from collections import defaultdict
 import pdfplumber
 import pandas as pd
-import deep_translator
 from deep_translator import GoogleTranslator
-import PyPDF2
 import re
 import operator
 import numpy as np
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.corpus import words
-
+import enchant
 
 
 def flatten_list(_2d_list):
@@ -143,7 +141,15 @@ def bleu_implementation(array_of_questions_to_compare,original_question):
 #reference : https://stackoverflow.com/questions/3788870/how-to-check-if-a-word-is-an-english-word-with-python
 
 
+def check_word(word):
+    print("here")
+    d = enchant.Dict("en_UK")
+    if d.check(word):
+        print("true")
+    else:
+        print("False")
 
+check_word("hesdfsfgiuhsg")
 
 def main():
     translated_keywords = keywords().keys()
@@ -169,7 +175,7 @@ def main():
     #CONVERT INTO A DATAFRAME LATER ON
     #d = {'Translated Questions':clean_translations}
     #DftranslatedDoc=pd.DataFrame(data =d)
-    #DftranslatedDoc.to_csv('out_translation.csv',index=False)
+    #DftranslatedDoc.to_mysql('out_translation.csv',index=False)
     '''
         for column in DftranslatedDoc.iterrows():
         print(column)
@@ -187,7 +193,7 @@ def main():
 
 
 #hopefully then we have a df of only questions whcih we can use to calculate the BLEU score
-main()
+#main()
 
 
 
