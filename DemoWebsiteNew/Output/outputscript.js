@@ -1,3 +1,4 @@
+//implementations taken from https://www.w3schools.com/
 //output.js
 function openCity(evt, cityName) {
     // Declare all variables
