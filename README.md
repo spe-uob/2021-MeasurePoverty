@@ -54,13 +54,26 @@ pip install regex
 pip install pyenchant
 ```
 
-To be able to determine which words are part of the English dictionary, we have used the NLTK data package "words". To install this, run python and type the following into the command line:
+To be able to determine which words are part of the English dictionary, we have used the pyenchant library.  
+
+To install this on linux, do the following on command line:
+
 
 ```
->>> import nltk
->>> nltk.download("words")
+pip install enchant2
 ```
 
+
+To install this, run python and type the following into the command line:
+
+```
+brew update
+brew install enchant
+```
+
+In the event of any difficulties while installing pyenchant:
+
+https://pyenchant.github.io/pyenchant/install.html
 
 
 
