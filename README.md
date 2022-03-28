@@ -41,7 +41,7 @@ The user is able to choose a country, and see the pages which contain the povert
 ### Manual setups
 
 #### Requirements
-It is essential to have python 3.9 and pip installed on your device. 
+It is essential to have python 3.7+ (due to pyenchant) and pip installed on your device. 
 To run the source code, run the following to install the necessary libraries:
 
 
