@@ -36,7 +36,7 @@ http://2021-measure-poverty.vercel.app/
 The user is able to choose a country, and see the pages which contain the poverty questions, as well as the poverty questions in english and the native language
 
 
-## Developer Guide
+## Developer/Contribution Guide 
 
 ### Manual setups
 
@@ -118,7 +118,7 @@ https://www.analyticsvidhya.com/blog/2021/05/topic-modelling-in-natural-language
 
 
 
-## Contribution Guide 
+
 
 ## License 
 MIT License
