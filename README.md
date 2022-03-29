@@ -25,10 +25,10 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 
 |  User | Story |   
 |------ |-------|
-|   Researcher    | As a researcher,  I want access     |  
-|   Member of UNICEF |       |   
-| University student |       |
-|Dr David Gordon|  |
+|   Researcher    | As a researcher,  I want access to the questions from foreign questionnaires, but translated into English    |  
+|   Member of UNICEF |  As a member of UNICEF,  I want access to the questions from foreign questionnaires, but translated into English to be able to check which countries ask all the required questions |   
+| University student | I want to be able to use the poverty questions asked to aid my studies    |
+|Dr David Gordon| ? |
 
 
 ## User Guide/Deployment 
@@ -118,6 +118,7 @@ https://www.analyticsvidhya.com/blog/2022/03/keyword-extraction-methods-from-doc
 NLP topic modelling: 
 https://www.analyticsvidhya.com/blog/2021/05/topic-modelling-in-natural-language-processing/
 
+Concurrency:
 
 
 
