@@ -25,9 +25,10 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 
 |  User | Story |   
 |------ |-------|
-|   Researcher    |       |  
+|   Researcher    | As a researcher,  I want access     |  
 |   Member of UNICEF |       |   
 | University student |       |
+|Dr David Gordon|  |
 
 
 ## User Guide/Deployment 
