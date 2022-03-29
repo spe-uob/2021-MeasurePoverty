@@ -20,17 +20,13 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 
 ### User Stories 
 
-As a **researcher** I would like to 
 
-As a **ML developer** I would like to 
-
-As a 
 
 
 |  User | Story |   
 |------ |-------|
-|       |       |  
-|       |       |   
+|   researcher    |       |  
+|   lecturer    |       |   
 
 
 ## User Guide/Deployment 
