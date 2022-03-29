@@ -25,8 +25,8 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 
 |  User | Story |   
 |------ |-------|
-|   researcher    |       |  
-|   member of UNICEF |       |   
+|   Researcher    |       |  
+|   Member of UNICEF |       |   
 | University student |       |
 
 
