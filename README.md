@@ -20,7 +20,11 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 
 ### User Stories 
 
+As a **researcher** I would like to 
 
+As a **ML developer** I would like to 
+
+As a 
 
 
 
@@ -100,7 +104,7 @@ Our Approach:
 Most reference contained in source code.
 
 BLEU theory/information:
-http://www.lrec-conf.org/proceedings/lrec2006/pdf/413_pdf.pdf
+https://aclanthology.org/P02-1040.pdf
 
 text pre-processing:
 https://www.analyticsvidhya.com/blog/2021/09/essential-text-pre-processing-techniques-for-nlp/
