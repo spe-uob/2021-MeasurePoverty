@@ -1,5 +1,21 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
+:root{
+  --primary-color: #edf2fc;
+  --secondary-color: #212121;
+}
+
+#icon {
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  background-color: white;
+}
+
+#icon:hover{
+  background-color: black;
+}
+
 .navbar {
   width: 100%;
   background-color: #555;
@@ -9,10 +25,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   font-size: 18.05px;
 }
 
+/* thisone */
 .navbar a {
   float: left;
   padding: 12px;
-  color: white;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -34,7 +51,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .navbar.containerpanel{
   width:250px;
   height: 10px;
-
 }
 
 .active {
@@ -78,8 +94,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding: 0%;
   position: absolute;
   top: 6.125%;
-  
-  
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -120,6 +134,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   display: none;
   position: absolute;
   right: 0%;
+  color: black;
 }
 
 
@@ -151,26 +166,3 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 
-/* searchYear class implementation */
-.searchYear{
-  text-align: center;
-}
-
-.searchYear button{
-  background-color: white; 
-  border: 2px;
-  border-style: solid;
-  border-color: black;
-  color: green;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  cursor: pointer;
-  margin: 10px;
-}
-
-.searchYear button:hover{
-  background-color: orange;
-}
