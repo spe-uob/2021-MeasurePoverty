@@ -1,21 +1,5 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
-:root{
-  --primary-color: #edf2fc;
-  --secondary-color: #212121;
-}
-
-#icon {
-  cursor: pointer;
-  width: 30px;
-  height: 40px;
-  background-color: white;
-}
-
-#icon:hover{
-  background-color: black;
-}
-
 .navbar {
   width: 100%;
   background-color: #555;
@@ -29,7 +13,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .navbar a {
   float: left;
   padding: 12px;
-  color: var(--primary-color);
+  color: white;
   text-decoration: none;
 }
 
