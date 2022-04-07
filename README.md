@@ -102,7 +102,9 @@ Our Approach:
 
 
 ### Architecture
-(![Text](meaure_poverty_DB.jpeg)
+
+#### Database structure
+![We have used three tables to structure our database](meaure_poverty_DB.jpeg)
 ### User Flowchart
 
 ## References / Resources
