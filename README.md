@@ -56,7 +56,7 @@ pip install --user -U numpy
 pip install pdfplumber 
 pip install deep-translator
 pip install regex 
-pip install pyenchant
+pip install cdifflib
 ```
 
 Throughout our code, we make use of nltk datasets. To install, open python3 on commandline and run the following:
@@ -67,7 +67,6 @@ Throughout our code, we make use of nltk datasets. To install, open python3 on c
 ```
 
 To be able to determine which words are part of the English dictionary, we have used the pyenchant library.  
-
 To install this on linux, do the following on command line:
 
 ```
