@@ -102,7 +102,7 @@ Our Approach:
 
 
 ### Architecture
-![Database](screenshot.png)
+(![Text](meaure_poverty_DB.jpeg)
 ### User Flowchart
 
 ## References / Resources
