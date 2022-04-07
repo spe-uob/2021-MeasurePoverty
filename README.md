@@ -102,7 +102,7 @@ Our Approach:
 
 
 ### Architecture
-
+![This is an image](Measure Poverty.jpeg)
 ### User Flowchart
 
 ## References / Resources
