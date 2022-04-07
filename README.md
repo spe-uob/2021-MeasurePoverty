@@ -104,7 +104,7 @@ Our Approach:
 ### Architecture
 
 #### Database structure
-![We have used three tables to structure our database](meaure_poverty_DB.jpeg)
+![measure_poverty_DB](meaure_poverty_DB.jpeg)
 ### User Flowchart
 
 ## References / Resources
