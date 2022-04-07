@@ -59,23 +59,22 @@ pip install regex
 pip install pyenchant
 ```
 
-To be able to determine which words are part of the English dictionary, we have used the pyenchant library.  
-
-To install this on linux, do the following on command line:
-
-
-```
-pip install enchant2
-```
-
 Throughout our code, we make use of nltk datasets. To install, open python3 on commandline and run the following:
 
 ```
 >>>import nltk
 >>>nltk.download("punkt")
+```
+
+To be able to determine which words are part of the English dictionary, we have used the pyenchant library.  
+
+To install this on linux, do the following on command line:
 
 ```
-To install this, run python and type the following into the command line:
+pip install enchant2
+```
+
+To install this on MacOS, run python and type the following into the command line:
 
 ```
 brew update
@@ -124,7 +123,7 @@ https://www.analyticsvidhya.com/blog/2022/03/keyword-extraction-methods-from-doc
 NLP topic modelling: 
 https://www.analyticsvidhya.com/blog/2021/05/topic-modelling-in-natural-language-processing/
 
-Concurrency:
+
 
 
 
