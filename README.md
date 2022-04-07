@@ -68,7 +68,13 @@ To install this on linux, do the following on command line:
 pip install enchant2
 ```
 
+Throughout our code, we make use of nltk datasets. To install, open python3 on commandline and run the following:
 
+```
+>>>import nltk
+>>>nltk.download("punkt")
+
+```
 To install this, run python and type the following into the command line:
 
 ```
