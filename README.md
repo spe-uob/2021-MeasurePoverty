@@ -102,7 +102,7 @@ Our Approach:
 
 
 ### Architecture
-![alt text](https://github.com/[lipichak]/[2021-MeasurePoverty]/blob/[main]/Meaure Poverty.jpeg?raw=true)
+![Database](screenshot.png)
 ### User Flowchart
 
 ## References / Resources
