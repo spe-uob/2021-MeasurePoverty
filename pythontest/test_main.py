@@ -1,7 +1,7 @@
 #from main import *
 #from pythontest.main import bleu_implementation
 #import re
-from stuff import func
+
 
 
     
@@ -17,7 +17,5 @@ from stuff import func
         #assert check_word("")
         #assert main() == 
 
-def test_func():
-      assert func(9) == 10
 
 
