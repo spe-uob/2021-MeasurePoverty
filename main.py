@@ -157,7 +157,6 @@ def new_translate_document(pages):
         print(number)
         print("about to extract and translate page:",number)
         p1 = pdf1.pages[number]
-        im = p1.to_image()
         text = p1.extract_text()
         text = clean(text)
         sentences = nltk.sent_tokenize(text)
