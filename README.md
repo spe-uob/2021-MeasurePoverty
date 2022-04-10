@@ -64,6 +64,7 @@ Throughout our code, we make use of nltk datasets. To install, open python3 on c
 ```
 >>>import nltk
 >>>nltk.download("punkt")
+>>>nltk.download("words")
 ```
 
 To be able to determine which words are part of the English dictionary, we have used the pyenchant library.  
