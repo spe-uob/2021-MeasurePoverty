@@ -226,9 +226,9 @@ def main():
             if re.findall(word,Text,re.IGNORECASE):
                 pages.add(i)
     print(pages,"found the page numbers and about to translate")
-    test_list = [45,73,79,107,158,159,161,164,165,232,251,273]
-    #clean_translations = flatten_list(new_translate_document(list(pages)))
-    clean_translations = flatten_list(new_translate_document(test_list))
+    #test_list = [45,73,79,107,158,159,161,164,165,232,251,273]
+    clean_translations = flatten_list(new_translate_document(list(pages)))
+    #clean_translations = flatten_list(new_translate_document(test_list))
     print("translated")
     #print(clean_translations)
     #dictionary of quesion to its highest BLEU score
@@ -247,7 +247,7 @@ def main():
 # CODE TO CONVERT INTO A DATAFRAME LATER ON
     d = {'Translated Questions':clean_translations,'Cleaned Questions':new_list}
     DftranslatedDoc=pd.DataFrame(data =d)
-    DftranslatedDoc.to_csv('tokenized_translations.csv', index=False)
+    DftranslatedDoc.to_csv('final_output.csv', index=False)
     print("outputted as CSV file ")
 #convert to a mysql file ready for website
 
