@@ -1,26 +1,23 @@
-import main
-from pythontest.main import bleu_implementation
+#from main import *
+#from pythontest.main import bleu_implementation
+#import re
+from stuff import func
 
-#def bleu_implementation(array_of_questions_to_compare,original_question):
+
     
-#    max_score = 0
- #   question_name = ""
-  #  for item in array_of_questions_to_compare:
-   #     score = sentence_bleu([item],original_question)
-    ##       max_score = 1
-      #      question_name += item
-       # elif score > max_score:
-        #    max_score = score
-         #   question_name += item
 
-    # return max_score
+#def test_flattenlist():
+        #assert flatten_list()
+        #assert test_regex() == ("matched", matched)
+        #assert translator("bonjour") == ["hello"]
+        #assert keywords() == []
+        #assert clean("remove") == "remove"
+        #assert translate_document()
+        #assert bleu_implementation(["how are you heh?", "what should i eat?"], "bread is my pot") == 3.237552826118531e-78 
+        #assert check_word("")
+        #assert main() == 
 
-
-def test_functions():
-        assert bleu_implementation(["how are you heh?", "what should i eat?"], "bread is my pot") == 3.237552826118531e-78
-
-
-
-
+def test_func():
+      assert func(9) == 10
 
 
