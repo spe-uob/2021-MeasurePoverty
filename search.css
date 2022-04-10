@@ -28,7 +28,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   cursor: pointer;
 } 
 
-
+.button:hover{
+  background: rgba(0, 0, 0, 0);
+  transition: 0.5s;
+}
 
 #myInput {
   background-position: 10px 12px; /* Position the search icon */
