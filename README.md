@@ -56,20 +56,25 @@ pip install --user -U numpy
 pip install pdfplumber 
 pip install deep-translator
 pip install regex 
-pip install pyenchant
+pip install cdifflib
+```
+
+Throughout our code, we make use of nltk datasets. To install, open python3 on commandline and run the following:
+
+```
+>>>import nltk
+>>>nltk.download("punkt")
+>>>nltk.download("words")
 ```
 
 To be able to determine which words are part of the English dictionary, we have used the pyenchant library.  
-
 To install this on linux, do the following on command line:
-
 
 ```
 pip install enchant2
 ```
 
-
-To install this, run python and type the following into the command line:
+To install this on MacOS, run python and type the following into the command line:
 
 ```
 brew update
@@ -99,6 +104,8 @@ Our Approach:
 
 ### Architecture
 
+#### Database structure
+![measure_poverty_DB](meaure_poverty_DB.jpeg)
 ### User Flowchart
 
 ## References / Resources
@@ -118,7 +125,7 @@ https://www.analyticsvidhya.com/blog/2022/03/keyword-extraction-methods-from-doc
 NLP topic modelling: 
 https://www.analyticsvidhya.com/blog/2021/05/topic-modelling-in-natural-language-processing/
 
-Concurrency:
+
 
 
 

@@ -1,0 +1,153 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+  margin: 0px;
+  padding: 0;
+  font-size: 18.05px;
+}
+
+/* thisone */
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+ .navbar button{
+  background-color: #555;
+  border-style: none;
+  text-align: center;
+  height: 1px;
+} 
+
+.search {
+  cursor: pointer;
+}
+
+.navbar.containerpanel{
+  width:250px;
+  height: 10px;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {
+    opacity: 0;
+  }
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+
+  * {box-sizing: border-box}
+
+/* Style the tab */
+#tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  text-align: left;
+  padding: 0%;
+  position: absolute;
+  top: 6.6%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tablinks{
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: larger;
+
+  
+}
+
+/* Change background color of buttons on hover */
+.tablinks:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tablinks.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: none;
+  width: 70%;
+  border-left: none;
+  height: 500px;
+  font-size: x-large;
+  display: none;
+  position: absolute;
+  right: 0%;
+  color: black;
+}
+
+
+.tabcontent button{
+    background-color: white;
+    border: 2px solid black;
+    color: green;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+    margin: 10px 30px;
+    cursor: pointer;
+}
+
+.text {
+  text-decoration: none;
+  color: green;
+}
+
+.tabcontent button:hover{
+    background-color: orange;
+}
+
+.tabcontent h1{
+    font-size: xx-large;
+    text-align: center;
+}
+
+
+
