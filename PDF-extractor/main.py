@@ -27,16 +27,15 @@ from nltk.corpus import words
 import enchant
 import concurrent.futures
 from time import time
+import os
 
 
 
 def flatten_list(_2d_list):
-    print("about to flatten list")
     new_list = []
     for i in _2d_list:
         for j in i:
             new_list.append(j)
-    print("reached and completed flatten_list")
     return new_list
 
 
@@ -66,6 +65,7 @@ def translator(lines):
     return translated_array
 
 '''
+attempt to implement concurrency 
 def translation_work(line):
     translated  = GoogleTranslator(source='auto',target='en').translate(line)
     return translated
@@ -88,13 +88,12 @@ def translator_with_concurrency(lines):
 
 #cleans text from any whitesace and can later be used to remove punctuation if necessary
 def clean(text):
-    print(text)
+
     #removing whitesapce- needed
     text = re.sub('\n','',str(text))
     text = re.sub('\n',' ',str(text))
     #removing punctuation- not needed right now, keep commented out just incase
     #text = re.sub(r'[^\w\s]','',text)
-    print(text)
     return text
 
 
@@ -120,31 +119,19 @@ def keywords():
         translated_keywords_dict[GoogleTranslator(source='en', target='french').translate(key)] = []
     return translated_keywords_dict
 
-'''
-def translate_document(pages):
-    pdf1 = pdfplumber.open("france.pdf")
-    translated_array = []
-    #pages = list(pages)
-    # writing page 161 will translate page 162
-    pages= pages
-    for number in pages:
-        p1 = pdf1.pages[number]
-        im = p1.to_image()
-        text = p1.extract_text()
-        text = clean(text)
-        #text = re.split('[?]',text)
-        text = re.findall('(?<=[\?\.\!]\s)[^\?\n\.]+?\?',text)
-        clean_sent  = []
-        for sent in text:
-            clean_sent.append(sent)
-        translated_array.append(translator(clean_sent))
-
-    return translated_array
+def check_keywords(array_of_questions):
+    relevant_questions =[]
+    array_of_keywords = ["holiday","vegetarian","expense","telephone","colour TV","washing machine", "van", "dwelling","warm"]
+    for question in array_of_questions:
+        if any(word in question for word in array_of_keywords):
+            relevant_questions.append(question)
+        else:
+            continue
+    return relevant_questions
 
 
-'''
-
-
+#print(check_keywords(["do you have a van?","do you have a colour TV", "what is your name","washing machine?"]))
+#should return ["do you have a van?","do you have a colour TV","washing machine?"]
 
 #iterates through an array which contains page numbers, extracts each quesiton from that page, translates them into english,
 #adds to an array, cleans data and adds to final array
@@ -157,8 +144,6 @@ def new_translate_document(pages):
     clean_foreign_questions = set()
     translated_questions = []
     for number in pages:
-        print(number)
-        print("about to extract and translate page:",number)
         p1 = pdf1.pages[number]
         text = p1.extract_text()
         text = clean(text)
@@ -166,13 +151,9 @@ def new_translate_document(pages):
         for item in sentences:
             if item[-1] == "?":
                 clean_foreign_questions.add(item)
-                #print(clean_foreign_questions)
-        print("extracted and translated page:",number)
-    #translated_questions.append(translator(clean_foreign_questions))
-    translated_questions.append(translator(clean_foreign_questions))
-    #print(translated_questions)
 
-    print("translated the array, about to flatten the list")
+    translated_questions.append(translator(clean_foreign_questions))
+
     return translated_questions
 
 
@@ -204,11 +185,6 @@ def bleu_implementation(array_of_questions_to_compare,original_question):
 
 
 
-#reference : https://stackoverflow.com/questions/3788870/how-to-check-if-a-word-is-an-english-word-with-python
-
-
-
-## returns true if a work is in English dictionary with british spelling
 
 
 
@@ -238,15 +214,16 @@ def main():
     for question in clean_translations:
         new_list.append(" ".join(w.lower() for w in nltk.wordpunct_tokenize(str(question))\
                 if w.lower() in words or not w.isalpha()))
+    keywords_list = check_keywords(new_list)
+
     #for question in questions_to_keywords.values():
         #question_to_scores[question] = bleu_implementation(clean_translations,question)
     #print(question_to_scores)
 
-
 # CODE TO CONVERT INTO A DATAFRAME LATER ON
-    d = {'Translated Questions':clean_translations,'Cleaned Questions':new_list}
+    d = {'Cleaned Questions':keywords_list}
     DftranslatedDoc=pd.DataFrame(data =d)
-    DftranslatedDoc.to_csv('final_output.csv', index=False)
+    DftranslatedDoc.to_csv(os.getcwd() + r'final_output2.csv',index = False)
     print("outputted as CSV file ")
 #convert to a mysql file ready for website
 
