@@ -251,7 +251,7 @@ def main():
 #convert to a mysql file ready for website
 
 
-#main()
+main()
 
 
 
