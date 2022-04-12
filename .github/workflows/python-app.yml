@@ -27,6 +27,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install nltk
+        pip install pdfplumber
+        pip install pandas
+        pip install deep_translator
+        pip install numpy
+        pip install regex
+        pip install cdifflib
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
