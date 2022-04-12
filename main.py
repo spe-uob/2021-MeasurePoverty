@@ -15,7 +15,7 @@ somewhere in the code we are adding everything to the list every time rather tha
 
 from collections import defaultdict
 #from IPython.display import display
-#import nltk
+import nltk
 import pdfplumber
 import pandas as pd
 from deep_translator import GoogleTranslator
