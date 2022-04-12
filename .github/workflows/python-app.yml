@@ -36,7 +36,7 @@ jobs:
         pip install pyenchant
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        python -m nltk.downloader punkt stopwords
+        python -m nltk.downloader all
 
 
     - name: Lint with flake8
