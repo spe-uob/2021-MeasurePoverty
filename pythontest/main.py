@@ -181,20 +181,20 @@ def new_translate_document(pages):
 #reference: https://stackoverflow.com/questions/68926574/i-compare-two-identical-sentences-with-bleu-nltk-and-dont-get-1-0-why
 
 
-def bleu_implementation(array_of_questions_to_compare,original_question):
+#def bleu_implementation(array_of_questions_to_compare,original_question):
 
-    max_score = 0
-    question_name = ""
-    for item in array_of_questions_to_compare:
-        score = sentence_bleu([item],original_question)
-        if score == 1:
-            max_score = 1
-            question_name += item
-        elif score > max_score:
-            max_score = score
-            question_name += item
+    #max_score = 0
+   # question_name = ""
+    #for item in array_of_questions_to_compare:
+      #  score = sentence_bleu([item],original_question)
+       # if score == 1:
+        #    max_score = 1
+         #   question_name += item
+       # elif score > max_score:
+         #   max_score = score
+      #      question_name += item
 
-    return max_score
+   # return max_score
 
 
 ##bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
