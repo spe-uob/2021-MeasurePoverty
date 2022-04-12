@@ -1,20 +1,5 @@
-'''
-This is the functioning code.
-following steps:
-
-    1. Find all of the words that are not part of the english dictionary and remove them, make sure this method works fully
-    2. test the BLEU function again and test that it works
-    3. see how many questions are actually being narrowed down
-    4. make sure this all works before adding the concurrency, as we need a functioning database first
-
-
-The problem is with the clean translations list
-somewhere in the code we are adding everything to the list every time rather than only the new questions
-'''
-
 
 from collections import defaultdict
-#from IPython.display import display
 import nltk
 import pdfplumber
 import pandas as pd
@@ -28,6 +13,7 @@ import enchant
 import concurrent.futures
 from time import time
 import os
+from difflib import SequenceMatcher
 
 
 
@@ -164,6 +150,8 @@ def new_translate_document(pages):
 # (in my example reference should be [reference]:
 #reference: https://stackoverflow.com/questions/68926574/i-compare-two-identical-sentences-with-bleu-nltk-and-dont-get-1-0-why
 
+##TESTING BLEU VS SIMILAR SCORE API
+
 
 def bleu_implementation(array_of_questions_to_compare,original_question):
 
@@ -179,12 +167,19 @@ def bleu_implementation(array_of_questions_to_compare,original_question):
             question_name += item
 
     return max_score
-
-
 ##bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
 
 
 
+#works quite well maybe run it through this first
+def similar(string1,string2):
+    print(string2,SequenceMatcher(None,string1,string2).ratio())
+    return SequenceMatcher(None,string1,string2).ratio()
+def similar_sentence(question,target_list):
+    return max(target_list,key=lambda str:similar(question,str))
+#test_array = ["do you have a washing machine", "do you have a car"," cars are nice","i want a car","i want a washing machine"]
+#question = "do you have a washing machine"
+#print(similar_sentence(question,test_array))
 
 
 
@@ -216,30 +211,15 @@ def main():
                 if w.lower() in words or not w.isalpha()))
     keywords_list = check_keywords(new_list)
 
-    #for question in questions_to_keywords.values():
-        #question_to_scores[question] = bleu_implementation(clean_translations,question)
-    #print(question_to_scores)
-
 # CODE TO CONVERT INTO A DATAFRAME LATER ON
     d = {'Cleaned Questions':keywords_list}
     DftranslatedDoc=pd.DataFrame(data =d)
-    DftranslatedDoc.to_csv(os.getcwd() + r'final_output2.csv',index = False)
+    DftranslatedDoc.to_csv(os.getcwd() + r'final_output.csv',index = False)
     print("outputted as CSV file ")
 #convert to a mysql file ready for website
 
 
 main()
-
-
-
-
-
-
-
-
-
-
-
 
 
 
