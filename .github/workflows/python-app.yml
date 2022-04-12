@@ -33,7 +33,7 @@ jobs:
         pip install numpy
         pip install regex
         pip install cdifflib
-        brew install enchant
+        pip install pyenchant
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
