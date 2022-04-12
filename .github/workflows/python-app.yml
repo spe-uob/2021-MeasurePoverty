@@ -36,12 +36,13 @@ jobs:
         pip install pyenchant
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        
+
     - name: Install nltk stuff
       run: |
         python
-        nltk.download("punkt")
-        nltk.download("words")
+        nltk.download(punkt)
+        nltk.download(words)
+        exit()
 
     - name: Lint with flake8
       run: |
