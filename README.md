@@ -79,6 +79,7 @@ pip install enchant2
 ```
 
 On windows, run the follow command:
+
 ```
 pip install pyenchant
 ```
