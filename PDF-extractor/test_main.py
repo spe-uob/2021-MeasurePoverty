@@ -1,8 +1,8 @@
 from main import *
 
 
-def test_translator():
-        assert translator(["feliz"]) == ["happy"]
+#def test_translator():
+        #ssert translator(["feliz"]) == ["happy"]
 
 
 def test_flattenlist():
