@@ -1,5 +1,20 @@
+'''
+This is the functioning code.
+following steps:
+
+    1. Find all of the words that are not part of the english dictionary and remove them, make sure this method works fully
+    2. test the BLEU function again and test that it works
+    3. see how many questions are actually being narrowed down
+    4. make sure this all works before adding the concurrency, as we need a functioning database first
+
+
+The problem is with the clean translations list
+somewhere in the code we are adding everything to the list every time rather than only the new questions
+'''
+
 
 from collections import defaultdict
+#from IPython.display import display
 import nltk
 import pdfplumber
 import pandas as pd
@@ -12,20 +27,17 @@ from nltk.corpus import words
 #import enchant
 import concurrent.futures
 from time import time
-
 from concurrent.futures import ProcessPoolExecutor
-
-import os
-from difflib import SequenceMatcher
-
 
 
 
 def flatten_list(_2d_list):
+    print("about to flatten list")
     new_list = []
     for i in _2d_list:
         for j in i:
             new_list.append(j)
+    print("reached and completed flatten_list")
     return new_list
 
 
@@ -55,7 +67,6 @@ def translator(lines):
     return translated_array
 
 '''
-attempt to implement concurrency 
 def translation_work(line):
     translated  = GoogleTranslator(source='auto',target='en').translate(line)
     return translated
@@ -78,12 +89,13 @@ def translator_with_concurrency(lines):
 
 #cleans text from any whitesace and can later be used to remove punctuation if necessary
 def clean(text):
-
+    print(text)
     #removing whitesapce- needed
     text = re.sub('\n','',str(text))
     text = re.sub('\n',' ',str(text))
     #removing punctuation- not needed right now, keep commented out just incase
     #text = re.sub(r'[^\w\s]','',text)
+    print(text)
     return text
 
 
@@ -110,21 +122,6 @@ def keywords():
     return translated_keywords_dict
 
 
-def check_keywords(array_of_questions):
-    relevant_questions =[]
-    array_of_keywords = ["holiday","vegetarian","expense","telephone","colour TV","washing machine", "van", "dwelling","warm"]
-    for question in array_of_questions:
-        if any(word in question for word in array_of_keywords):
-            relevant_questions.append(question)
-        else:
-            continue
-    return relevant_questions
-
-
-#print(check_keywords(["do you have a van?","do you have a colour TV", "what is your name","washing machine?"]))
-#should return ["do you have a van?","do you have a colour TV","washing machine?"]
-
-
 #iterates through an array which contains page numbers, extracts each quesiton from that page, translates them into english,
 #adds to an array, cleans data and adds to final array
 
@@ -136,6 +133,8 @@ def new_translate_document(pages):
     clean_foreign_questions = set()
     translated_questions = []
     for number in pages:
+        print(number)
+        print("about to extract and translate page:",number)
         p1 = pdf1.pages[number]
         text = p1.extract_text()
         text = clean(text)
@@ -143,9 +142,13 @@ def new_translate_document(pages):
         for item in sentences:
             if item[-1] == "?":
                 clean_foreign_questions.add(item)
-
+                #print(clean_foreign_questions)
+        print("extracted and translated page:",number)
+    #translated_questions.append(translator(clean_foreign_questions))
     translated_questions.append(translator(clean_foreign_questions))
+    #print(translated_questions)
 
+    print("translated the array, about to flatten the list")
     return translated_questions
 
 
@@ -155,8 +158,6 @@ def new_translate_document(pages):
 # In other words, even if you take only one reference it should be a list of lists
 # (in my example reference should be [reference]:
 #reference: https://stackoverflow.com/questions/68926574/i-compare-two-identical-sentences-with-bleu-nltk-and-dont-get-1-0-why
-
-##TESTING BLEU VS SIMILAR SCORE API
 
 
 def bleu_implementation(array_of_questions_to_compare,original_question):
@@ -173,19 +174,17 @@ def bleu_implementation(array_of_questions_to_compare,original_question):
             question_name += item
 
     return max_score
+
+
 ##bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
 
 
 
-#works quite well maybe run it through this first
-def similar(string1,string2):
-    print(string2,SequenceMatcher(None,string1,string2).ratio())
-    return SequenceMatcher(None,string1,string2).ratio()
-def similar_sentence(question,target_list):
-    return max(target_list,key=lambda str:similar(question,str))
-#test_array = ["do you have a washing machine", "do you have a car"," cars are nice","i want a car","i want a washing machine"]
-#question = "do you have a washing machine"
-#print(similar_sentence(question,test_array))
+#reference : https://stackoverflow.com/questions/3788870/how-to-check-if-a-word-is-an-english-word-with-python
+
+
+
+## returns true if a work is in English dictionary with british spelling
 
 
 
@@ -219,15 +218,22 @@ if __name__ == "__main__":
         new_list.append(" ".join(w.lower() for w in nltk.wordpunct_tokenize(str(question))\
                 if w.lower() in words or not w.isalpha()))
 
-    keywords_list = check_keywords(new_list)
-
 
 # CODE TO CONVERT INTO A DATAFRAME LATER ON
-    d = {'Cleaned Questions':keywords_list}
+    d = {'Translated Questions':clean_translations,'Cleaned Questions':new_list}
     DftranslatedDoc=pd.DataFrame(data =d)
-    DftranslatedDoc.to_csv(os.getcwd() + r'final_output.csv',index = False)
+    DftranslatedDoc.to_csv('final_output.csv', index=False)
     print("outputted as CSV file ")
 #convert to a mysql file ready for website
+
+
+#main()
+
+
+
+
+
+
 
 
 

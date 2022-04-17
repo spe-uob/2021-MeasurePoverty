@@ -110,6 +110,9 @@ Our Approach:
 3. Use NLP and BLEU analysis to determinte the questions are poverty themed, and populate database
 4. Upload and make the database available on the web, as well as open sourced for furture developments in the NLP algorithm 
 
+### The reason why we use if __mname__ = main: instead of def main
+is described clearly here: https://stackoverflow.com/questions/419163/what-does-if-name-main-do?page=1&tab=scoredesc#tab-top
+
 
 
 ### Architecture
