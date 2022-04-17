@@ -45,6 +45,10 @@ The user is able to choose a country, and see the pages which contain the povert
 
 ### Manual setups
 
+### Pre-requisites
+We highly recommend running this program through Anaconda. You can download the distributions of Anaconda through the link below. Please ensure that Anaconda has a version of 1.7+
+https://www.anaconda.com/products/distribution
+
 #### Requirements
 It is essential to have python 3.7+ (due to pyenchant) and pip installed on your device. 
 To run the source code, run the following to install the necessary libraries:
@@ -72,6 +76,12 @@ To install this on linux, do the following on command line:
 
 ```
 pip install enchant2
+```
+
+On windows, run the follow command:
+
+```
+pip install pyenchant
 ```
 
 To install this on MacOS, run python and type the following into the command line:
