@@ -24,9 +24,10 @@ import operator
 import numpy as np
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.corpus import words
-import enchant
+#import enchant
 import concurrent.futures
 from time import time
+from concurrent.futures import ProcessPoolExecutor
 
 
 
@@ -120,31 +121,6 @@ def keywords():
         translated_keywords_dict[GoogleTranslator(source='en', target='french').translate(key)] = []
     return translated_keywords_dict
 
-'''
-def translate_document(pages):
-    pdf1 = pdfplumber.open("france.pdf")
-    translated_array = []
-    #pages = list(pages)
-    # writing page 161 will translate page 162
-    pages= pages
-    for number in pages:
-        p1 = pdf1.pages[number]
-        im = p1.to_image()
-        text = p1.extract_text()
-        text = clean(text)
-        #text = re.split('[?]',text)
-        text = re.findall('(?<=[\?\.\!]\s)[^\?\n\.]+?\?',text)
-        clean_sent  = []
-        for sent in text:
-            clean_sent.append(sent)
-        translated_array.append(translator(clean_sent))
-
-    return translated_array
-
-
-'''
-
-
 
 #iterates through an array which contains page numbers, extracts each quesiton from that page, translates them into english,
 #adds to an array, cleans data and adds to final array
@@ -212,7 +188,7 @@ def bleu_implementation(array_of_questions_to_compare,original_question):
 
 
 
-def main():
+if __name__ == "__main__":
     translated_keywords = keywords().keys()
     pages = set()
     pdf = pdfplumber.open("france.pdf")
@@ -225,8 +201,11 @@ def main():
             if re.findall(word,Text,re.IGNORECASE):
                 pages.add(i)
     print(pages,"found the page numbers and about to translate")
-    #test_list = [45,73,79,107,158,159,161,164,165,232,251,273]
-    clean_translations = flatten_list(new_translate_document(list(pages)))
+    test_list = [45,73,79,107,158,159,161,164,165,232,251,273]
+    with ProcessPoolExecutor(max_workers=100) as pool:
+        result = pool.map(new_translate_document, test_list)
+    print(result)
+    clean_translations = flatten_list(result)
     #clean_translations = flatten_list(new_translate_document(test_list))
     print("translated")
     #print(clean_translations)
@@ -238,9 +217,6 @@ def main():
     for question in clean_translations:
         new_list.append(" ".join(w.lower() for w in nltk.wordpunct_tokenize(str(question))\
                 if w.lower() in words or not w.isalpha()))
-    #for question in questions_to_keywords.values():
-        #question_to_scores[question] = bleu_implementation(clean_translations,question)
-    #print(question_to_scores)
 
 
 # CODE TO CONVERT INTO A DATAFRAME LATER ON
@@ -252,36 +228,3 @@ def main():
 
 
 #main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
