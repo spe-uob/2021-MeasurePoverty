@@ -49,6 +49,8 @@ The user is able to choose a country, and see the pages which contain the povert
 We highly recommend running this program through Anaconda. You can download the distributions of Anaconda through the link below. Please ensure that Anaconda has a version of 1.7+
 https://www.anaconda.com/products/distribution
 
+Internet connections is required to run the code, as the Deep-translator API requires a connection to connect to the different translators used throughout the code.
+
 #### Requirements
 It is essential to have python 3.7+ (due to pyenchant) and pip installed on your device. 
 To run the source code, run the following to install the necessary libraries:
