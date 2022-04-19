@@ -1,3 +1,4 @@
+
 '''
 This is the functioning code.
 following steps:
@@ -28,6 +29,7 @@ from nltk.corpus import words
 import concurrent.futures
 from time import time
 from concurrent.futures import ProcessPoolExecutor
+import sqlite3
 
 
 
@@ -201,11 +203,15 @@ if __name__ == "__main__":
             if re.findall(word,Text,re.IGNORECASE):
                 pages.add(i)
     print(pages,"found the page numbers and about to translate")
-    test_list = [45,73,79,107,158,159,161,164,165,232,251,273]
-    with ProcessPoolExecutor(max_workers=100) as pool:
+    #test_list = [45,73,79,107,158,159,161,164,165,232,251,273]
+
+    #Parallel
+    '''with ProcessPoolExecutor(max_workers=100) as pool:
         result = pool.map(new_translate_document, test_list)
     print(result)
-    clean_translations = flatten_list(result)
+    clean_translations = flatten_list(result)'''
+
+    clean_translations = flatten_list(new_translate_document(list(pages)))
     #clean_translations = flatten_list(new_translate_document(test_list))
     print("translated")
     #print(clean_translations)
@@ -218,17 +224,27 @@ if __name__ == "__main__":
         new_list.append(" ".join(w.lower() for w in nltk.wordpunct_tokenize(str(question))\
                 if w.lower() in words or not w.isalpha()))
 
-
 # CODE TO CONVERT INTO A DATAFRAME LATER ON
-    d = {'Translated Questions':clean_translations,'Cleaned Questions':new_list}
-    DftranslatedDoc=pd.DataFrame(data =d)
-    DftranslatedDoc.to_csv('final_output.csv', index=False)
-    print("outputted as CSV file ")
+    d = {'Translated_Questions':clean_translations,'Cleaned_Questions':new_list}
+    DftranslatedDoc=pd.DataFrame(d,columns=['Translated Question','Cleaned Questions'] )
+    #print("The following is the output dataframe")
+    #print(DftranslatedDoc)
+
+    #DftranslatedDoc.to_csv('final_output.csv', index=False)
+    #print("outputted as CSV file ")
+
 #convert to a mysql file ready for website
+    conn = sqlite3.connect('test_database')
+    c = conn.cursor()
+    DftranslatedDoc.to_sql('questions', conn, if_exists='replace', index = False)
+    c.execute('CREATE TABLE IF NOT EXISTS products (Translated_Questions text, Cleaned_Questions text)')
+    conn.commit()   
+    c.execute('''  
+    SELECT * FROM questions
+              ''')
 
-
-#main()
-
+    for row in c.fetchall():
+        print (row)
 
 
 
