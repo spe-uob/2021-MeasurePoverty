@@ -43,10 +43,10 @@ def test_regex():
 #and return
 def translator(lines):
     print("about to translate the array")
-    translated_array  = []
+    translated_array = []
     for i in lines:
         to_translate = i
-        translated  = GoogleTranslator(source='auto',target='en').translate(i)
+        translated = GoogleTranslator(source='auto',target='en').translate(i)
         translated_array.append(translated)
     print("translated")
     return translated_array
