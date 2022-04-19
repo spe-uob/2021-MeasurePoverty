@@ -1,20 +1,5 @@
-'''
-This is the functioning code.
-following steps:
-
-    1. Find all of the words that are not part of the english dictionary and remove them, make sure this method works fully
-    2. test the BLEU function again and test that it works
-    3. see how many questions are actually being narrowed down
-    4. make sure this all works before adding the concurrency, as we need a functioning database first
-
-
-The problem is with the clean translations list
-somewhere in the code we are adding everything to the list every time rather than only the new questions
-'''
-
 
 from collections import defaultdict
-#from IPython.display import display
 import nltk
 import pdfplumber
 import pandas as pd
@@ -24,21 +9,15 @@ import operator
 import numpy as np
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.corpus import words
-#import enchant
+import enchant
 import concurrent.futures
 from time import time
-from concurrent.futures import ProcessPoolExecutor
+import os
+from difflib import SequenceMatcher
+from nltk.translate.bleu_score import SmoothingFunction
 
 
 
-def flatten_list(_2d_list):
-    print("about to flatten list")
-    new_list = []
-    for i in _2d_list:
-        for j in i:
-            new_list.append(j)
-    print("reached and completed flatten_list")
-    return new_list
 
 
 
@@ -56,46 +35,17 @@ def test_regex():
 
 #translator function - given an array of lines, translate each line in the array, add to array of translated lines,
 #and return
-def translator(lines):
-    print("about to translate the array")
-    translated_array  = []
-    for i in lines:
-        to_translate = i
-        translated  = GoogleTranslator(source='auto',target='en').translate(i)
-        translated_array.append(translated)
-    print("translated")
-    return translated_array
+def translator(line):
+    return GoogleTranslator(source = 'auto',target = 'en').translate(line)
 
-'''
-def translation_work(line):
-    translated  = GoogleTranslator(source='auto',target='en').translate(line)
-    return translated
 
-def translator_with_concurrency(lines):
-    print("about to start concurrency")
-    translated_array = []
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = []
-        for line in lines:
-            futures.append(executor.submit(translation_work(line)))
-        for future in concurrent.futures.as_completed(futures):
-            translated_array.append(future.result())
-
-    return translated_array
-
-'''
 
 
 
 #cleans text from any whitesace and can later be used to remove punctuation if necessary
 def clean(text):
-    print(text)
-    #removing whitesapce- needed
     text = re.sub('\n','',str(text))
     text = re.sub('\n',' ',str(text))
-    #removing punctuation- not needed right now, keep commented out just incase
-    #text = re.sub(r'[^\w\s]','',text)
-    print(text)
     return text
 
 
@@ -106,24 +56,31 @@ def keywords():
 
     global questions_to_keywords
     questions_to_keywords={
-        "holiday":"Can your whole household afford to go for a week’s annual holiday, away from home?",
-        "vegetarian":"Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?",
-        "expense": "Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?",
-        "telephone":"Does your household have a telephone(fixed landline or mobile)?",
-        "colour TV":"Does your household have a color TV?",
-        "washing machine":"Does the household have a washing machine? ",
-        "van":"Does your household have a car/van for private use? ",
-        "dwelling":"Do you have any of the following problems with your dwelling/accommodation? ",
-        "warm":"Can your household afford to keep its home adequately warm?  "
+        "Can your whole household afford to go for a week’s annual holiday, away from home?":["vacation","holiday","holiday residence","residence"],
+        "Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?":["vegetarian"],
+        "Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?":["expense","costs"],
+        "Does your household have a telephone(fixed landline or mobile)?":["telephone","phone"],
+        "Does your household have a color TV?":["colour TV","colour television"],
+        "Does the household have a washing machine? ":["washing machine"],
+        "Does your household have a car/van for private use? ":["van","autobus"],
+        "Do you have any of the following problems with your dwelling/accommodation? ":["dwelling","lodging"],
+        "Can your household afford to keep its home adequately warm?":["warm","heat"]
     }
+
     translated_keywords_dict = defaultdict()
-    for key in questions_to_keywords.keys():
-        translated_keywords_dict[GoogleTranslator(source='en', target='french').translate(key)] = []
-    return translated_keywords_dict
+    for key in questions_to_keywords.values():
+        for item in key:
+            translated_keywords_dict[GoogleTranslator(source='en', target='french').translate(item)] = []
+    return (translated_keywords_dict)
 
 
-#iterates through an array which contains page numbers, extracts each quesiton from that page, translates them into english,
-#adds to an array, cleans data and adds to final array
+
+
+
+#print(check_keywords(["do you have a van?","do you have a colour TV", "what is your name","washing machine?"]))
+#should return ["do you have a van?","do you have a colour TV","washing machine?"]
+
+
 
 
 
@@ -131,10 +88,8 @@ def new_translate_document(pages):
     pdf1 = pdfplumber.open("france.pdf")
     pages = pages
     clean_foreign_questions = set()
-    translated_questions = []
+    translated_questions = defaultdict()
     for number in pages:
-        print(number)
-        print("about to extract and translate page:",number)
         p1 = pdf1.pages[number]
         text = p1.extract_text()
         text = clean(text)
@@ -142,15 +97,12 @@ def new_translate_document(pages):
         for item in sentences:
             if item[-1] == "?":
                 clean_foreign_questions.add(item)
-                #print(clean_foreign_questions)
-        print("extracted and translated page:",number)
-    #translated_questions.append(translator(clean_foreign_questions))
-    translated_questions.append(translator(clean_foreign_questions))
-    #print(translated_questions)
 
-    print("translated the array, about to flatten the list")
+    for item in clean_foreign_questions:
+        key_to_add = translator(item)
+        translated_questions[key_to_add] = item
+
     return translated_questions
-
 
 
 #BLEU allows to compare set of references with a candidate,
@@ -159,36 +111,34 @@ def new_translate_document(pages):
 # (in my example reference should be [reference]:
 #reference: https://stackoverflow.com/questions/68926574/i-compare-two-identical-sentences-with-bleu-nltk-and-dont-get-1-0-why
 
-
-def bleu_implementation(array_of_questions_to_compare,original_question):
-
-    max_score = 0
-    question_name = ""
-    for item in array_of_questions_to_compare:
-        score = sentence_bleu([item],original_question)
-        if score == 1:
-            max_score = 1
-            question_name += item
-        elif score > max_score:
-            max_score = score
-            question_name += item
-
-    return max_score
-
-
-##bleu_implementation(["hello my name is lipples","hello my name is lipi"],"hello my name is lipi", )
+##TESTING BLEU VS SIMILAR SCORE API
 
 
 
-#reference : https://stackoverflow.com/questions/3788870/how-to-check-if-a-word-is-an-english-word-with-python
+
+
+## new remove brackets function
+def remove_brackets(keywords_questions):
+    tidied_dictionary = defaultdict()
+    for keyword_question in keywords_questions.keys():
+        tidied_dictionary[re.sub("[\(\[].*?[\)\]]", "", keyword_question)] = keywords_questions[keyword_question]
+    return tidied_dictionary
+
+## new def check keywords
+def check_keywords(new_dictionary):
+    relevant_questions =  defaultdict()
+    array_of_keywords = ["holiday","vacation","holiday residence","residence","vegetarian","expense","costs","telephone","phone","colour TV","colour television","washing machine", "van", "dwelling","lodging","warm","heat"]
+    for question in new_dictionary.keys():
+        if any(word in question for word  in array_of_keywords):
+            relevant_questions[question] = new_dictionary[question]
+        else:
+            continue
+    return relevant_questions
 
 
 
-## returns true if a work is in English dictionary with british spelling
 
-
-
-if __name__ == "__main__":
+def main():
     translated_keywords = keywords().keys()
     pages = set()
     pdf = pdfplumber.open("france.pdf")
@@ -201,33 +151,58 @@ if __name__ == "__main__":
             if re.findall(word,Text,re.IGNORECASE):
                 pages.add(i)
     print(pages,"found the page numbers and about to translate")
-    test_list = [45,73,79,107,158,159,161,164,165,232,251,273]
-    with ProcessPoolExecutor(max_workers=100) as pool:
-        result = pool.map(new_translate_document, test_list)
-    print(result)
-    clean_translations = flatten_list(result)
-    #clean_translations = flatten_list(new_translate_document(test_list))
+    #clean_translateions is a dictinoary of {english:french}
+    clean_translations = new_translate_document(list(pages))
     print("translated")
-    #print(clean_translations)
-    #dictionary of quesion to its highest BLEU score
     print("about to go through the words and check taht they are in english ")
     question_to_scores = defaultdict()
     words = set(nltk.corpus.words.words())
-    new_list = []
-    for question in clean_translations:
-        new_list.append(" ".join(w.lower() for w in nltk.wordpunct_tokenize(str(question))\
-                if w.lower() in words or not w.isalpha()))
+    new_dictionary = defaultdict()
+
+    for question in clean_translations.keys():
+        item = (" ".join(w.lower() for w in nltk.wordpunct_tokenize(str(question)) \
+                         if w.lower() in words or not w.isalpha()))
+
+        new_dictionary[item] = clean_translations[question]
+    keywords_questions = check_keywords(new_dictionary)
+    updated_keywords_list = remove_brackets(keywords_questions)
+    return updated_keywords_list
 
 
-# CODE TO CONVERT INTO A DATAFRAME LATER ON
-    d = {'Translated Questions':clean_translations,'Cleaned Questions':new_list}
-    DftranslatedDoc=pd.DataFrame(data =d)
-    DftranslatedDoc.to_csv('final_output.csv', index=False)
-    print("outputted as CSV file ")
-#convert to a mysql file ready for website
+
+#works quite well maybe run it through this first
+def similar(string1,string2):
+    return SequenceMatcher(None,string1,string2).ratio()
+def similar_sentence(question,target_list):
+    return max(target_list,key=lambda str:similar(question,str))
+#test_array = ["do you have a washing machine", "do you have a car"," cars are nice","i want a car","i want a washing machine"]
+#question = "do you have a washing machine"
+#print(similar_sentence(question,test_array))
 
 
-#main()
+
+def bleu_implementation(original_question,array_of_questions_to_compare):
+    scores = defaultdict()
+    question_name = ""
+    for item in array_of_questions_to_compare:
+        score = sentence_bleu([item],original_question,smoothing_function=SmoothingFunction().method1)
+        scores[score] = item
+    max_score = max(scores.keys())
+    return scores[max_score]
+
+
+
+davids_questions_to_match = ["Can your whole household afford to go for a week’s annual holiday, away from home?","Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?","Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?","Does your household have a telephone(fixed landline or mobile)?","Does your household have a color TV?","Does the household have a washing machine? ","Does your household have a car/van for private use? ","Do you have any of the following problems with your dwelling/accommodation? ","Can your household afford to keep its home adequately warm? "]
+matched_questions = defaultdict()
+dictionary_of_questions = main()
+for david_question in davids_questions_to_match:
+    matched_question= bleu_implementation(david_question,dictionary_of_questions.keys())
+    matched_questions[david_question]= [matched_question, dictionary_of_questions[matched_question]]
+for key,value in matched_questions.items():
+    print(key,value)
+
+
+
 
 
 
