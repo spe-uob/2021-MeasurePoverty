@@ -2,7 +2,7 @@ from main import *
 
 
 def test_translator():
-        assert translator(["bonjour"]) == ["good morning"]
+        assert translator([""]) == [""]
 
 
 def test_flattenlist():
