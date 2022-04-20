@@ -5,31 +5,11 @@ import pdfplumber
 import pandas as pd
 from deep_translator import GoogleTranslator
 import re
-import operator
-import numpy as np
 from nltk.translate.bleu_score import sentence_bleu
-from nltk.corpus import words
-import enchant
-import concurrent.futures
-from time import time
-import os
 from difflib import SequenceMatcher
 from nltk.translate.bleu_score import SmoothingFunction
 
-
-
-
-
-
-
-
-
-#function to test different regex expressions
-#so findall definitely works for matching aceented characters
-#problem is with the pdf extractor that we are using
-def test_regex():
-    matched = (re.findall('é','hé'))
-    print("matched",matched)
+from IPython.display import display
 
 
 
@@ -70,7 +50,7 @@ def keywords():
     translated_keywords_dict = defaultdict()
     for key in questions_to_keywords.values():
         for item in key:
-            translated_keywords_dict[GoogleTranslator(source='en', target='french').translate(item)] = []
+            translated_keywords_dict[GoogleTranslator(source='en', target='it').translate(item)] = []
     return (translated_keywords_dict)
 
 
@@ -84,8 +64,8 @@ def keywords():
 
 
 
-def new_translate_document(pages):
-    pdf1 = pdfplumber.open("france.pdf")
+def translate_document(pages):
+    pdf1 = pdfplumber.open("italy.pdf")
     pages = pages
     clean_foreign_questions = set()
     translated_questions = defaultdict()
@@ -141,8 +121,8 @@ def check_keywords(new_dictionary):
 def main():
     translated_keywords = keywords().keys()
     pages = set()
-    pdf = pdfplumber.open("france.pdf")
-    print("about to find pages")
+    pdf = pdfplumber.open("italy.pdf")
+
     for word in translated_keywords:
         word = word.lower()
         for i in range(0,len(pdf.pages)):
@@ -150,12 +130,10 @@ def main():
             Text = page_number.extract_text()
             if re.findall(word,Text,re.IGNORECASE):
                 pages.add(i)
-    print(pages,"found the page numbers and about to translate")
+
     #clean_translateions is a dictinoary of {english:french}
-    clean_translations = new_translate_document(list(pages))
-    print("translated")
-    print("about to go through the words and check taht they are in english ")
-    question_to_scores = defaultdict()
+    clean_translations = translate_document(list(pages))
+
     words = set(nltk.corpus.words.words())
     new_dictionary = defaultdict()
 
@@ -166,7 +144,7 @@ def main():
         new_dictionary[item] = clean_translations[question]
     keywords_questions = check_keywords(clean_translations)
     updated_keywords_list = remove_brackets(keywords_questions)
-    print(updated_keywords_list)
+
     return updated_keywords_list
 
 
@@ -184,7 +162,7 @@ def similar_sentence(question,target_list):
 
 def bleu_implementation(original_question,array_of_questions_to_compare):
     scores = defaultdict()
-    question_name = ""
+
     for item in array_of_questions_to_compare:
         score = sentence_bleu([item],original_question,smoothing_function=SmoothingFunction().method1)
         scores[score] = item
@@ -200,25 +178,32 @@ final_questions_to_keywords={
     "Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?":["expense","costs"],
     "Does your household have a telephone(fixed landline or mobile)?":["telephone","phone"],
     "Does your household have a color TV?":["colour TV","colour television","colour","television","TV"],
-    "Does the household have a washing machine? ":["washing machine","washing","machine"],
-    "Does your household have a car/van for private use? ":["van","car","vehicle"],
-    "Do you have any of the following problems with your dwelling/accommodation? ":["dwelling","lodging"],
-    "Can your household afford to keep its home adequately warm?":["warm","heat"]
+    "Does the household have a washing machine?":["washing machine","washing","machine"],
+    "Does your household have a car/van for private use?":["van","car","vehicle"],
+    "Do you have any of the following problems with your dwelling/accommodation?":["dwelling","lodging"],
+    "Can your household afford to keep its home adequately warm?":["warm","heat","heating","warmth"]
 }
-translated_questions_to_check = main().keys()
+
+
+translated_questions_to_check = main()
 keywords_to_translated_questions = defaultdict()
-davids_questions_to_match = ["Can your whole household afford to go for a week’s annual holiday, away from home?","Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?","Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?","Does your household have a telephone(fixed landline or mobile)?","Does your household have a color TV?","Does the household have a washing machine? ","Does your household have a car/van for private use? ","Do you have any of the following problems with your dwelling/accommodation? ","Can your household afford to keep its home adequately warm? "]
+davids_questions_to_match = ["Can your whole household afford to go for a week’s annual holiday, away from home?","Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?","Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?","Does your household have a telephone(fixed landline or mobile)?","Does your household have a color TV?","Does the household have a washing machine?","Does your household have a car/van for private use?","Do you have any of the following problems with your dwelling/accommodation?","Can your household afford to keep its home adequately warm?"]
 
 
+# keywords to translated questions has a list of the questions associated with each keyword, narrows down what to check for BLEU algorithm
 for question in final_questions_to_keywords.keys():
+    #x list is the lsit of questions to compare to davids quesiton that contains the same keyword
     x_list = []
     keyword_list = final_questions_to_keywords[question]
-    for translated_question in translated_questions_to_check:
+    for translated_question in translated_questions_to_check.keys():
         if any(keyword in translated_question for keyword in keyword_list):
             x_list.append(translated_question)
     keywords_to_translated_questions[question] = x_list
 
 
+
+## goes thtrouhg each item in dictionary, calculating BLEU score for key vs value
+# now that we have the matched questions, have to go into the translated_qustions_to_check and get the french version ie from main values
 matched_questions = defaultdict()
 for key,value in keywords_to_translated_questions.items():
     if value == []:
@@ -228,118 +213,32 @@ for key,value in keywords_to_translated_questions.items():
 print(matched_questions)
 
 
-'''
 
-|- albanian: sq
-|- amharic: am
-|- arabic: ar
-|- armenian: hy
-|- azerbaijani: az
-|- basque: eu
-|- belarusian: be
-|- bengali: bn
-|- bosnian: bs
-|- bulgarian: bg
-|- catalan: ca
-|- cebuano: ceb
-|- chichewa: ny
-|- chinese (simplified): zh-CN
-|- chinese (traditional): zh-TW
-|- corsican: co
-|- croatian: hr
-|- czech: cs
-|- danish: da
-|- dutch: nl
-|- english: en
-|- esperanto: eo
-|- estonian: et
-|- filipino: tl
-|- finnish: fi
-|- french: fr
-|- frisian: fy
-|- galician: gl
-|- georgian: ka
-|- german: de
-|- greek: el
-|- gujarati: gu
-|- haitian creole: ht
-|- hausa: ha
-|- hawaiian: haw
-|- hebrew: iw
-|- hindi: hi
-|- hmong: hmn
-|- hungarian: hu
-|- icelandic: is
-|- igbo: ig
-|- indonesian: id
-|- irish: ga
-|- italian: it
-|- japanese: ja
-|- javanese: jw
-|- kannada: kn
-|- kazakh: kk
-|- khmer: km
-|- kinyarwanda: rw
-|- korean: ko
-|- kurdish: ku
-|- kyrgyz: ky
-|- lao: lo
-|- latin: la
-|- latvian: lv
-|- lithuanian: lt
-|- luxembourgish: lb
-|- macedonian: mk
-|- malagasy: mg
-|- malay: ms
-|- malayalam: ml
-|- maltese: mt
-|- maori: mi
-|- marathi: mr
-|- mongolian: mn
-|- myanmar: my
-|- nepali: ne
-|- norwegian: no
-|- odia: or
-|- pashto: ps
-|- persian: fa
-|- polish: pl
-|- portuguese: pt
-|- punjabi: pa
-|- romanian: ro
-|- russian: ru
-|- samoan: sm
-|- scots gaelic: gd
-|- serbian: sr
-|- sesotho: st
-|- shona: sn
-|- sindhi: sd
-|- sinhala: si
-|- slovak: sk
-|- slovenian: sl
-|- somali: so
-|- spanish: es
-|- sundanese: su
-|- swahili: sw
-|- swedish: sv
-|- tajik: tg
-|- tamil: ta
-|- tatar: tt
-|- telugu: te
-|- thai: th
-|- turkish: tr
-|- turkmen: tk
-|- ukrainian: uk
-|- urdu: ur
-|- uyghur: ug
-|- uzbek: uz
-|- vietnamese: vi
-|- welsh: cy
-|- xhosa: xh
-|- yiddish: yi
-|- yoruba: yo
-|- zulu: zu
+## createing a dataframe of english questions to french questions
+dataframe_dictionary = defaultdict()
+for davids_question in matched_questions.keys():
+    if matched_questions[davids_question] == ["not found"]:
+        dataframe_dictionary[davids_question] = ["not found"]
+
+    else:
+        dataframe_dictionary[davids_question] = translated_questions_to_check[matched_questions[davids_question]]
+print(dataframe_dictionary)
+display(pd.DataFrame.from_dict(dataframe_dictionary))
 
 
 
 
-'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
