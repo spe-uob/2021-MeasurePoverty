@@ -42,7 +42,7 @@ def translator(line):
 
 
 
-#cleans text from any whitesace and can later be used to remove punctuation if necessary
+#cleans text from any whitespace and can later be used to remove punctuation if necessary
 def clean(text):
     text = re.sub('\n','',str(text))
     text = re.sub('\n',' ',str(text))
@@ -54,17 +54,17 @@ def clean(text):
 #you can change the language we are using
 def keywords():
 
-    global questions_to_keywords
+
     questions_to_keywords={
         "Can your whole household afford to go for a week’s annual holiday, away from home?":["vacation","holiday","holiday residence","residence"],
-        "Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?":["vegetarian"],
+        "Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?":["vegetarian","meat","chicken","fish"],
         "Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?":["expense","costs"],
         "Does your household have a telephone(fixed landline or mobile)?":["telephone","phone"],
-        "Does your household have a color TV?":["colour TV","colour television"],
-        "Does the household have a washing machine? ":["washing machine"],
-        "Does your household have a car/van for private use? ":["van","autobus"],
+        "Does your household have a color TV?":["colour TV","colour television","colour","television","TV"],
+        "Does the household have a washing machine? ":["washing machine","washing","machine"],
+        "Does your household have a car/van for private use? ":["van","car","vehicle"],
         "Do you have any of the following problems with your dwelling/accommodation? ":["dwelling","lodging"],
-        "Can your household afford to keep its home adequately warm?":["warm","heat"]
+        "Can your household afford to keep its home adequately warm?":["warm","heat","heating","warmth"]
     }
 
     translated_keywords_dict = defaultdict()
@@ -164,8 +164,9 @@ def main():
                          if w.lower() in words or not w.isalpha()))
 
         new_dictionary[item] = clean_translations[question]
-    keywords_questions = check_keywords(new_dictionary)
+    keywords_questions = check_keywords(clean_translations)
     updated_keywords_list = remove_brackets(keywords_questions)
+    print(updated_keywords_list)
     return updated_keywords_list
 
 
@@ -192,29 +193,153 @@ def bleu_implementation(original_question,array_of_questions_to_compare):
 
 
 
+
+final_questions_to_keywords={
+    "Can your whole household afford to go for a week’s annual holiday, away from home?":["vacation","holiday","holiday residence","residence"],
+    "Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?":["vegetarian","meat","chicken","fish"],
+    "Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?":["expense","costs"],
+    "Does your household have a telephone(fixed landline or mobile)?":["telephone","phone"],
+    "Does your household have a color TV?":["colour TV","colour television","colour","television","TV"],
+    "Does the household have a washing machine? ":["washing machine","washing","machine"],
+    "Does your household have a car/van for private use? ":["van","car","vehicle"],
+    "Do you have any of the following problems with your dwelling/accommodation? ":["dwelling","lodging"],
+    "Can your household afford to keep its home adequately warm?":["warm","heat"]
+}
+translated_questions_to_check = main().keys()
+keywords_to_translated_questions = defaultdict()
 davids_questions_to_match = ["Can your whole household afford to go for a week’s annual holiday, away from home?","Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?","Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?","Does your household have a telephone(fixed landline or mobile)?","Does your household have a color TV?","Does the household have a washing machine? ","Does your household have a car/van for private use? ","Do you have any of the following problems with your dwelling/accommodation? ","Can your household afford to keep its home adequately warm? "]
+
+
+for question in final_questions_to_keywords.keys():
+    x_list = []
+    keyword_list = final_questions_to_keywords[question]
+    for translated_question in translated_questions_to_check:
+        if any(keyword in translated_question for keyword in keyword_list):
+            x_list.append(translated_question)
+    keywords_to_translated_questions[question] = x_list
+
+
 matched_questions = defaultdict()
-dictionary_of_questions = main()
-for david_question in davids_questions_to_match:
-    matched_question= bleu_implementation(david_question,dictionary_of_questions.keys())
-    matched_questions[david_question]= [matched_question, dictionary_of_questions[matched_question]]
-for key,value in matched_questions.items():
-    print(key,value)
+for key,value in keywords_to_translated_questions.items():
+    if value == []:
+        matched_questions[key] = ["not found"]
+    else:
+        matched_questions[key] = bleu_implementation(key,value)
+print(matched_questions)
+
+
+'''
+
+|- albanian: sq
+|- amharic: am
+|- arabic: ar
+|- armenian: hy
+|- azerbaijani: az
+|- basque: eu
+|- belarusian: be
+|- bengali: bn
+|- bosnian: bs
+|- bulgarian: bg
+|- catalan: ca
+|- cebuano: ceb
+|- chichewa: ny
+|- chinese (simplified): zh-CN
+|- chinese (traditional): zh-TW
+|- corsican: co
+|- croatian: hr
+|- czech: cs
+|- danish: da
+|- dutch: nl
+|- english: en
+|- esperanto: eo
+|- estonian: et
+|- filipino: tl
+|- finnish: fi
+|- french: fr
+|- frisian: fy
+|- galician: gl
+|- georgian: ka
+|- german: de
+|- greek: el
+|- gujarati: gu
+|- haitian creole: ht
+|- hausa: ha
+|- hawaiian: haw
+|- hebrew: iw
+|- hindi: hi
+|- hmong: hmn
+|- hungarian: hu
+|- icelandic: is
+|- igbo: ig
+|- indonesian: id
+|- irish: ga
+|- italian: it
+|- japanese: ja
+|- javanese: jw
+|- kannada: kn
+|- kazakh: kk
+|- khmer: km
+|- kinyarwanda: rw
+|- korean: ko
+|- kurdish: ku
+|- kyrgyz: ky
+|- lao: lo
+|- latin: la
+|- latvian: lv
+|- lithuanian: lt
+|- luxembourgish: lb
+|- macedonian: mk
+|- malagasy: mg
+|- malay: ms
+|- malayalam: ml
+|- maltese: mt
+|- maori: mi
+|- marathi: mr
+|- mongolian: mn
+|- myanmar: my
+|- nepali: ne
+|- norwegian: no
+|- odia: or
+|- pashto: ps
+|- persian: fa
+|- polish: pl
+|- portuguese: pt
+|- punjabi: pa
+|- romanian: ro
+|- russian: ru
+|- samoan: sm
+|- scots gaelic: gd
+|- serbian: sr
+|- sesotho: st
+|- shona: sn
+|- sindhi: sd
+|- sinhala: si
+|- slovak: sk
+|- slovenian: sl
+|- somali: so
+|- spanish: es
+|- sundanese: su
+|- swahili: sw
+|- swedish: sv
+|- tajik: tg
+|- tamil: ta
+|- tatar: tt
+|- telugu: te
+|- thai: th
+|- turkish: tr
+|- turkmen: tk
+|- ukrainian: uk
+|- urdu: ur
+|- uyghur: ug
+|- uzbek: uz
+|- vietnamese: vi
+|- welsh: cy
+|- xhosa: xh
+|- yiddish: yi
+|- yoruba: yo
+|- zulu: zu
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'''
