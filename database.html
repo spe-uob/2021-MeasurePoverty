@@ -39,6 +39,14 @@
                `
         });
     })
+    var firebaseRef2 = firebase.database().ref("country")
+        firebaseRef2.on("value" , function(snapshot){
+           snapshot.forEach(function(element){
+               document.querySelector('#root').innerHTML += `
+               <div>${element.val()}</div>
+               `
+        });
+    })
       </script>
 </body>
 </html>
