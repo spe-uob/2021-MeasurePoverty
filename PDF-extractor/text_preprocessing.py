@@ -8,7 +8,7 @@ import re
 
 
 #cleans text from any whitespace and can later be used to remove punctuation if necessary
-def clean(text):
+def remove_whitespace(text):
     text = re.sub('\n','',str(text))
     text = re.sub('\n',' ',str(text))
     return text
@@ -17,10 +17,10 @@ def clean(text):
 
 
 ## new remove brackets function
-def remove_brackets(keywords_questions):
+def remove_brackets(input_dictionary):
     tidied_dictionary = defaultdict()
-    for keyword_question in keywords_questions.keys():
-        tidied_dictionary[re.sub("[\(\[].*?[\)\]]", "", keyword_question)] = keywords_questions[keyword_question]
+    for keyword_question in input_dictionary.keys():
+        tidied_dictionary[re.sub("[\(\[].*?[\)\]]", "", keyword_question)] = input_dictionary[keyword_question]
     return tidied_dictionary
 
 
@@ -28,12 +28,12 @@ def remove_brackets(keywords_questions):
 
 
 ## new def check keywords
-def check_keywords(new_dictionary):
+def check_keywords(input_dictionary):
     relevant_questions =  defaultdict()
     array_of_keywords = ["holiday","vacation","holiday residence","residence","vegetarian","expense","costs","telephone","phone","colour TV","colour television","washing machine", "van", "dwelling","lodging","warm","heat"]
-    for question in new_dictionary.keys():
+    for question in input_dictionary.keys():
         if any(word in question for word  in array_of_keywords):
-            relevant_questions[question] = new_dictionary[question]
+            relevant_questions[question] = input_dictionary[question]
     return relevant_questions
 
 

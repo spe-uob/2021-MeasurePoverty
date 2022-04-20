@@ -37,7 +37,7 @@ def find_and_translate_questions(pages):
     translated_questions = defaultdict()
     for number in pages:
         p1 = pdf1.pages[number]
-        text = text_preprocessing.clean(p1.extract_text())
+        text = text_preprocessing.remove_whitespace(p1.extract_text())
         sentences = nltk.sent_tokenize(text)
         for item in sentences:
             if item[-1] == "?":
