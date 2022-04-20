@@ -1,0 +1,32 @@
+version: "3"
+networks:
+  my-network:
+    driver: bridge 
+services:       
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: "QAZ1992519QAZ"
+      MYSQL_USER: 'pw'
+      MYSQL_PASS: 'mypw'
+    image: "daocloud.io/library/mysql:5.7"
+    restart: always
+    volumes:
+      - "./init:/docker-entrypoint-initdb.d/"
+    ports:
+      - "3307:3306"
+    networks:
+      - my-network   
+  app:
+    build:
+      context: .   
+    # volumes:
+    #   - "./test.sh:/test.sh"
+    ports:
+      - "7001:7001"  
+    depends_on:
+      - "mysql"
+    command: > 
+      sh -c
+      'sleep 30;npm run start;'
+    networks:
+      - my-network
