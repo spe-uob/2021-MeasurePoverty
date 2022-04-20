@@ -15,15 +15,12 @@ def remove_whitespace(text):
 
 
 
-
 ## new remove brackets function
 def remove_brackets(input_dictionary):
     tidied_dictionary = defaultdict()
     for keyword_question in input_dictionary.keys():
         tidied_dictionary[re.sub("[\(\[].*?[\)\]]", "", keyword_question)] = input_dictionary[keyword_question]
     return tidied_dictionary
-
-
 
 
 
