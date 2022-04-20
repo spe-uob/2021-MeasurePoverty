@@ -1,0 +1,16 @@
+2022-04-19 10:59:56,365 INFO 16933 [egg-logrotator] app logger reload: got log-reload message
+2022-04-19 11:23:19,089 INFO 30852 [egg:logger] init all loggers with options: {"dir":"/Users/toakirakiri/Desktop/translate/translateServer/logs/egg-ant-design-pro","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-ant-design-pro-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"type":"application"}
+2022-04-19 11:23:19,115 INFO 30852 [egg-multipart] stream mode enable
+2022-04-19 11:23:19,574 INFO 30852 [egg-static] starting static serve /public/ -> /Users/toakirakiri/Desktop/translate/translateServer/app/public
+2022-04-19 11:23:19,574 INFO 30852 [egg-static] starting static serve /public/ -> /Users/toakirakiri/Desktop/translate/translateServer/app/upload
+2022-04-19 11:23:19,575 WARN 30852 [egg-security] Please use `config.security.csrf = { enable: false }` instead of `config.security.csrf = false`
+2022-04-19 11:23:19,577 INFO 30852 [egg-security] use methodnoallow middleware
+2022-04-19 11:23:19,578 INFO 30852 [egg-security] use noopen middleware
+2022-04-19 11:23:19,579 INFO 30852 [egg-security] use nosniff middleware
+2022-04-19 11:23:19,579 INFO 30852 [egg-security] use xssProtection middleware
+2022-04-19 11:23:19,580 INFO 30852 [egg-security] use xframe middleware
+2022-04-19 11:23:19,580 INFO 30852 [egg-security] use dta middleware
+2022-04-19 11:23:19,580 INFO 30852 [egg-security] compose 6 middlewares into one security middleware
+2022-04-19 11:23:19,597 INFO 30852 [egg:core] dump config after load, 5ms
+2022-04-19 11:23:19,659 INFO 30852 [egg-watcher:application] watcher start success
+2022-04-19 11:23:19,701 INFO 30852 [egg:core] dump config after ready, 6ms
