@@ -1,0 +1,403 @@
+{
+  "keys": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+  "static": {
+    "dir": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "prefix": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "dynamic": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "preload": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "buffer": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js",
+    "maxFiles": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-static@2.2.0@egg-static/config/config.default.js"
+  },
+  "view": {
+    "root": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "mapping": {
+      ".html": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js"
+    },
+    "cache": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view@2.1.3@egg-view/config/config.local.js",
+    "defaultExtension": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view@2.1.3@egg-view/config/config.default.js",
+    "defaultViewEngine": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view@2.1.3@egg-view/config/config.default.js"
+  },
+  "sequelize": {
+    "dialect": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "host": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "port": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "database": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "user": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "password": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "timezone": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "define": {
+      "createdAt": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+      "updatedAt": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js"
+    },
+    "dialectOptions": {
+      "dateStrings": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+      "typeCast": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js"
+    },
+    "username": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-sequelize@5.2.2@egg-sequelize/config/config.default.js"
+  },
+  "assets": {
+    "publicPath": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "devServer": {
+      "autoPort": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+      "command": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+      "env": {
+        "APP_ROOT": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+        "BROWSER": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+        "SOCKET_SERVER": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js"
+      },
+      "debug": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+      "port": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+      "portPath": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+      "timeout": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+      "waitStart": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js"
+    },
+    "isLocalOrUnittest": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+    "url": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+    "templatePath": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+    "templateViewEngine": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+    "crossorigin": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+    "contextKey": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js",
+    "dynamicLocalIP": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-assets@1.8.0@egg-view-assets/config/config.default.js"
+  },
+  "security": {
+    "csrf": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "domainWhiteList": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+    "xframe": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+      "value": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "hsts": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.local.js",
+      "maxAge": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "dta": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "noopen": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "nosniff": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+      "value": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "xssProtection": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+      "value": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "csp": {
+      "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+      "policy": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+      "ipExceptionList": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js",
+      "checkAddress": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+    }
+  },
+  "cors": {
+    "origin": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js",
+    "allowMethods": "/Users/toakirakiri/Desktop/translate/translateServer/config/config.default.js"
+  },
+  "session": {
+    "maxAge": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-session@3.3.0@egg-session/config/config.default.js",
+    "key": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-session@3.3.0@egg-session/config/config.default.js",
+    "httpOnly": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-session@3.3.0@egg-session/config/config.default.js",
+    "encrypt": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-session@3.3.0@egg-session/config/config.default.js",
+    "logValue": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-session@3.3.0@egg-session/config/config.default.js"
+  },
+  "helper": {
+    "shtml": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-security@2.10.1@egg-security/config/config.default.js"
+  },
+  "jsonp": {
+    "limit": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js",
+    "callback": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js",
+    "csrf": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-jsonp@2.0.0@egg-jsonp/config/config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js",
+    "templatePath": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-onerror@2.1.0@egg-onerror/config/config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "dirs": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "queryField": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "cookieField": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "cookieDomain": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-i18n@2.1.1@egg-i18n/config/config.default.js"
+  },
+  "watcher": {
+    "type": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.local.js",
+    "eventSources": {
+      "default": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.default.js",
+      "development": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-watcher@3.1.1@egg-watcher/config/config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-schedule@3.6.6@egg-schedule/config/config.default.js",
+      "file": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-schedule@3.6.6@egg-schedule/config/config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-schedule@3.6.6@egg-schedule/config/config.default.js"
+  },
+  "multipart": {
+    "mode": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "autoFields": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "fields": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "fileSize": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "files": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "whitelist": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "allowArrayField": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js",
+      "disable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-multipart@2.13.1@egg-multipart/config/config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "fastReady": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "overrideDefault": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js",
+    "overrideIgnore": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-development@2.7.0@egg-development/config/config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-logrotator@3.1.0@egg-logrotator/config/config.default.js"
+  },
+  "nunjucks": {
+    "autoescape": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-nunjucks@2.3.0@egg-view-nunjucks/config/config.default.js",
+    "throwOnUndefined": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-nunjucks@2.3.0@egg-view-nunjucks/config/config.default.js",
+    "trimBlocks": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-nunjucks@2.3.0@egg-view-nunjucks/config/config.default.js",
+    "lstripBlocks": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-nunjucks@2.3.0@egg-view-nunjucks/config/config.default.js",
+    "cache": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg-view-nunjucks@2.3.0@egg-view-nunjucks/config/config.local.js"
+  },
+  "env": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "name": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "cookies": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "proxy": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "maxIpsCount": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "maxProxyCount": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "protocolHeaders": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "ipHeaders": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "hostHeaders": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "pkg": {
+    "name": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "version": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "description": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "private": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "dependencies": {
+      "@antv/data-set": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "@babel/runtime": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "antd": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "await-stream-ready": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "bizcharts": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "bizcharts-plugin-slider": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "classnames": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "dva": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-cors": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-scripts": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-sequelize": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-view-assets": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-view-nunjucks": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "enquire-js": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "formidable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "hash.js": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "lodash": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "lodash-decorators": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "md5": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "memoize-one": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "moment": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "mysql2": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "numeral": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "nzh": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "omit.js": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "path-to-regexp": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "prop-types": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "qs": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "rc-animate": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "react": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "react-container-query": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "react-copy-to-clipboard": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "react-document-title": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "react-dom": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "react-fittext": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "react-router-dom": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "sequelize": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "stream-wormhole": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "uuid": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "devDependencies": {
+      "antd-pro-merge-less": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "antd-theme-webpack-plugin": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "autod": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "autod-egg": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "babel-eslint": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "babel-plugin-dva-hmr": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "babel-plugin-import": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "babel-plugin-transform-decorators-legacy": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-bin": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-ci": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "egg-mock": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "enzyme": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-config-airbnb": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-config-egg": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-config-prettier": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-plugin-babel": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-plugin-compat": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-plugin-import": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-plugin-jsx-a11y": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-plugin-markdown": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "eslint-plugin-react": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "mockjs": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "redbox-react": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "sequelize-cli": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "umi": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "umi-plugin-ga": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "umi-plugin-react": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "engines": {
+      "node": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "scripts": {
+      "start": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "stop": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "dev": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "debug": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "build": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "test": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "test-local": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "cov": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "lint": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "ci": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "autod": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "sync": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "ci": {
+      "version": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "license": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "repository": {
+      "type": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "url": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "author": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "license": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "baseDir": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "HOME": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "rundir": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "dump": {
+    "ignore": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "notFound": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "sitefile": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "middlewares": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "httpClient": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "cacheControl": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "bodyParser": {
+    "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "encoding": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "formLimit": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "jsonLimit": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "textLimit": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "strict": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "queryString": {
+      "arrayLimit": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "depth": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "parameterLimit": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "onerror": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "logger": {
+    "dir": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "encoding": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "env": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "level": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "consoleLevel": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "outputJSON": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "buffer": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "appLogName": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "coreLogName": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "agentLogName": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "errorLogName": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "coreLogger": {
+      "consoleLevel": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.local.js"
+    },
+    "allowDebugAtProd": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "enablePerformanceTimer": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "request": {
+      "timeout": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "maxSockets": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "maxSockets": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "maxFreeSockets": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "logging": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "coreMiddleware": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "workerStartTimeout": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "serverTimeout": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "port": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+      "hostname": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js",
+    "responseTimeout": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+  },
+  "onClientError": "/Users/toakirakiri/Desktop/translate/translateServer/node_modules/_egg@2.35.0@egg/config/config.default.js"
+}
