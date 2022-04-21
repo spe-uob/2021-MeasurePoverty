@@ -98,8 +98,8 @@ In the event of any difficulties while installing pyenchant:
 
 https://pyenchant.github.io/pyenchant/install.html
 
-
-
+#### The reason why we use if __mname__ = main: instead of def main
+is described clearly here: https://stackoverflow.com/questions/419163/what-does-if-name-main-do?page=1&tab=scoredesc#tab-top
 
 
 
@@ -112,12 +112,33 @@ Our Approach:
 3. Use NLP and BLEU analysis to determinte the questions are poverty themed, and populate database
 4. Upload and make the database available on the web, as well as open sourced for furture developments in the NLP algorithm 
 
-### The reason why we use if __mname__ = main: instead of def main
-is described clearly here: https://stackoverflow.com/questions/419163/what-does-if-name-main-do?page=1&tab=scoredesc#tab-top
-
 
 
 ### Architecture
+#### Back-end structure
+![image](https://user-images.githubusercontent.com/72454289/164344789-5aa5ca8d-b93b-4a3c-bc1c-b2b62944c1f1.png)
+
+##### question_extraction.py: 
+     find_and_preprocess_questions
+     translate_keywords -- translate key words to foregin language
+     tokenize_and_translate_questions
+     filter_non_words
+     find_and_preprocess_questions
+##### main.py:
+      blew_implementation
+      group_questions_by_keyword
+      main
+##### translators.py:
+      translator_into_english
+      translator_into_foreign
+##### keyword_identifiers.py
+      a dictionary of target questions as keys, keywords as values
+##### text_preprocessing.py:
+      def remove_whitespace(text)
+      remove_brackets(input_dictionary)
+      check_keywords(input_dictionary)
+      
+
 
 #### Database structure
 ![measure_poverty_DB](meaure_poverty_DB.jpeg)
