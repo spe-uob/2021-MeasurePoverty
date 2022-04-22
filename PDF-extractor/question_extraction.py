@@ -5,10 +5,6 @@ import re
 import keyword_identifiers
 import translators
 import text_preprocessing
-#import os
-#from concurrent.futures import ProcessPoolExecutor
-from multiprocessing.dummy import Pool as ThreadPool
-
 
 
 
@@ -26,6 +22,9 @@ def translate_keywords():
     return (translated_keywords_dict)
 
 
+
+
+
 def tokenize_and_translate_questions(pages):
     translated_questions = defaultdict()
     for number in pages:
@@ -39,17 +38,6 @@ def tokenize_and_translate_questions(pages):
 
         ### until here
     return translated_questions
-
-def parallel_tokenize_and_translate_questions(pages):
-    translated_questions= defaultdict()
-    # Create a threadpool with 3 threads
-    pool = ThreadPool(3)
-    # Run tokenize_and_translate_question on all 
-    pool.map(tokenize_and_translate_questions, pages)
-    pool.close()
-    pool.join()
-    return translated_questions
-
 
 
 

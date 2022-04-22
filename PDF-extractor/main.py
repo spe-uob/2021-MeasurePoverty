@@ -3,11 +3,7 @@ from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.bleu_score import SmoothingFunction
 import question_extraction
 import keyword_identifiers
-#packgaes for parallel
-#import os
-#from concurrent.futures import ProcessPoolExecutor
-#from functools import reduce
-
+import pyrebase
 
 
 translated_questions_to_check = question_extraction.find_and_preprocess_questions()
@@ -20,9 +16,6 @@ def bleu_implementation(original_question,array_of_questions_to_compare):
         scores[score] = item
     max_score = max(scores.keys())
     return scores[max_score]
-
-#print(bleu_implementation(["how are you ?"],["how are you?","how is he?"]))
-
 
 
 
@@ -44,9 +37,6 @@ def group_questions_by_keyword(ungrouped_dictionary):
 
 #returns dictionary of david questoin to matched question in foreign language
 def main():
-#if __name__ == "__main__":
-    #with ProcessPoolExecutor() as pool:
-        #keyword_to_translations=pool.map(group_questions_by_keyword,keyword_identifiers.questions_to_keywords)
 
     keyword_to_translations = group_questions_by_keyword(keyword_identifiers.questions_to_keywords)
     matched_questions = defaultdict()
@@ -61,28 +51,43 @@ def main():
     final_dataframe_dictionary = defaultdict()
     for davids_question in matched_questions.keys():
         if matched_questions[davids_question] == ["not found"]:
-            final_dataframe_dictionary[davids_question] = ["not found"]
-
+            final_dataframe_dictionary[davids_question] = "not found"
         else:
             final_dataframe_dictionary[davids_question] = translated_questions_to_check[matched_questions[davids_question]]
 
 
     return final_dataframe_dictionary
-    #print(final_dataframe_dictionary[davids_question] )
-
-
-
-main()
 
 
 
 
 
+firebase_config ={
+    "apiKey": "AIzaSyASZ59fobXr6ovy8QQUX2mogFso22v5nQM",
+    "authDomain": "measuredb.firebaseapp.com",
+    "databaseURL": "https://measuredb-default-rtdb.firebaseio.com",
+    "projectId": "measuredb",
+    "storageBucket": "measuredb.appspot.com",
+    "messagingSenderId": "298611251603",
+    "appId": "1:298611251603:web:0d236cfa7d1926a552f066"
+}
 
 
 
 
 
+firebase = pyrebase.initialize_app(firebase_config)
+database = firebase.database()
+database.child("QuestionIDs").set(keyword_identifiers.questionIDs)
+print("done")
+
+'''
+foreign_dictionary = main.main()
+upload_data = {}
+for i in keyword_identifiers.questionIDs.keys():
+    upload_data[i] = foreign_dictionary[keyword_identifiers.questionIDs[i]]
 
 
+database.child("France-2009").set(upload_data)
 
+'''
