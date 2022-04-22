@@ -3,19 +3,33 @@ from text_preprocessing import *
 from translators import *
 from keyword_identifiers import *
 from question_extraction import *
+import re
+
+#cleans text from any whitespace and can later be used to remove punctuation if necessary
+def remove_whitespace(text):
+    text = re.sub('\n','',str(text))
+    text = re.sub('\n',' ',str(text))
+    return text
+
+print(remove_whitespace("clea\nn"))
 
 #functions from main.py
 def test_bleu_implementation():
-        assert bleu_implementation(["how are you?"],["how old are you?","how are you?"]) == ["how are you?"]
+        assert bleu_implementation(["how are you?"],["how old are you?","how are you?"]) == "how are you?"
 
-def test_groupedquestionsbykeywords():
-        assert group_questions_by_keyword()
 
- #functions from text_preprocessing.py
-        
-def test_removewhitespace():
-        assert remove_whitespace()
-        
+'''def test_groupedquestionsbykeywords():
+        assert group_questions_by_keyword()'''
+
+
+
+#functions from text_preprocessing.py
+'''  
+def test_removewhitespace(self):
+        assert test_removewhitespace("clea\nn") == "clean"
+        #assert test_removewhitespace("clean\nclean") == "clean clean"
+
+     
 def test_removebrackets():
         assert remove_brackets()
 
@@ -47,6 +61,7 @@ def test_translatorintoforeign():
 #def test_clean():
   #      assert clean("clea\nn") == "clean"
  #       assert clean("clean \n clean") == "clean  clean"'''
+
 
 
 
