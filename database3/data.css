@@ -4,17 +4,6 @@ body{
     font-size: x-large;
 }
 
-#QID {
-    position: fixed;
-    left: 15%;
-}
-
-#question {
-    position: fixed;
-    left: 30%;
-
-}
-
 #pagetitle {
     text-align: center;
     left: 40%;
@@ -25,25 +14,44 @@ body{
     vertical-align: text-top;
 }
 
+
+#QID {
+    position: fixed;
+    left: 5%;
+}
+
 #questionid {
     position: fixed;
-    left: 13.5%;
+    left: 3.5%;
     top: 20%;
+}
+
+#question {
+    position: fixed;
+    left: 15%;
+    text-align: center;
 }
 
 #FrenchQuestions {
     position: fixed;
-    right: 50%;
+    left: 25%;
     top: 20%;
 }
 
 #DutchQuestions {
     position: fixed;
-    right: 20%;
+    left: 55%;
     top: 20%;
 }
 
 #french2009 {
     position: fixed;
-    right: 15%;
+    left: 55%;
+    text-align: center;
+}
+
+#englishQuestions {
+    position: fixed;
+    top: 20%;
+    right: 15%
 }
