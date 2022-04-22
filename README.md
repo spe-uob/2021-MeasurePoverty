@@ -28,7 +28,7 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 |   Researcher    | As a researcher,  I want access to the questions from foreign questionnaires, but translated into English    |  
 |   Member of UNICEF |  As a member of UNICEF,  I want access to the questions from foreign questionnaires, but translated into English to be able to check which countries ask all the required questions |   
 | University student | I want to be able to use the poverty questions asked to aid my studies    |
-|Dr David Gordon| ? |
+|Dr David Gordon| As a member of UNICEF and a researcher, I would like to automate the identification of conceptual translated questions in each language. |
 
 
 ## User Guide/Deployment 
