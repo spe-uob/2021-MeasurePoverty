@@ -14,6 +14,7 @@ const firebaseConfig = {
     appId: "1:298611251603:web:0d236cfa7d1926a552f066"
 };
 
+// youtube link: https://www.youtube.com/watch?v=H8frPNjKSC8
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var firebaseRef = firebase.database().ref("id")
@@ -24,11 +25,24 @@ firebaseRef.on("value" , function(snapshot){
                `
     });
 })
+
+var firebaseRef2 = firebase.database().ref("test")
+firebaseRef2.on("value" , function(snapshot){
+    snapshot.forEach(function(element){
+        document.querySelector('#root').innerHTML += `
+        <div>${element.key}</div>
+                      `
+    });
+})
+
+/*
+
 var firebaseRef2 = firebase.database().ref("a")
 firebaseRef2.on("value" , function(snapshot){
     snapshot.forEach(function(element){
         document.querySelector('#root').innerHTML += `
                <div>${element.val()}</div>
+
 
 var firebaseRef3 = firebase.database().ref("b")
 firebaseRef3.on("value" , function(snapshot){
@@ -43,4 +57,4 @@ firebaseRef4.on("value" , function(snapshot){
                <div>${element.val()}</div>
                `
     });
-})
+}) */
