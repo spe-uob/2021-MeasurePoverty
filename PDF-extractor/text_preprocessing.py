@@ -3,10 +3,6 @@ import re
 
 
 
-
-
-
-
 #cleans text from any whitespace and can later be used to remove punctuation if necessary
 def remove_whitespace(text):
     text = re.sub('\n','',str(text))

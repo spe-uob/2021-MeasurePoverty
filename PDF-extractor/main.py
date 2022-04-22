@@ -17,6 +17,9 @@ def bleu_implementation(original_question,array_of_questions_to_compare):
     max_score = max(scores.keys())
     return scores[max_score]
 
+print(bleu_implementation(["how are you ?"],["how are you?","how is he?"]))
+
+
 
 
 def group_questions_by_keyword(ungrouped_dictionary):
