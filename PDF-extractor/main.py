@@ -17,9 +17,6 @@ def bleu_implementation(original_question,array_of_questions_to_compare):
     max_score = max(scores.keys())
     return scores[max_score]
 
-print(bleu_implementation(["how are you ?"],["how are you?","how is he?"]))
-
-
 
 
 def group_questions_by_keyword(ungrouped_dictionary):
@@ -32,7 +29,7 @@ def group_questions_by_keyword(ungrouped_dictionary):
                 keyword_group.append(translated_question)
         grouped_questions[question] = keyword_group
 
-
+   
     return grouped_questions
 
 
@@ -50,13 +47,13 @@ def main():
             matched_questions[key] = bleu_implementation(key,value)
 
 
-
+    print(matched_questions)
     final_dataframe_dictionary = defaultdict()
     for davids_question in matched_questions.keys():
         if matched_questions[davids_question] == ["not found"]:
             final_dataframe_dictionary[davids_question] = ["not found"]
-
         else:
+
             final_dataframe_dictionary[davids_question] = translated_questions_to_check[matched_questions[davids_question]]
 
 
@@ -64,7 +61,7 @@ def main():
 
 
 
-main()
+print(main())
 
 
 
