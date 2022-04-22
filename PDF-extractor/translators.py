@@ -7,6 +7,6 @@ def translator_into_english(sentence):
     return GoogleTranslator(source = 'auto',target = 'en').translate(sentence)
 
 def translator_into_foreign(sentence):
-    return GoogleTranslator(source = 'auto',target = 'fr').translate(sentence)
+    return GoogleTranslator(source = 'auto',target = 'it').translate(sentence)
 
 

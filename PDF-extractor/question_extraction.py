@@ -12,7 +12,7 @@ from multiprocessing.dummy import Pool as ThreadPool
 
 
 
-pdf = pdfplumber.open("france.pdf")
+pdf = pdfplumber.open("italy.pdf")
 
 
 
