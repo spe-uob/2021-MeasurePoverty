@@ -29,7 +29,7 @@ def group_questions_by_keyword(ungrouped_dictionary):
                 keyword_group.append(translated_question)
         grouped_questions[question] = keyword_group
 
-   
+    print(grouped_questions)
     return grouped_questions
 
 
