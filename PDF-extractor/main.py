@@ -88,6 +88,6 @@ for i in keyword_identifiers.questionIDs.keys():
     upload_data[i] = foreign_dictionary[keyword_identifiers.questionIDs[i]]
 
 
-database.child("Italy-2009").set(upload_data)
+database.child("Germany-2009").set(upload_data)
 
 

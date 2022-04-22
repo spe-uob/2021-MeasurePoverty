@@ -8,7 +8,7 @@ import text_preprocessing
 
 
 
-pdf = pdfplumber.open("italy.pdf")
+pdf = pdfplumber.open("german.pdf")
 
 
 
