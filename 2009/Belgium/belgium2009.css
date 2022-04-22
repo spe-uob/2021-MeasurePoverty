@@ -14,17 +14,17 @@ body{
     vertical-align: text-top;
 }
 
-#questionid {
-    position: fixed;
-    left: 4.0%;
-    top: 20%;
-}
-
-
 #QID {
     position: fixed;
     left: 5%;
     text-align: center;
+    top: 20%;
+}
+
+
+#questionID {
+    position: fixed;
+    left: 5%;
 }
 
 

@@ -29,7 +29,7 @@ firebaseRef.on("value" , function(snapshot){
 var firebaseRef2 = firebase.database().ref("Belgium2009")
 firebaseRef2.on("value" , function(snapshot){
     snapshot.forEach(function(element){
-        document.querySelector('#QID').innerHTML += `
+        document.querySelector('#questionID').innerHTML += `
         <div>${element.key}</div>
                       `
     });

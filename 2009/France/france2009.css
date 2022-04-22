@@ -14,36 +14,20 @@ body{
     vertical-align: text-top;
 }
 
-#questionID {
-    position: fixed;
-    left: 13.5%;
-    top: 20%;
-}
-
 #QID {
     position: fixed;
-    left: 15%;
-    
-}
-
-#question {
-    position: fixed;
-    left: 30%;
-}
-
-#bulgarianQuestions{
-    position: fixed;
-    right: 50%;
+    left: 5%;
     top: 20%;
 }
 
-#DutchQuestions {
-    position: fixed;
-    right: 20%;
+#frenchTitle {
     top: 20%;
+    left: 20%;
+    position: fixed;
 }
 
-#french2009 {
+#englishTitle {
+    top: 20%;
+    left: 55%;
     position: fixed;
-    right: 15%;
 }
