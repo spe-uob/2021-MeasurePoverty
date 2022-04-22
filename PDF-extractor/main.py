@@ -78,16 +78,16 @@ firebase_config ={
 
 firebase = pyrebase.initialize_app(firebase_config)
 database = firebase.database()
-database.child("QuestionIDs").set(keyword_identifiers.questionIDs)
+#database.child("QuestionIDs").set(keyword_identifiers.questionIDs)
 print("done")
 
-'''
-foreign_dictionary = main.main()
+
+foreign_dictionary = main()
 upload_data = {}
 for i in keyword_identifiers.questionIDs.keys():
     upload_data[i] = foreign_dictionary[keyword_identifiers.questionIDs[i]]
 
 
-database.child("France-2009").set(upload_data)
+database.child("Italy-2009").set(upload_data)
 
-'''
+
