@@ -17,24 +17,25 @@ const firebaseConfig = {
 // youtube link: https://www.youtube.com/watch?v=H8frPNjKSC8
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-var firebaseRef = firebase.database().ref("Bulgarian2009")
+var firebaseRef = firebase.database().ref("QuestionIDs")
 firebaseRef.on("value" , function(snapshot){
     snapshot.forEach(function(element){
-        document.querySelector('#question').innerHTML += `
+        document.querySelector('#englishQuestions').innerHTML += `
                <div>${element.val()}</div>
                `
     });
 })
 
-var firebaseRef2 = firebase.database().ref("English2009")
+
+var firebaseRef2 = firebase.database().ref("QuestionIDs")
 firebaseRef2.on("value" , function(snapshot){
     snapshot.forEach(function(element){
-        document.querySelector('#QID').innerHTML += `
+        document.querySelector('#questionID').innerHTML += `
         <div>${element.key}</div>
                       `
     });
 })
-
+/*
 var firebaseRef2 = firebase.database().ref("English2009")
 firebaseRef2.on("value" , function(snapshot){
     snapshot.forEach(function(element){
@@ -43,4 +44,4 @@ firebaseRef2.on("value" , function(snapshot){
                       `
     });
 })
-
+*/

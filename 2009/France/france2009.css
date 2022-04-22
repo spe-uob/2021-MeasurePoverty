@@ -16,8 +16,14 @@ body{
 
 #QID {
     position: fixed;
-    left: 5%;
+    left: 4%;
     top: 20%;
+}
+
+#questionID {
+    position: fixed;
+    left: 5%;
+    line-height: 50px;
 }
 
 #frenchTitle {
@@ -30,4 +36,10 @@ body{
     top: 20%;
     left: 55%;
     position: fixed;
+}
+
+#englishQuestions {
+    left: 55%;
+    position: fixed;
+    line-height: 50px;
 }
