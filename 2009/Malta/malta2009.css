@@ -1,0 +1,52 @@
+body{
+    position: fixed;
+    top: 25%;
+    font-size: x-large;
+}
+
+#pagetitle {
+    text-align: center;
+    left: 40%;
+    bottom: 87%;
+    position: fixed;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    vertical-align: text-top;
+}
+
+#questionid {
+    position: fixed;
+    left: 4.0%;
+    top: 20%;
+}
+
+
+#QID {
+    position: fixed;
+    left: 5%;
+    text-align: center;
+}
+
+
+#question {
+    position: fixed;
+    left: 20%;
+}
+
+#malteseQuestions {
+    position: fixed;
+    left: 20%;
+    top: 20%;
+}
+
+
+#maltese2009 {
+    position: fixed;
+    left: 55%;
+}
+
+#englishQuestions {
+    position: fixed;
+    top: 20%;
+    left: 75%
+}
