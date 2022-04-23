@@ -67,8 +67,8 @@ def find_and_preprocess_questions():
     clean_translations = tokenize_and_translate_questions(list(pages))
     filtered_dictionary = filter_non_words(clean_translations)
     keywords_questions = text_preprocessing.check_keywords(filtered_dictionary)
-    removed_brackets_list = text_preprocessing.remove_brackets(keywords_questions)
-    return removed_brackets_list
+    #removed_brackets_list = text_preprocessing.remove_brackets(keywords_questions)
+    return keywords_questions
 
 
 
