@@ -16,6 +16,12 @@ def test_remove_whitespace():
         assert remove_whitespace("clean\n clean") == "clean clean"
 
 
+
+def test_removebrackets():
+        in_dict= {"(question 111)Does your household have a car/van for private use? ":["van","car","vehicle"]}
+        assert remove_brackets(in_dict) == {'Does your household have a car/van for private use? ': ['van', 'car', 'vehicle']}
+
+
 '''
 def test_checkkeywords():
         assert check_keywords()

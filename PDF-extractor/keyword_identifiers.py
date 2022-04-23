@@ -1,5 +1,5 @@
 questions_to_keywords={
-    "Can your whole household afford to go for a week’s annual holiday, away from home?":["vacation","holiday","holiday residence","residence"],
+    "Can your whole household afford to go for a week's annual holiday, away from home?":["vacation","holiday","holiday residence","residence"],
     "Can your household afford a meal with meat, chicken, fish(or vegetarian equivalent)?":["vegetarian","meat","chicken","fish"],
     "Can your household afford an unexpected required expense(amount to be filled) and pay through its own resources?":["expense","costs"],
     "Does your household have a telephone(fixed landline or mobile)?":["telephone","phone"],
