@@ -44,14 +44,3 @@ firebaseRef3.on("value" , function(snapshot){
                       `
     });
 })
-
-/*
-var firebaseRef2 = firebase.database().ref("English2009")
-firebaseRef2.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        document.querySelector('#QID').innerHTML += `
-        <div>${element.val()}</div>
-                      `
-    });
-})
-*/
