@@ -35,6 +35,16 @@ firebaseRef2.on("value" , function(snapshot){
                       `
     });
 })
+
+var firebaseRef3 = firebase.database().ref("France-2009")
+firebaseRef3.on("value" , function(snapshot){
+    snapshot.forEach(function(element){
+        document.querySelector('#frenchQuestions').innerHTML += `
+        <div>${element.val()}</div>
+                      `
+    });
+})
+
 /*
 var firebaseRef2 = firebase.database().ref("English2009")
 firebaseRef2.on("value" , function(snapshot){
