@@ -1,20 +1,5 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
-.body{
-  background-color: #000;
-}
-
-.darkmode{
-  cursor: pointer;
-  border: 1px solid #555;
-  text-align: center;
-  padding: 5px;
-  margin-left: 8px;
-}
-.dark{
-  background-color: #222;
-  color: #e6e6e6;
-}
 
 .navbar {
   width: 100%;
@@ -25,7 +10,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   font-size: 18.05px;
 }
 
-/* thisone */
 .navbar a {
   float: left;
   padding: 12px;
@@ -37,67 +21,80 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background-color: #000;
 }
 
- .navbar button{
-  background-color: #555;
+ .search{
+  background-color: #04AA6D;
   border-style: none;
   text-align: center;
-  height: 1px;
+  cursor: pointer;
 } 
 
-.search {
-  cursor: pointer;
+.button:hover{
+  background: rgba(0, 0, 0, 0);
+  transition: 0.5s;
 }
 
-.navbar.containerpanel{
-  width:250px;
-  height: 10px;
+#myInput {
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 13px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+   /* Add some space below the input */
 }
 
-.active {
-  background-color: #04AA6D;
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 30%;
+  
 }
-  
-  .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  
-  /* Rotate first bar */
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-    transform: rotate(-45deg) translate(-9px, 6px) ;
-  }
-  
-  /* Fade out the second bar */
-  .change .bar2 {
-    opacity: 0;
-  }
-  
-  /* Rotate last bar */
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-    transform: rotate(45deg) translate(-8px, -8px) ;
-  }
 
-  * {box-sizing: border-box}
+#myUL li a {
+  border:  none; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+   /* Grey background color */
+  padding: 22px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 20px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+  width: 70%;
+  
+}
+
+.tablinks {
+    display: block;
+    color: black;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+* {box-sizing: border-box}
 
 /* Style the tab */
-#tab {
+.tab {
   float: left;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
   width: 30%;
-  text-align: left;
-  padding: 0%;
-  position: absolute;
-  top: 6.6%;
+  height: 300px;
 }
 
 /* Style the buttons that are used to open the tab content */
-.tablinks{
+.tab button {
   display: block;
   background-color: inherit;
   color: black;
@@ -107,40 +104,36 @@ body {font-family: Arial, Helvetica, sans-serif;}
   outline: none;
   text-align: left;
   cursor: pointer;
-  transition: 0.5s;
-  font-size: larger;
-
-  
+  transition: 0.3s;
 }
 
 /* Change background color of buttons on hover */
-.tablinks:hover {
+.tab button:hover {
   background-color: #ddd;
 }
 
 /* Create an active/current "tab button" class */
-.tablinks.active {
+.tab button.active {
   background-color: #ccc;
 }
 
 /* Style the tab content */
 .tabcontent {
   float: left;
+  text-align: center;
   padding: 0px 12px;
   border: none;
   width: 70%;
   border-left: none;
-  height: 500px;
-  font-size: x-large;
+  height: 300px;
   display: none;
   position: absolute;
   right: 0%;
-  color: black;
+  top: 16.01%;
 }
 
-
-.tabcontent button{
-    background-color: white;
+.tabcontent button {
+  background-color: white;
     border: 2px solid black;
     color: green;
     padding: 5px 10px;
@@ -151,19 +144,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
     cursor: pointer;
 }
 
-.text {
-  text-decoration: none;
-  color: green;
-}
-
 .tabcontent button:hover{
-    background-color: orange;
+  background-color: orange;
 }
 
-.tabcontent h1{
-    font-size: xx-large;
-    text-align: center;
+.tabcontent::after {
+  display:none;
 }
-
-
-
