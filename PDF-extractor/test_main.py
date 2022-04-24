@@ -14,7 +14,6 @@ def test_groupedquestionsbykeywords():
 def test_remove_whitespace():
         assert remove_whitespace("clea\nn") == "clean"
         assert remove_whitespace("clean\n clean") == "clean clean"
-<<<<<<< Updated upstream
 
 
 
@@ -23,11 +22,6 @@ def test_removebrackets():
         assert remove_brackets(in_dict) == {'Does your household have a car/van for private use? ': ['van', 'car', 'vehicle']}
 
 
-=======
-
->>>>>>> Stashed changes
-
-'''
 def test_checkkeywords():
         assert check_keywords({"How are you?":["you"],"Can your whole household afford to go for a week's annual holiday, away from home?":["vacation","holiday","holiday residence","residence"]})=={"Can your whole household afford to go for a week's annual holiday, away from home?": ['vacation', 'holiday', 'holiday residence', 'residence']}
 
