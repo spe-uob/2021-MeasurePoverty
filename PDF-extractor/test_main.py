@@ -22,10 +22,11 @@ def test_removebrackets():
         assert remove_brackets(in_dict) == {'Does your household have a car/van for private use? ': ['van', 'car', 'vehicle']}
 
 
-'''
-def test_checkkeywords():
-        assert check_keywords()
 
+def test_checkkeywords():
+        assert check_keywords({"How are you?":["you"],"Can your whole household afford to go for a week's annual holiday, away from home?":["vacation","holiday","holiday residence","residence"]})=={"Can your whole household afford to go for a week's annual holiday, away from home?": ['vacation', 'holiday', 'holiday residence', 'residence']}
+
+'''
 #functions from translators.py
 
 def test_translatorintoenglish():
