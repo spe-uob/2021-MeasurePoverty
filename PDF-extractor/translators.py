@@ -11,7 +11,6 @@ def translator_into_foreign(sentence):
 
 
 
-
 '''
 LIST OF ABBREVIATIONS FOR EACH  LANGUAGE
 |- afrikaans: af
