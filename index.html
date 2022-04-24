@@ -1,548 +1,584 @@
-<!DOCTYPE html>
+<!-- I had to put index.html in the main file as vercel wouldn't deploy it otherwise -->
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-<link href="./frontend/css/index.css" rel="stylesheet">
+    <title>Search</title>
+    <style></style>
+    <script src="./deploy/frontend/js/index.js"></script>
+    <link href="./deploy/frontend/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <div class="navbar">
+      <a class="search"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="https://github.com/spe-uob/2021-MeasurePoverty" target="_blank"><i class="fa fa-github" style="font-size:20px"></i> Github Repository</a>
+      <a href="https://ec.europa.eu/eurostat/web/income-and-living-conditions/quality/questionnaires" target="blank_"><i class="fa fa-external-link" style="font-size:20px"></i> Eurostat Questionnaires</a>
+    </div>
 
 <body>
-  <script src="./frontend/js/index.js"></script>
-  <div class="navbar">
-    <a class="active" onclick="location.href='./frontend/notice.html'"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="search.html"><i class="fa fa-fw fa-search"></i> Search</a>
-    <a href="https://github.com/spe-uob/2021-MeasurePoverty" target="blank_"><i class="fa fa-github" style="font-size:20px"></i> Github Repository</a>
-    <a href="https://ec.europa.eu/eurostat/web/income-and-living-conditions/quality/questionnaires" target="blank_"><i class="fa fa-euro" style="font-size:20px"></i> Eurostat Questionnaires</a>
-  </div>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
-  <ul id="tab">
-    <button class="tablinks" onclick="openCity(event, 'Belgium')">Belgium</button>
-    <button class="tablinks" onclick="openCity(event, 'Bulgaria')">Bulgaria</button>
-    <button class="tablinks" onclick="openCity(event, 'Denmark')">Denmark</button>
-    <button class="tablinks" onclick="openCity(event, 'Germany')">Germany</button>
-    <button class="tablinks" onclick="openCity(event, 'Estonia')">Estonia</button>
-    <button class="tablinks" onclick="openCity(event, 'Ireland')">Ireland</button>
-    <button class="tablinks" onclick="openCity(event, 'Greece')">Greece</button>
-    <button class="tablinks" onclick="openCity(event, 'Spain')">Spain</button>
-    <button class="tablinks" onclick="openCity(event, 'France')">France</button>
-    <button class="tablinks" onclick="openCity(event, 'Croatia')">Croatia</button>
-    <button class="tablinks" onclick="openCity(event, 'Italy')">Italy</button>
-    <button class="tablinks" onclick="openCity(event, 'Cyprus')">Cyprus</button>
-    <button class="tablinks" onclick="openCity(event, 'Latvia')">Latvia</button>
-    <button class="tablinks" onclick="openCity(event, 'Lithuania')">Lithuania</button>
-    <button class="tablinks" onclick="openCity(event, 'Luxembourg')">Luxembourg</button>
-    <button class="tablinks" onclick="openCity(event, 'Hungary')">Hungary</button>
-    <button class="tablinks" onclick="openCity(event, 'Malta')">Malta</button>
-    <button class="tablinks" onclick="openCity(event, 'Netherlands')">Netherlands</button>
-    <button class="tablinks" onclick="openCity(event, 'Austria')">Austria</button>
-    <button class="tablinks" onclick="openCity(event, 'Poland')">Poland</button>
-    <button class="tablinks" onclick="openCity(event, 'Portugal')">Portugal</button>
-    <button class="tablinks" onclick="openCity(event, 'Romania')">Romania</button>
-    <button class="tablinks" onclick="openCity(event, 'Slovenia')">Slovenia</button>
-    <button class="tablinks" onclick="openCity(event, 'Slovakia')">Slovakia</button>
-    <button class="tablinks" onclick="openCity(event, 'Finland')">Finland</button>
-    <button class="tablinks" onclick="openCity(event, 'Sweden')">Sweden</button>
-    <button class="tablinks" onclick="openCity(event, 'Iceland')">Iceland</button>
-    <button class="tablinks" onclick="openCity(event, 'Norway')">Switzerland</button>
-    <button class="tablinks" onclick="openCity(event, 'United Kingdom')">United Kingdom</button>
-  </ul>
+    <ul id="myUL">
+      <button class="tablinks" onclick="openCity(event, 'Belgium')"><li><a >Belgium</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Bulgaria')"><li><a >Bulgaria</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Czechia')"><li><a >Czechia</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Denmark')"><li><a >Denmark</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Germany')"><li><a >Germany</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Estonia')"><li><a >Estonia</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Ireland')"><li><a >Ireland</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Greece')"><li><a >Greece</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Spain')"><li><a >Spain</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'France')"><li><a >France</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Croatia')"><li><a >Croatia</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Italy')"><li><a >Italy</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Cyprus')"><li><a >Cyprus</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Latvia')"><li><a >Latvia</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Lithuania')"><li><a >Lithuania</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Luxembourg')"><li><a >Luxembourg</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Hungary')"><li><a >Hungary</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Malta')"><li><a >Malta</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Netherlands')"><li><a >Netherlands</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Austria')"><li><a >Austria</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Poland')"><li><a >Poland</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Portugal')"><li><a >Portugal</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Romania')"><li><a >Romania</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Slovenia')"><li><a >Slovenia</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Slovakia')"><li><a >Slovakia</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Finland')"><li><a >Finland</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Sweden')"><li><a >Sweden</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Iceland')"><li><a >Iceland</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Norway')"><li><a >Norway</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'Switzerland')"><li><a >Switzerland</a></li></button>
+      <button class="tablinks" onclick="openCity(event, 'United Kingdom')"><li><a >United Kingdom</a></li></button>
 
-
-  
-
-  <div id="Belgium" class="tabcontent">
-    <h1>Belgium</h1>
-    <ul>
-      <button onclick="location.href='./2009/Belgium/belgium2009.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Bulgaria" class="tabcontent">
-    <h1>Bulgaria</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Denmark" class="tabcontent">
-    <h1>Denmark</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Germany" class="tabcontent">
-    <h1>Germany</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Estonia" class="tabcontent">
-    <h1>Estonia</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Ireland" class="tabcontent">
-    <h1>Ireland</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Greece" class="tabcontent">
-    <h1>Greece</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Spain" class="tabcontent">
-    <h1>Spain</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="France" class="tabcontent">
-    <h1>France</h1>
-    <ul>
-      <button onclick="location.href='./2009/France/france2009.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Croatia" class="tabcontent">
-    <h1>Croatia</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Italy" class="tabcontent">
-    <h1>Italy</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Cyprus" class="tabcontent">
-    <h1>Cyprus</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Latvia" class="tabcontent">
-    <h1>Latvia</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Lithuania" class="tabcontent">
-    <h1>Lithuania</h1>
-    <ul>
-      <button href="#">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Luxembourg" class="tabcontent">
-    <h1>Luxembourg</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Hungary" class="tabcontent">
-    <h1>Hungary</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Malta" class="tabcontent">
-    <h1>Malta</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Netherlands" class="tabcontent">
-    <h1>Netherlands</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Austria" class="tabcontent">
-    <h1>Austria</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Poland" class="tabcontent">
-    <h1>Poland</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Portugal" class="tabcontent">
-    <h1>Portugal</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Romania" class="tabcontent">
-    <h1>Romania</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Slovenia" class="tabcontent">
-    <h1>Slovenia</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Slovakia" class="tabcontent">
-    <h1>Slovakia</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Finland" class="tabcontent">
-    <h1>Finland</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Sweden" class="tabcontent">
-    <h1>Sweden</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Iceland" class="tabcontent">
-    <h1>Iceland</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="Switzerland" class="tabcontent">
-    <h1>Switzerland</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
-  <div id="United Kingdom" class="tabcontent">
-    <h1>United Kingdom</h1>
-    <ul>
-      <button onclick="location.href='./frontend/notice.html'">2009</button>
-      <button onclick="location.href='./frontend/notice.html'">2010</button>
-      <button onclick="location.href='./frontend/notice.html'">2011</button>
-      <button onclick="location.href='./frontend/notice.html'">2012</button>
-      <button onclick="location.href='./frontend/notice.html'">2013</button>
-      <button onclick="location.href='./frontend/notice.html'">2014</button>
-      <button onclick="location.href='./frontend/notice.html'">2015</button>
-      <button onclick="location.href='./frontend/notice.html'">2016</button>
-      <button onclick="location.href='./frontend/notice.html'">2017</button>
-      <button onclick="location.href='./frontend/notice.html'">2018</button>
-      <button onclick="location.href='./frontend/notice.html'">2019</button>
-    </ul>
-  </div>
-
+      </ul>
 </body>
+
+<div id="Belgium" class="tabcontent">
+  <h1>Belgium</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Bulgaria" class="tabcontent">
+  <h1>Bulgaria</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Czechia" class="tabcontent">
+  <h1>Czechia</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+
+<div id="Denmark" class="tabcontent">
+  <h1>Denmark</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Germany" class="tabcontent">
+  <h1>Germany</h1>
+  <ul>
+    <button onclick="location.href='./deploy/database/2009/Germany/germany2009.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Estonia" class="tabcontent">
+  <h1>Estonia</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Ireland" class="tabcontent">
+  <h1>Ireland</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Greece" class="tabcontent">
+  <h1>Greece</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Spain" class="tabcontent">
+  <h1>Spain</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="France" class="tabcontent">
+  <h1>France</h1>
+  <ul>
+    <button onclick="location.href='./deploy/database/2009/France/france2009.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Croatia" class="tabcontent">
+  <h1>Croatia</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Italy" class="tabcontent">
+  <h1>Italy</h1>
+  <ul>
+    <button onclick="location.href='./deploy/database/2009/Italy/italy2009.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Cyprus" class="tabcontent">
+  <h1>Cyprus</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Latvia" class="tabcontent">
+  <h1>Latvia</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Lithuania" class="tabcontent">
+  <h1>Lithuania</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Luxembourg" class="tabcontent">
+  <h1>Luxembourg</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Hungary" class="tabcontent">
+  <h1>Hungary</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Malta" class="tabcontent">
+  <h1>Malta</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Netherlands" class="tabcontent">
+  <h1>Netherlands</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Austria" class="tabcontent">
+  <h1>Austria</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Poland" class="tabcontent">
+  <h1>Poland</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Portugal" class="tabcontent">
+  <h1>Portugal</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Romania" class="tabcontent">
+  <h1>Romania</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Slovenia" class="tabcontent">
+  <h1>Slovenia</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Slovakia" class="tabcontent">
+  <h1>Slovakia</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Finland" class="tabcontent">
+  <h1>Finland</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Sweden" class="tabcontent">
+  <h1>Sweden</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Iceland" class="tabcontent">
+  <h1>Iceland</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="Norway" class="tabcontent">
+  <h1>Norway</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+
+<div id="Switzerland" class="tabcontent">
+  <h1>Switzerland</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
+<div id="United Kingdom" class="tabcontent">
+  <h1>United Kingdom</h1>
+  <ul>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2009</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2010</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2011</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2012</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2013</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2014</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2015</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2016</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2017</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2018</button>
+    <button onclick="location.href='./deploy/frontend/notice.html'">2019</button>
+  </ul>
+</div>
+
 
 </html>
