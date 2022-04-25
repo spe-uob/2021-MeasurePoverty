@@ -3,6 +3,13 @@ body{
     display: flex;
     width: 5300px;
     height: 2000px;
+    background-color: white;
+    color: black;
+}
+
+.darkmode{
+    background-color: black;
+    color: white;
 }
 
 #pagetitle {
