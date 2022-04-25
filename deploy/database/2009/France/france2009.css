@@ -1,9 +1,7 @@
-
 body{
     font-size: x-large;
     display: flex;
-    position: relative;
-    width: 100%;
+    width: 1000px;
 }
 
 #pagetitle {
@@ -24,7 +22,6 @@ body{
 
 #questionID {
     position: relative;
-    line-height: 100px;
     top: 237.5px;
     left: -360px;
 }
@@ -40,7 +37,6 @@ body{
     left: -215px;
     top: 237.5px;
     position: relative;
-    line-height: 35px;
 }
 
 #englishTitle {
@@ -53,5 +49,4 @@ body{
     top: 237.5px;
     left: -90px;
     position: relative;
-    line-height: 35px;
 }

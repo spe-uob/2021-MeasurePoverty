@@ -21,7 +21,7 @@ var firebaseRef = firebase.database().ref("QuestionIDs")
 firebaseRef.on("value" , function(snapshot){
     snapshot.forEach(function(element){
         document.querySelector('#englishQuestions').innerHTML += `
-               <div>${element.val()}</div>
+               <div>${element.val()}</div>  \n
                `
     });
 })
