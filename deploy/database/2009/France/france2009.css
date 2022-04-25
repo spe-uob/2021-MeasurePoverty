@@ -1,15 +1,19 @@
-
 body{
     font-size: x-large;
     display: flex;
-    position: relative;
-    width: 100%;
+    width: 5300px;
+    height: 2000px;
+    background-color: white;
+    color: black;
+}
+
+.darkmode{
+    background-color: black;
+    color: white;
 }
 
 #pagetitle {
     text-align: center;
-    left: 40%;
-    bottom: 87%;
     position: relative;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 50px;
@@ -18,40 +22,38 @@ body{
 
 #QID {
     position: relative;
-    top: 170px;
-    left: -140px;
+    top: 7.9%;
+    right: 3%;
 }
 
 #questionID {
     position: relative;
-    line-height: 100px;
-    top: 237.5px;
-    left: -360px;
+    top: 11%;
+    right: 10%;
+    line-height: 50px;
 }
 
 #frenchTitle {
-    left: 0px;
-    top: 155px;
+    top: 7.9%;
     position: relative;
-    
 }
 
 #frenchQuestions {
-    left: -215px;
-    top: 237.5px;
+    right: 6.9%;
+    top: 11%;
     position: relative;
-    line-height: 35px;
+    line-height: 50px;
 }
 
 #englishTitle {
-    top: 155px;
-    left: 600px;
+    top: 7.9%;
+    left: 56%;
     position: relative;
 }
 
 #englishQuestions {
-    top: 237.5px;
-    left: -120px;
+    top: 11%;
+    left: 0%;
     position: relative;
-    line-height: 35px;
+    line-height: 50px;
 }
