@@ -6,11 +6,12 @@ import keyword_identifiers
 import translators
 import text_preprocessing
 
-
+'''
 value = input("Please enter the name of the questionnaire PDF:\n")
 print(f'You entered {value} and please import the pdf file into the folder if its later than 20009 ')
 pdf = pdfplumber.open("{value}.pdf")
-
+'''
+pdf = pdfplumber.open("france.pdf")
 
 
 def translate_keywords():
