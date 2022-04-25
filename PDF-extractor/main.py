@@ -61,7 +61,7 @@ def main():
     return final_dataframe_dictionary
 
 if __name__ == "__main__":
-    main()
+    print(main())
 
 '''
 firebase_config ={
