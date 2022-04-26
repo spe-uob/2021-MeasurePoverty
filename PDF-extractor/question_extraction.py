@@ -1,29 +1,20 @@
 from collections import defaultdict
-from fileinput import filename
 import nltk
 import pdfplumber
 import re
 import keyword_identifiers
 import translators
 import text_preprocessing
-'''
-def input_filename():
-    filename = input("Please enter the name of the questionnaire PDF:\n")
-    return filename
 
-    #filename = input("Please choose A or B\n A - run with different tranlsator opetion\n B - upload new file:\n")
-   # print(f'You entered {value} and please import the pdf file into the folder if its later than 20009 ')
 
-print(f'You entered {value} and please import the pdf file into the folder if its later than 20009 ')
-pdf = pdfplumber.open("{value}.pdf")
-'''
 
-filename = input("Please enter the name of the questionnaire PDF:\n")
-print(f'You entered {filename} and please import the pdf file into the folder if it is not 20009 ')
-pdf = pdfplumber.open(f"{filename}.pdf")
+pdf = pdfplumber.open("german.pdf")
+
 
 
 def translate_keywords():
+
+
     translated_keywords_dict = defaultdict()
     for key in keyword_identifiers.questions_to_keywords.values():
         for item in key:

@@ -16,7 +16,7 @@ def remove_brackets(input_dictionary):
         tidied_dictionary[re.sub("[\(\[].*?[\)\]]", "", keyword_question)] = input_dictionary[keyword_question]
     return tidied_dictionary
 
-
+print(remove_brackets({"(question 111)Does your household have a car/van for private use? ":["van","car","vehicle"]}))
 
 
 
@@ -38,3 +38,5 @@ def check_keywords(input_dictionary):
             relevant_questions[question] = input_dictionary[question]
     return relevant_questions
 
+print(check_keywords({"An outdoor space in the neighbourhood where they can play safely?":["outdoor","play","safely"]
+,"My name is lisa":["lisa"]}))
