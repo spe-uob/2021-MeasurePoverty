@@ -3,7 +3,7 @@ from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.bleu_score import SmoothingFunction
 import question_extraction
 import keyword_identifiers
-import pyrebase
+#import pyrebase
 
 
 translated_questions_to_check = question_extraction.find_and_preprocess_questions()
@@ -37,7 +37,9 @@ def group_questions_by_keyword(ungrouped_dictionary):
 
 #returns dictionary of david questoin to matched question in foreign language
 def main():
-
+    #value = input("Please choose A or B\n A - run with different tranlsator opetion\n B - upload new file:\n")
+    #print(f'You entered {value} and please import the pdf file into the folder if its later than 20009 ')
+    
     keyword_to_translations = group_questions_by_keyword(keyword_identifiers.questions_to_keywords)
     matched_questions = defaultdict()
     for key,value in keyword_to_translations.items():
@@ -58,10 +60,10 @@ def main():
 
     return final_dataframe_dictionary
 
+if __name__ == "__main__":
+    print(main())
 
-
-
-
+'''
 firebase_config ={
     "apiKey": "AIzaSyASZ59fobXr6ovy8QQUX2mogFso22v5nQM",
     "authDomain": "measuredb.firebaseapp.com",
@@ -72,22 +74,16 @@ firebase_config ={
     "appId": "1:298611251603:web:0d236cfa7d1926a552f066"
 }
 
-
-
-
-
 firebase = pyrebase.initialize_app(firebase_config)
 database = firebase.database()
 #database.child("QuestionIDs").set(keyword_identifiers.questionIDs)
 print("done")
-
 
 foreign_dictionary = main()
 upload_data = {}
 for i in keyword_identifiers.questionIDs.keys():
     upload_data[i] = foreign_dictionary[keyword_identifiers.questionIDs[i]]
 
-
-database.child("Germany-2009").set(upload_data)
-
+database.child("france-2009").set(upload_data)
+'''
 
