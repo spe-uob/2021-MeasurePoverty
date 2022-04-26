@@ -6,9 +6,10 @@ import keyword_identifiers
 import translators
 import text_preprocessing
 
-
-
-pdf = pdfplumber.open("german.pdf")
+filename = input("Please enter the name of the questionnaire PDF:\n")
+print(f'You entered {filename} and please import the pdf file into the folder if its later than 20009 ')
+pdf = pdfplumber.open(f"{filename}.pdf")
+#pdf = pdfplumber.open("german.pdf")
 
 
 
