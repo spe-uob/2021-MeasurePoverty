@@ -62,6 +62,7 @@ def main():
 
 
 
+
 firebase_config ={
     "apiKey": "AIzaSyASZ59fobXr6ovy8QQUX2mogFso22v5nQM",
     "authDomain": "measuredb.firebaseapp.com",
@@ -78,16 +79,26 @@ firebase_config ={
 
 firebase = pyrebase.initialize_app(firebase_config)
 database = firebase.database()
-#database.child("QuestionIDs").set(keyword_identifiers.questionIDs)
-print("done")
+
+
+
 
 
 foreign_dictionary = main()
-upload_data = {}
-for i in keyword_identifiers.questionIDs.keys():
-    upload_data[i] = foreign_dictionary[keyword_identifiers.questionIDs[i]]
 
+list_of_english_questions = list(foreign_dictionary.keys())
+print(list_of_english_questions)
+for i in range(len(list_of_english_questions)):
+    english = list_of_english_questions[i]
 
-database.child("Germany-2009").set(upload_data)
+    #CHANGE "FRENCH" TO THE FOREIGN LANGUAGE WE ARE TRANSLATING INTO
+    upload = {
+        "french":foreign_dictionary[english],
+        "english":english
+    }
+    #CHANGE FRANCE INTO THE NAME OF THE COUNTRY SO IT LOOKS LIKE COUNTRY_2009 AND COUNTRYQ
+    #if its a countrh iwth multiple languages, dont change country here only change language above
+    database.child("France_2009").child("FranceQ"+str(i)).set(upload)
+
 
 
