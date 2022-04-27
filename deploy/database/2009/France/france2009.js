@@ -63,7 +63,7 @@
         function GetAllDataOnce() {
             const dbRef = ref(db);
 
-            get(child(dbRef, "French_2009"))
+            get(child(dbRef, "France_2009"))
             .then((snapshot)=>{
                 var questions =[];
                 
