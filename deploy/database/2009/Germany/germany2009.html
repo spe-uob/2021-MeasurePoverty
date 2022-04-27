@@ -43,12 +43,18 @@
             td2.innerHTML= english;
             td3.innerHTML= foreign;
 
+
             trow.appendChild(td1);
             trow.appendChild(td2);
             trow.appendChild(td3);
 
             tbody.appendChild(trow);
+           // body.appendChild(trow);
         }
+
+        
+    
+
 
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -72,24 +78,21 @@
         from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
         const db = getDatabase();
 
-
          //adding items to the table
-        function AddAllItemsToTable(QuestionIDs){
+        function AddAllItemsToTable(QuestionIDs, Italy){ 
             QID =0;
             tbody.innerHTML="";
             QuestionIDs.forEach(element => {
                 AddItemToTable(element)
             });
         }
-
-        function AddAllItemsToTable2(stuff){
+        function AddAllItemsToTable2(Italy){ 
             QID =0;
             tbody.innerHTML="";
-            stuff.forEach(element => {
+            Italy.forEach(element => {
                 AddItemToTable(element)
             });
         }
-
         //getting data once
         function GetAllDataOnce() {
             const dbRef = ref(db);
@@ -103,16 +106,17 @@
                 });
                 AddAllItemsToTable(questions);
             });
-            get(child(dbRef, "stuff"))
+            get(child(dbRef, "Italy"))
             .then((snapshot)=>{
-                var array =[];
+                var questions2 =[];
                 
                 snapshot.forEach(childSnapshot => {
-                    array.push(childSnapshot.val());
+                    questions2.push(childSnapshot.val());
                 });
-               // AddAllItemsToTable2(array);
+                AddAllItemsToTable2(questions2);
             });
         }
+
 
         window.onload = GetAllDataOnce; 
     </script>

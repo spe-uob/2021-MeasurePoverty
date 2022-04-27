@@ -78,6 +78,7 @@ function GetAllDataRealTime() {
                 students.push(childSnapshot.val());
             });
             AddAllItemsToTable(students);
+            print(students);
     });
     
 }
