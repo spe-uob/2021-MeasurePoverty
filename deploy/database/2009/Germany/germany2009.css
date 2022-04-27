@@ -1,58 +1,8 @@
 
 body{
-    font-size: 50px;
+    font-size: 30px;
     display: flex;
     position: relative;
     width: 100%;
     background-color: black;
-}
-
-#pagetitle {
-    text-align: center;
-    left: 40%;
-    bottom: 87%;
-    position: relative;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    vertical-align: text-top;
-}
-
-#QID {
-    position: relative;
-    top: 170px;
-    left: -140px;
-}
-
-#questionID {
-    position: relative;
-    line-height: 100px;
-    top: 237.5px;
-    left: -360px;
-}
-
-#germanTitle {
-    left: 0px;
-    top: 155px;
-    position: relative;
-    
-}
-
-#germanQuestions {
-    left: -215px;
-    top: 237.5px;
-    position: relative;
-    line-height: 35px;
-}
-
-#englishTitle {
-    top: 155px;
-    left: 600px;
-    position: relative;
-}
-
-#englishQuestions {
-    top: 237.5px;
-    left: -140px;
-    position: relative;
-    line-height: 35px;
 }
