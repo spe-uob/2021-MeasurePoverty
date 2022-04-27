@@ -4,15 +4,14 @@ from deep_translator import GoogleTranslator
 #translator function - given an array of lines, translate each line in the array, add to array of translated lines,
 #and return
 def translator_into_english(sentence):
-    #return GoogleTranslator(source = 'auto',target = 'en').translate(sentence)
-    #to_translate = 'Ich möchte diesen Text übersetzen'
-    translated = GoogleTranslator(source='auto', target='en').translate(sentence)
-    return translated
+    return GoogleTranslator(source = 'auto',target = 'en').translate(sentence)
 
 def translator_into_foreign(sentence):
+    #CHANGE THE LANGUAGE
     return GoogleTranslator(source = 'en',target = 'fr').translate(sentence)
 
-print(translator_into_english("Ich möchte diesen Text übersetzen!"))
+
+
 
 '''
 LIST OF ABBREVIATIONS FOR EACH  LANGUAGE

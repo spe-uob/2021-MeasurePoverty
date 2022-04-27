@@ -6,10 +6,22 @@ import keyword_identifiers
 import translators
 import text_preprocessing
 
+
+'''
+print("OPTION A: upload questionnaire /n OPTION B: experiment with translator ")
 filename = input("Please enter the name of the questionnaire PDF:\n")
-print(f'You entered {filename} and please import the pdf file into the folder if its later than 20009 ')
+print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
 pdf = pdfplumber.open(f"{filename}.pdf")
-#pdf = pdfplumber.open("german.pdf")
+
+
+'''
+
+
+
+#CHANGE THE PDF
+pdf = pdfplumber.open("france.pdf")
+
+
 
 
 
@@ -68,8 +80,8 @@ def find_and_preprocess_questions():
     clean_translations = tokenize_and_translate_questions(list(pages))
     filtered_dictionary = filter_non_words(clean_translations)
     keywords_questions = text_preprocessing.check_keywords(filtered_dictionary)
-    #removed_brackets_list = text_preprocessing.remove_brackets(keywords_questions)
-    return keywords_questions
+    removed_brackets_list = text_preprocessing.remove_brackets(keywords_questions)
+    return removed_brackets_list
 
 
 
