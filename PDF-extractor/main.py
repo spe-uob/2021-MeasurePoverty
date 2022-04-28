@@ -95,31 +95,9 @@ for i in range(len(list_of_english_questions)):
 
     #CHANGE "FRENCH" TO THE FOREIGN LANGUAGE WE ARE TRANSLATING INTO
     upload = {
+    #need language names here 
         "lithuanian":foreign_dictionary[english],
         "english":english
     }
-
-    database.child("Lithuania_2009").child("LithuanianhQ"+str(i)).set(upload)
-
-
-'''
-IF THE COUNTRY HAS MULTIPLE LANGUAGES
-make sure the pdf name is of the form country-language.pdf
-FOR EXAMPLE BELIGUM QUSTIONNAIRE FRENCH LANGUAGE
-
-
-for i in range(len(list_of_english_questions)):
-    english = list_of_english_questions[i]
-
-    #CHANGE "FRENCH" TO THE FOREIGN LANGUAGE WE ARE TRANSLATING INTO
-    upload = {
-        "french":foreign_dictionary[english],
-        "english":english
-    }
-##should be country_2009 and then languageQ
-    database.child("Belgium_2009").child("FrenchQ"+str(i)).set(upload)
-
-
-
-
-'''
+#format of databse.child("country_2009").child("countryQ"+ str(i)).set(upload)
+    database.child("Lithuania_2009").child("LithuaniaQ"+str(i)).set(upload)
