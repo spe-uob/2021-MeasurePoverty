@@ -86,8 +86,28 @@ database = firebase.database()
 
 foreign_dictionary = main()
 
+
+##IF THE COUNTRY HAS ONE LANGUAGE
 list_of_english_questions = list(foreign_dictionary.keys())
 print(list_of_english_questions)
+for i in range(len(list_of_english_questions)):
+    english = list_of_english_questions[i]
+
+    #CHANGE "FRENCH" TO THE FOREIGN LANGUAGE WE ARE TRANSLATING INTO
+    upload = {
+        "lithuanian":foreign_dictionary[english],
+        "english":english
+    }
+
+    database.child("Lithuania_2009").child("LithuanianhQ"+str(i)).set(upload)
+
+
+'''
+IF THE COUNTRY HAS MULTIPLE LANGUAGES
+make sure the pdf name is of the form country-language.pdf
+FOR EXAMPLE BELIGUM QUSTIONNAIRE FRENCH LANGUAGE
+
+
 for i in range(len(list_of_english_questions)):
     english = list_of_english_questions[i]
 
@@ -96,9 +116,10 @@ for i in range(len(list_of_english_questions)):
         "french":foreign_dictionary[english],
         "english":english
     }
-    #CHANGE FRANCE INTO THE NAME OF THE COUNTRY SO IT LOOKS LIKE COUNTRY_2009 AND COUNTRYQ
-    #if its a countrh iwth multiple languages, dont change country here only change language above
-    database.child("France_2009").child("FranceQ"+str(i)).set(upload)
+##should be country_2009 and then languageQ
+    database.child("Belgium_2009").child("FrenchQ"+str(i)).set(upload)
 
 
 
+
+'''

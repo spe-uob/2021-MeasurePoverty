@@ -19,7 +19,7 @@ pdf = pdfplumber.open(f"{filename}.pdf")
 
 
 #CHANGE THE PDF
-pdf = pdfplumber.open("france.pdf")
+pdf = pdfplumber.open("lithuania.pdf")
 
 
 

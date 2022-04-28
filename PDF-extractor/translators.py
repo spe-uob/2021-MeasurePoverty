@@ -8,7 +8,7 @@ def translator_into_english(sentence):
 
 def translator_into_foreign(sentence):
     #CHANGE THE LANGUAGE
-    return GoogleTranslator(source = 'en',target = 'fr').translate(sentence)
+    return GoogleTranslator(source = 'en',target = 'lt').translate(sentence)
 
 
 
