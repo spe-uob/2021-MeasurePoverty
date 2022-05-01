@@ -4,20 +4,24 @@
         var QID = 0;
         var tbody = document.getElementById('tbody1');
 
-        function AddItemToTable(english, foreign) {
+        function AddItemToTable(english, foreign, foreign2) {
             let trow = document.createElement("tr");
             let td1 = document.createElement('td');
             let td2 = document.createElement('td');
             let td3 = document.createElement('td');
+            let td4 = document.createElement('td');
+
 
             td1.innerHTML= ++QID;
             td2.innerHTML= english;
             td3.innerHTML= foreign;
+            td4.innerHTML= foreign2;
 
 
             trow.appendChild(td1);
             trow.appendChild(td2);
             trow.appendChild(td3);
+            trow.appendChild(td4);
 
             tbody.appendChild(trow);
            // body.appendChild(trow);
@@ -54,7 +58,7 @@
             QID =0;
             tbody.innerHTML="";
             Question.forEach(element => {
-                AddItemToTable(element.english, element.czech)
+                AddItemToTable(element.english, element.latvian, element.russian)
             });
         }
         //working on everything else below here
@@ -63,7 +67,7 @@
         function GetAllDataOnce() {
             const dbRef = ref(db);
 
-            get(child(dbRef, "Czechia_2009"))
+            get(child(dbRef, "Latvia_2009"))
             .then((snapshot)=>{
                 var questions =[];
                 

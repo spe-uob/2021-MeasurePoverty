@@ -54,7 +54,7 @@
             QID =0;
             tbody.innerHTML="";
             Question.forEach(element => {
-                AddItemToTable(element.english, element.czech)
+                AddItemToTable(element.english, element.spanish)
             });
         }
         //working on everything else below here
@@ -63,7 +63,7 @@
         function GetAllDataOnce() {
             const dbRef = ref(db);
 
-            get(child(dbRef, "Czechia_2009"))
+            get(child(dbRef, "Spain_2009"))
             .then((snapshot)=>{
                 var questions =[];
                 
