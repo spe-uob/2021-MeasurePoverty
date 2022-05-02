@@ -54,7 +54,7 @@
             QID =0;
             tbody.innerHTML="";
             Question.forEach(element => {
-                AddItemToTable(element.english, element.danish)
+                AddItemToTable(element.english, element.Denish)
             });
         }
         //working on everything else below here

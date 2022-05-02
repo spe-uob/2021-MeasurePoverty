@@ -1,10 +1,38 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js'
-// Import the functions you need from the SDKs you need
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+ //https://www.youtube.com/watch?v=KnAsYNhI_CY
+        //javascript part to fill in the table
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
+        var QID = 0;
+        var tbody = document.getElementById('tbody1');
+
+        function AddItemToTable(english, foreign) {
+            let trow = document.createElement("tr");
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+
+            td1.innerHTML= ++QID;
+            td2.innerHTML= english;
+            td3.innerHTML= foreign;
+
+
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td3);
+
+            tbody.appendChild(trow);
+           // body.appendChild(trow);
+        }
+
+        
+    
+
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
     apiKey: "AIzaSyASZ59fobXr6ovy8QQUX2mogFso22v5nQM",
     authDomain: "measuredb.firebaseapp.com",
     databaseURL: "https://measuredb-default-rtdb.firebaseio.com",
@@ -12,59 +40,39 @@ const firebaseConfig = {
     storageBucket: "measuredb.appspot.com",
     messagingSenderId: "298611251603",
     appId: "1:298611251603:web:0d236cfa7d1926a552f066"
-};
+  };
+    
 
-// youtube link: https://www.youtube.com/watch?v=H8frPNjKSC8
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-var firebaseRef = firebase.database().ref("Sweden2009")
-firebaseRef.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        document.querySelector('#question').innerHTML += `
-               <div>${element.val()}</div>
-               `
-    });
-})
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+        import { getDatabase, ref, child, onValue, get }
+        from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+        const db = getDatabase();
 
-var firebaseRef2 = firebase.database().ref("Sweden2009")
-firebaseRef2.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        document.querySelector('#QID').innerHTML += `
-        <div>${element.key}</div>
-                      `
-    });
-})
+         //adding items to the table, this function is fine
+        function AddAllItemsToTable(Question){    
+            QID =0;
+            tbody.innerHTML="";
+            Question.forEach(element => {
+                AddItemToTable(element.english, element.swedish)
+            });
+        }
+        //working on everything else below here
 
-var firebaseRef3 = firebase.database().ref("Sweden2009")
-firebaseRef3.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        document.querySelector('#swedish2009').innerHTML += `
-               <div>${element.val()}</div>
-               `
-    });
-})
+        //getting data once
+        function GetAllDataOnce() {
+            const dbRef = ref(db);
 
-
-/*
-
-var firebaseRef2 = firebase.database().ref("a")
-firebaseRef2.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        document.querySelector('#root').innerHTML += `
-               <div>${element.val()}</div>
+            get(child(dbRef, "Sweden_2009"))
+            .then((snapshot)=>{
+                var questions =[];
+                
+                snapshot.forEach(childSnapshot => {
+                    questions.push(childSnapshot.val());
+                });
+                AddAllItemsToTable(questions);
+            });
+        }
 
 
-var firebaseRef3 = firebase.database().ref("b")
-firebaseRef3.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        document.querySelector('#root').innerHTML += \`
-               <div>${element.val()}</div>           
-                  
-var firebaseRef4 = firebase.database().ref("c")
-firebaseRef4.on("value" , function(snapshot){
-    snapshot.forEach(function(element){
-        document.querySelector('#root').innerHTML += \`
-               <div>${element.val()}</div>
-               `
-    });
-}) */
+        window.onload = GetAllDataOnce;

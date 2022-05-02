@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firebase Database</title>
+    <title>Hungary 2009</title>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="hungary2009.css" rel="stylesheet">
-    <a id="pagetitle">2009 Hungary</a>
-
+    
+    <!--<a id="pagetitle">Germany 2009 </a> -->
 </head>
 <body>
-    
-    <a id="questionid">QID</a>
-    <a id="HungarianQuestions">Hungarian Questions</a>
-    <a id="englishQuestions">English Questions</a>
-    <div id="QID"></div>
-    <div id="question"></div>
-    <div id="hungarian2009"></div>
-    <script src="hungary2009.js" type="module"></script>
-    <meta charset="utf-8">
-    
+    <div class="container mt-3">
+        <table class="table table-dark">
+            <thead>
+                <th>QID</th>
+                <th>English Questions</th>
+                <th>Hungarian Questions</th>
+            </thead>
+            <tbody id="tbody1"></tbody>
+        </table> 
+    </div>
 
+
+    <script src="hungary2009.js" type="module"></script>
 </body>
 </html>
