@@ -40,6 +40,15 @@ http://2021-measure-poverty.vercel.app/
 
 The user is able to choose a country, and see the pages which contain the poverty questions, as well as the poverty questions in english and the native language
 
+## Database
+
+Most of our data are stored on firebase. 
+![measurepoverty_database](database.png)
+In order to change the connection of the database for any country, simply change the connection code on the JavaScript code on the country. 
+![measurepoverty_firebaseconnection](firebase.png)
+https://www.youtube.com/watch?v=KnAsYNhI_CY this video greatly explains and demonstrates how to retrieve data from firebase into a table.
+
+
 
 ## Developer/Contribution Guide 
 
