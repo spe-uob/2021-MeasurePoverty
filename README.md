@@ -115,8 +115,9 @@ Our Approach:
 
 
 ### Architecture
-#### Back-end structure
-![image](https://user-images.githubusercontent.com/72454289/164344789-5aa5ca8d-b93b-4a3c-bc1c-b2b62944c1f1.png)
+#### Back-end structure (main function calls)
+<img width="871" alt="image" src="https://user-images.githubusercontent.com/72454289/166489602-f4748018-1de7-45ac-a418-c2a3c0ace3f9.png">
+
 
 ##### question_extraction.py: 
      find_and_preprocess_questions
