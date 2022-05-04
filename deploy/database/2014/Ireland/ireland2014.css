@@ -1,0 +1,9 @@
+
+body{
+    font-size: 30px;
+    display: flex;
+    position: relative;
+    width: 100%;
+    background-color: #383c44;
+    color: white;
+}
