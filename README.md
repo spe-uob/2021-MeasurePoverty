@@ -126,6 +126,7 @@ Our Approach:
 ### Architecture
 #### Back-end structure (main function calls)
 <img width="871" alt="image" src="https://user-images.githubusercontent.com/72454289/166489602-f4748018-1de7-45ac-a418-c2a3c0ace3f9.png">
+![backend_flowchart](backend_flowchart.jpg)
 
 
 ##### question_extraction.py: 
