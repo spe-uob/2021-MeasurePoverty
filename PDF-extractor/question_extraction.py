@@ -2,24 +2,28 @@ from collections import defaultdict
 import nltk
 import pdfplumber
 import re
+
+import input_functions
 import keyword_identifiers
 import translators
 import text_preprocessing
 
 
-'''
-print("OPTION A: upload questionnaire /n OPTION B: experiment with translator ")
-filename = input("Please enter the name of the questionnaire PDF:\n")
-print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
-pdf = pdfplumber.open(f"{filename}.pdf")
 
 
 '''
 
+input = input("OPTION A: upload questionnaire /n OPTION B: experiment with translator ")
+if input.upper() == "A" :
+    filename = input("Please enter the name of the questionnaire PDF:\n")
+    print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
+    pdf = pdfplumber.open(filename)
+elif input.upper() == "B":
+    print('you chose option b')
+else:
+    print("invalid, A or B")
+'''
 
-
-#CHANGE THE PDF
-pdf = pdfplumber.open("lithuania.pdf")
 
 
 
@@ -44,12 +48,9 @@ def tokenize_and_translate_questions(pages):
         p1 = pdf.pages[number]
         text = text_preprocessing.remove_whitespace(p1.extract_text())
         sentences = nltk.sent_tokenize(text)
-        ## this part needs to run faster
         for item in sentences:
             if item[-1] == "?":
                 translated_questions[translators.translator_into_english(item)] = item
-
-        ### until here
     return translated_questions
 
 
