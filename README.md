@@ -58,6 +58,17 @@ The user is able to choose a country, and see the matched questions for the 2009
 
 Currently, we have only populated 2009 or 2014. To obtain the matched questions for a different questionnaire, follow the user guide below.
 
+1.download the PDF-Extractor file as a zip file
+2.run the following commands in terminal 
+
+```
+cd PDF-Extractor
+python3 question_extraction.py
+```
+
+
+the following prompts will allow you to choose the pdf and the language you would like to run the code on:
+
 
 
 ## Developer/Contribution Guide 
@@ -124,33 +135,6 @@ Our Approach:
 <img width="911" alt="image" src="https://user-images.githubusercontent.com/72454289/167161013-b6b797cf-03e5-4efc-ab1c-a453c006a52a.png">
 
 
-
-
-
-
-##### question_extraction.py: 
-     input functionality
-     choose translator
-     translate_keywords
-     tokenize_and_translate_questions
-     filter_non_words
-     find_and_preprocess_questions
-     main
-    
-##### BLEU_matching.py:
-      blew_implementation
-##### translators.py:
-      translator_into_english
-      translator_into_foreign
-##### keyword_identifiers.py
-      a dictionary of allocated keyword for each target question
-      a dictionary of abbreviations for each language code
-      a dictionary of target questions to their id
-##### text_preprocessing.py:
-      remove_whitespace(text)
-      remove_brackets(input_dictionary)
-      check_keywords(input_dictionary)
-      
 ### Backend Flowchart
 ![backend_flowchart](backend_flowchart.jpg)
 
