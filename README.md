@@ -44,7 +44,7 @@ The user is able to choose a country, and see the matched questions for the 2009
 
 ## Developer/Contribution Guide 
 
-### Manual setups
+
 
 ### Pre-requisites
 We highly recommend running this program through Anaconda. You can download the distributions of Anaconda through the link below. Please ensure that Anaconda has a version of 1.7+
@@ -53,7 +53,7 @@ https://www.anaconda.com/products/distribution
 Internet connections is required to run the code, as the Deep-translator API requires a connection to connect to the different translators used throughout the code.
 
 #### Requirements
-It is essential to have python 3.7+ (due to pyenchant) and pip installed on your device. 
+It is essential to have python 3.7+  and pip installed on your device. 
 To run the source code, run the following to install the necessary libraries:
 
 
@@ -74,30 +74,6 @@ Throughout our code, we make use of nltk datasets. To install, open python3 on c
 >>>nltk.download("words")
 ```
 
-To be able to determine which words are part of the English dictionary, we have used the pyenchant library.  
-To install this on linux, do the following on command line:
-
-```
-pip install enchant2
-```
-
-On windows, run the follow command:
-
-```
-pip install pyenchant
-```
-
-To install this on MacOS, run python and type the following into the command line:
-
-```
-brew update
-brew install enchant
-```
-
-In the event of any difficulties while installing pyenchant:
-
-
-https://pyenchant.github.io/pyenchant/install.html
 
 ## Database
 
@@ -105,9 +81,11 @@ The results from our backend matching functions are stored in the following NoSq
 ![measurepoverty_database](database.png)
 
 
+
+For developers wanting to upload more results to the database, the code is commented out at the bottom of question_extraction.py, as the results have been uploaded for 2009 and 2014.
 In order to change the connection of the database for any country, simply change the connection code on the JavaScript code on the country. 
 ![measurepoverty_firebaseconnection](firebase.png)
-https://www.youtube.com/watch?v=KnAsYNhI_CY this video greatly explains and demonstrates how to retrieve data from firebase into a table.
+
 
 
 
