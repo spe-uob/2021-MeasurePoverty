@@ -12,9 +12,17 @@ Client: Dr David Gordon
 ### Context 
 
 The Bristol Poverty Institue(University of Bristol) is working with UNICEF to develop a short question module to help improve the measurement of child and adult poverty in countries. 
-The measure poverty project aims to match questions MAKE BETTER
 
-Scrape the relevant data from the questionnaires of each country in EUROSTAT and automate the identification of the conceptually translated question text in each language. Upon completion, construct and populate a multilingual database, and upload results on the web.
+
+The aims of the project were to:
+
+
+1. automate the identification of consensual deprivation quesitons as defined by EUROSTAT
+2. run the identification on the 2009 questionnaires, on the EUROSTAT website
+3. populate a database with the results
+4. display the results on a website
+5. allow users to run the code on their own questionnaire
+
 
 
 ### User Stories 
@@ -30,6 +38,15 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 |Dr David Gordon| As a member of UNICEF and a researcher, I would like to automate the identification of conceptual translated questions in each language. |
 
 
+## Populated Countries
+
+Countries without 2009/2014: Croatia, Romania, Finland, Norway
+
+Countries with 2009: Bulgaria, Czechia, Denmark, Germany, Estonia, Greece, Spain, France, Italy, Cyprus, Latvia, Lithuania, Luxembourg, Hungary, Malta, Netherlands, Austria, Poland, Portugal, Slovenia, Slovakia, Sweden, Iceland, Switzerland, United Kingdom
+
+Countries with 2014: Belgium, Ireland 
+
+
 ## User Guide/Deployment 
 
 
@@ -39,16 +56,9 @@ http://2021-measure-poverty.vercel.app/
 
 The user is able to choose a country, and see the matched questions for the 2009 questionnaires, as well as the 2014 questionnaires if it was not run in 2009.
 
-Currently, we have only populated 2009 or 2014. To obtain the list of questions for different year, you would have to run on Anaconda terminal yourself. For countries with multiple questionnaires per year, please merge them before running it through the terminal.
+Currently, we have only populated 2009 or 2014. To obtain the matched questions for a different questionnaire, follow the user guide below.
 
 
-## Populated Countries
-
-Countries without 2009/2014: Croatia, Romania, Finland, Norway
-
-Countries with 2009: Bulgaria, Czechia, Denmark, Germany, Estonia, Greece, Spain, France, Italy, Cyprus, Latvia, Lithuania, Luxembourg, Hungary, Malta, Netherlands, Austria, Poland, Portugal, Slovenia, Slovakia, Sweden, Iceland, Switzerland, United Kingdom
-
-Countries with 2014: Belgium, Ireland, 
 
 ## Developer/Contribution Guide 
 
@@ -119,22 +129,25 @@ Our Approach:
 
 
 ##### question_extraction.py: 
-     find_and_preprocess_questions
-     translate_keywords -- translate key words to foregin language
+     input functionality
+     choose translator
+     translate_keywords
      tokenize_and_translate_questions
      filter_non_words
      find_and_preprocess_questions
-##### main.py:
+     main
+    
+##### BLEU_matching.py:
       blew_implementation
-      group_questions_by_keyword
-      main
 ##### translators.py:
       translator_into_english
       translator_into_foreign
 ##### keyword_identifiers.py
-      a dictionary of target questions as keys, keywords as values
+      a dictionary of allocated keyword for each target question
+      a dictionary of abbreviations for each language code
+      a dictionary of target questions to their id
 ##### text_preprocessing.py:
-      def remove_whitespace(text)
+      remove_whitespace(text)
       remove_brackets(input_dictionary)
       check_keywords(input_dictionary)
       
