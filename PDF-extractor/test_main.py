@@ -3,13 +3,6 @@ from text_preprocessing import *
 from translators import *
 from question_extraction import *
 
-#testing for prompts
-def test_prompt(capsys, monkeypatch):
-    monkeypatch.setattr('path.to.yourmodule.input', lambda: 'no')
-    val = input("enterfilename")
-    assert not val
-
-
 #functions from main.py
 def test_bleu_implementation():
         assert bleu_implementation(["how are you?"],["how old are you?","how are you?"]) == "how are you?"
