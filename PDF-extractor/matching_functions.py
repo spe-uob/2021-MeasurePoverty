@@ -5,10 +5,6 @@ from nltk.translate.bleu_score import SmoothingFunction
 import question_extraction
 import keyword_identifiers
 
-#comment
-
-
-
 
 translated_questions_to_check = question_extraction.find_and_preprocess_questions()
 
