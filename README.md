@@ -103,7 +103,8 @@ Our Approach:
 
 ### Architecture
 #### Back-end structure (main function calls)
-<img width="995" alt="image" src="https://user-images.githubusercontent.com/72454289/167069726-bccb2bdd-39a8-4b37-b33d-3189656c6218.png">
+<img width="911" alt="image" src="https://user-images.githubusercontent.com/72454289/167161013-b6b797cf-03e5-4efc-ab1c-a453c006a52a.png">
+
 
 
 
