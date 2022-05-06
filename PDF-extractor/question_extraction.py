@@ -1,13 +1,36 @@
 from collections import defaultdict
 import nltk
+import pandas as pd
 import pdfplumber
 import re
-from nltk.translate.bleu_score import sentence_bleu
-from nltk.translate.bleu_score import SmoothingFunction
 from deep_translator import GoogleTranslator,PonsTranslator
+
+import os
+
+import BLEU_matching
 import keyword_identifiers
 import translators
 import text_preprocessing
+
+#MAIN TERMINAL FUNCTIONALITY
+def input_language():
+
+    language = input("input language")
+    return language
+
+def input_filename():
+    filename = input("Please enter the name of the questionnaire PDF:\n")
+    print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
+    pdf = pdfplumber.open(filename)
+    return pdf
+
+def input_translator_choice():
+    translator_choice = input("A-default google \n B-PONSTranslator")
+    return translator_choice
+language = input_language()
+pdf = input_filename()
+translator_choice = input_translator_choice()
+
 
 
 def choose_translator(translator_choice,sentence):
@@ -69,15 +92,6 @@ def find_and_preprocess_questions():
 
 
 
-def bleu_implementation(original_question,array_of_questions_to_compare):
-    scores = defaultdict()
-    for item in array_of_questions_to_compare:
-        score = sentence_bleu([item],original_question,smoothing_function=SmoothingFunction().method1)
-        scores[score] = item
-    max_score = max(scores.keys())
-    return scores[max_score]
-
-
 def group_questions_by_keyword(ungrouped_dictionary):
     print("grouping questions")
     grouped_questions= defaultdict()
@@ -104,7 +118,7 @@ def main():
         if value == []:
             matched_questions[key] = ["not found"]
         else:
-            matched_questions[key] = bleu_implementation(key,value)
+            matched_questions[key] =  BLEU_matching.bleu_implementation(key,value)
 
 
 
@@ -120,13 +134,7 @@ def main():
 
 
 
-#MAIN TERMINAL FUNCTIONALITY
-language = input("input language")
-filename = input("Please enter the name of the questionnaire PDF:\n")
-year = input("please input year")
-print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
-pdf = pdfplumber.open(filename)
-translator_choice = input("A-default google \n B-PONSTranslator")
+
 translated_questions_to_check = find_and_preprocess_questions()
 output_dict = main()
 print(output_dict)
