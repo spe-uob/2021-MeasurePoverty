@@ -10,12 +10,13 @@ from BLEU_matching import *
 def test_bleu_implementation():
         assert bleu_implementation(["how are you?"],["how old are you?","how are you?"]) == "how are you?"
 
-'''
+
 #functions from text_preprocessing.py
 def test_remove_whitespace():
         assert remove_whitespace("clea\nn") == "clean"
         assert remove_whitespace("clean\n clean") == "clean clean"
 
+'''
 def test_removebrackets():
         in_dict= {"(question 111)Does your household have a car/van for private use? ":["van","car","vehicle"]}
         assert remove_brackets(in_dict) == {'Does your household have a car/van for private use? ': ['van', 'car', 'vehicle']}
