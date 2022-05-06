@@ -140,9 +140,6 @@ Our Approach:
 ### Backend Flowchart
 ![backend_flowchart](backend_flowchart.jpg)
 
-#### Database structure
-![measure_poverty_DB](meaure_poverty_DB.jpeg)
-
 
 ## References / Resources
 Most reference contained in source code.
