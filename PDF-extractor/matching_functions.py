@@ -60,16 +60,9 @@ def main():
 
     return final_dataframe_dictionary
 
-choice = input("choices are A- uplaod results with a new questionnaire or B -- new translator")
-if choice.upper() == "A":
-    translated_questions_to_check = question_extraction.find_and_preprocess_questions()
-    output_dict = main()
-    print(output_dict)
-    print("done")
-    #df = pd.DataFrame.from_dict(output_dict)
-    #csvFile = df.to_csv(question_extraction.country+question_extraction.year+"translated_questions.csv",index=False)
-else:
-    print("implement translator")
+
+
+
 
 
 
