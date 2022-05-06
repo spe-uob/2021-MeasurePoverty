@@ -128,6 +128,8 @@ Our Approach:
 3. Use NLP and BLEU analysis to determinte the questions are poverty themed, and populate database
 4. Upload and make the database available on the web, as well as open sourced for furture developments in the NLP algorithm 
 
+### User Flowchart
+![backend_flowchart](backend_flowchart.jpg)
 
 
 ### Architecture
@@ -135,8 +137,6 @@ Our Approach:
 <img width="911" alt="image" src="https://user-images.githubusercontent.com/72454289/167161013-b6b797cf-03e5-4efc-ab1c-a453c006a52a.png">
 
 
-### Backend Flowchart
-![backend_flowchart](backend_flowchart.jpg)
 
 
 ## References / Resources
