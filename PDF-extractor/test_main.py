@@ -1,12 +1,16 @@
+'''
 from matching_functions import bleu_implementation
 from text_preprocessing import *
 from translators import *
 from question_extraction import *
+'''
+from BLEU_matching import *
 
 #functions from main.py
 def test_bleu_implementation():
         assert bleu_implementation(["how are you?"],["how old are you?","how are you?"]) == "how are you?"
 
+'''
 #functions from text_preprocessing.py
 def test_remove_whitespace():
         assert remove_whitespace("clea\nn") == "clean"
@@ -29,4 +33,4 @@ def test_translatorintoenglish():
 def test_filter_non_words():
         assert filter_non_words(({"Do you have a fanzhaoyang":["car"],"Do you have a car":["car"],"DO you have a car":["car"]})) \
          == {'do you have a': ['car'], 'do you have a car': ['car']}
-
+'''
