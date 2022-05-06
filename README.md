@@ -56,26 +56,6 @@ http://2021-measure-poverty.vercel.app/
 
 The user is able to choose a country, and see the matched questions for the 2009 questionnaires, as well as the 2014 questionnaires if it was not run in 2009.
 
-Currently, we have only populated 2009 or 2014. To obtain the matched questions for a different questionnaire, follow the user guide below.
-
-1.download the PDF-Extractor file as a zip file
-2.run the following commands in terminal 
-
-```
-cd PDF-Extractor
-python3 question_extraction.py
-```
-
-
-the following prompts will allow you to choose the pdf and the language you would like to run the code on:
-
-
-![userflow](user1.png)
-
-
-The matched questions will output to the screen
-
-## Developer/Contribution Guide 
 
 
 
@@ -106,6 +86,24 @@ Throughout our code, we make use of nltk datasets. To install, open python3 on c
 >>>nltk.download("punkt")
 >>>nltk.download("words")
 ```
+Currently, we have only populated 2009 or 2014. To obtain the matched questions for a different questionnaire, follow the user guide below.
+
+1.download the PDF-Extractor file as a zip file
+2.run the following commands in terminal 
+
+```
+cd PDF-Extractor
+python3 question_extraction.py
+```
+
+
+the following prompts will allow you to choose the pdf and the language you would like to run the code on:
+
+
+![userflow](user1.png)
+
+
+The matched questions will output to the screen
 
 
 ## Database
