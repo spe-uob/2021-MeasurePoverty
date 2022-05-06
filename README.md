@@ -12,8 +12,7 @@ Client: Dr David Gordon
 ### Context 
 
 The Bristol Poverty Institue(University of Bristol) is working with UNICEF to develop a short question module to help improve the measurement of child and adult poverty in countries. 
-The measure poverty project aims to match questions 
-
+The measure poverty project aims to match questions MAKE BETTER
 
 Scrape the relevant data from the questionnaires of each country in EUROSTAT and automate the identification of the conceptually translated question text in each language. Upon completion, construct and populate a multilingual database, and upload results on the web.
 
@@ -34,19 +33,12 @@ Scrape the relevant data from the questionnaires of each country in EUROSTAT and
 ## User Guide/Deployment 
 
 
-To access the website to view the poverty questions, use the following link
+To access the website to view the poverty questions, use the following link:
 
 http://2021-measure-poverty.vercel.app/
 
-The user is able to choose a country, and see the pages which contain the poverty questions, as well as the poverty questions in english and the native language
+The user is able to choose a country, and see the matched questions for the 2009 questionnaires, as well as the 2014 questionnaires if it was not run in 2009.
 
-## Database
-
-Most of our data are stored on firebase. 
-![measurepoverty_database](database.png)
-In order to change the connection of the database for any country, simply change the connection code on the JavaScript code on the country. 
-![measurepoverty_firebaseconnection](firebase.png)
-https://www.youtube.com/watch?v=KnAsYNhI_CY this video greatly explains and demonstrates how to retrieve data from firebase into a table.
 
 
 
@@ -107,8 +99,16 @@ In the event of any difficulties while installing pyenchant:
 
 https://pyenchant.github.io/pyenchant/install.html
 
-#### The reason why we use if __mname__ = main: instead of def main
-is described clearly here: https://stackoverflow.com/questions/419163/what-does-if-name-main-do?page=1&tab=scoredesc#tab-top
+## Database
+
+The results from our backend matching functions are stored in the following NoSql database:
+![measurepoverty_database](database.png)
+
+
+In order to change the connection of the database for any country, simply change the connection code on the JavaScript code on the country. 
+![measurepoverty_firebaseconnection](firebase.png)
+https://www.youtube.com/watch?v=KnAsYNhI_CY this video greatly explains and demonstrates how to retrieve data from firebase into a table.
+
 
 
 
