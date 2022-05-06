@@ -1,6 +1,5 @@
 from deep_translator import GoogleTranslator
 from deep_translator import MicrosoftTranslator
-from deep_translator import DeepL
 #translator function - given an array of lines, translate each line in the array, add to array of translated lines,
 #and return
 import keyword_identifiers
