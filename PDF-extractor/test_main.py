@@ -1,6 +1,5 @@
 from text_preprocessing import *
 from translators import *
-from question_extraction import *
 from BLEU_matching import *
 
 #functions from main.py
