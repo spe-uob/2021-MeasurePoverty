@@ -89,7 +89,8 @@ Throughout our code, we make use of nltk datasets. To install, open python3 on c
 Currently, we have only populated 2009 or 2014. To obtain the matched questions for a different questionnaire, follow the user guide below.
 
 1.download the PDF-Extractor file as a zip file
-2.run the following commands in terminal 
+2.add the pdf you would like to run the code on to the folder
+3.run the following commands in terminal 
 
 ```
 cd PDF-Extractor
