@@ -1,16 +1,11 @@
-#from main import *
+from matching_functions import bleu_implementation
 from text_preprocessing import *
 from translators import *
-#from keyword_identifiers import *
-#from question_extraction import *
+from question_extraction import *
 
-'''#functions from main.py
+#functions from main.py
 def test_bleu_implementation():
         assert bleu_implementation(["how are you?"],["how old are you?","how are you?"]) == "how are you?"
-
-def test_groupedquestionsbykeywords():
-        assert group_questions_by_keyword()
-        '''
 
 #functions from text_preprocessing.py
 def test_remove_whitespace():
@@ -28,6 +23,10 @@ def test_checkkeywords():
 def test_translatorintoenglish():
         assert translator_into_english("Ich möchte diesen Text übersetzen!") == "I want to translate this text!"
 
+#no functions from keyword_identifiers.py need to be tested
 
-#no functions from keyword_identifiers.py
 #functions from question_extraction.py
+def test_filter_non_words():
+        assert filter_non_words(({"Do you have a fanzhaoyang":["car"],"Do you have a car":["car"],"DO you have a car":["car"]})) \
+         == {'do you have a': ['car'], 'do you have a car': ['car']}
+

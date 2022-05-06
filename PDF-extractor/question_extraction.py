@@ -2,40 +2,32 @@ from collections import defaultdict
 import nltk
 import pdfplumber
 import re
+#import input_functions
 import keyword_identifiers
 import translators
 import text_preprocessing
 
 
 '''
-print("OPTION A: upload questionnaire /n OPTION B: experiment with translator ")
-filename = input("Please enter the name of the questionnaire PDF:\n")
-print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
-pdf = pdfplumber.open(f"{filename}.pdf")
-
-
+input = input("OPTION A: upload questionnaire /n OPTION B: experiment with translator ")
+if input.upper() == "A" :
+    filename = input("Please enter the name of the questionnaire PDF:\n")
+    print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
+    pdf = pdfplumber.open(filename)
+elif input.upper() == "B":
+    print('you chose option b')
+else:
+    print("invalid, A or B")
 '''
 
-
-
-#CHANGE THE PDF
-pdf = pdfplumber.open("lithuania.pdf")
-
-
-
-
+pdf = pdfplumber.open("france.pdf")
 
 def translate_keywords():
-
-
     translated_keywords_dict = defaultdict()
     for key in keyword_identifiers.questions_to_keywords.values():
         for item in key:
             translated_keywords_dict[translators.translator_into_foreign(item)] = []
     return (translated_keywords_dict)
-
-
-
 
 
 def tokenize_and_translate_questions(pages):
@@ -44,16 +36,10 @@ def tokenize_and_translate_questions(pages):
         p1 = pdf.pages[number]
         text = text_preprocessing.remove_whitespace(p1.extract_text())
         sentences = nltk.sent_tokenize(text)
-        ## this part needs to run faster
         for item in sentences:
             if item[-1] == "?":
                 translated_questions[translators.translator_into_english(item)] = item
-
-        ### until here
     return translated_questions
-
-
-
 
 
 def filter_non_words(input_dictionary):
@@ -64,8 +50,6 @@ def filter_non_words(input_dictionary):
                          if w.lower() in words or not w.isalpha()))
         new_dictionary[item] = input_dictionary[question]
     return new_dictionary
-
-
 
 def find_and_preprocess_questions():
     translated_keywords = translate_keywords().keys()

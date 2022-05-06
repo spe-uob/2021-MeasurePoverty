@@ -125,7 +125,10 @@ Our Approach:
 
 ### Architecture
 #### Back-end structure (main function calls)
-<img width="871" alt="image" src="https://user-images.githubusercontent.com/72454289/166489602-f4748018-1de7-45ac-a418-c2a3c0ace3f9.png">
+<img width="995" alt="image" src="https://user-images.githubusercontent.com/72454289/167069726-bccb2bdd-39a8-4b37-b33d-3189656c6218.png">
+
+
+
 
 
 ##### question_extraction.py: 
@@ -148,11 +151,12 @@ Our Approach:
       remove_brackets(input_dictionary)
       check_keywords(input_dictionary)
       
-
+### Backend Flowchart
+![backend_flowchart](backend_flowchart.jpg)
 
 #### Database structure
 ![measure_poverty_DB](meaure_poverty_DB.jpeg)
-### User Flowchart
+
 
 ## References / Resources
 Most reference contained in source code.
