@@ -4,9 +4,11 @@ from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.bleu_score import SmoothingFunction
 import question_extraction
 import keyword_identifiers
+import pandas as pd
+import csv
+import os.path
 
 
-translated_questions_to_check = question_extraction.find_and_preprocess_questions()
 
 
 def bleu_implementation(original_question,array_of_questions_to_compare):
@@ -19,6 +21,7 @@ def bleu_implementation(original_question,array_of_questions_to_compare):
 
 
 def group_questions_by_keyword(ungrouped_dictionary):
+    print("grouping questions")
     grouped_questions= defaultdict()
     for question in ungrouped_dictionary.keys():
         keyword_group = []
@@ -57,7 +60,16 @@ def main():
 
     return final_dataframe_dictionary
 
-
+choice = input("choices are A- uplaod results with a new questionnaire or B -- new translator")
+if choice.upper() == "A":
+    translated_questions_to_check = question_extraction.find_and_preprocess_questions()
+    output_dict = main()
+    print(output_dict)
+    print("done")
+    #df = pd.DataFrame.from_dict(output_dict)
+    #csvFile = df.to_csv(question_extraction.country+question_extraction.year+"translated_questions.csv",index=False)
+else:
+    print("implement translator")
 
 
 

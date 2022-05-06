@@ -11,9 +11,9 @@ import text_preprocessing
 
 #MAIN TERMINAL FUNCTIONALITY
 filename = input("Please enter the name of the questionnaire PDF:\n")
+year = input("please input year")
 print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
 pdf = pdfplumber.open(filename)
-language = input("please enter the language of the quetsionnaire")
 
 
 
@@ -29,6 +29,7 @@ def translate_keywords():
 
 
 def tokenize_and_translate_questions(pages):
+    print("tokenizing")
     translated_questions = defaultdict()
     for number in pages:
         p1 = pdf.pages[number]
@@ -41,6 +42,7 @@ def tokenize_and_translate_questions(pages):
 
 
 def filter_non_words(input_dictionary):
+    print("Filtering non words")
     words = set(nltk.corpus.words.words())
     new_dictionary = defaultdict()
     for question in input_dictionary.keys():
@@ -50,7 +52,6 @@ def filter_non_words(input_dictionary):
     return new_dictionary
 
 def find_and_preprocess_questions():
-    print("running")
     translated_keywords = translate_keywords().keys()
     pages = set()
     for word in translated_keywords:

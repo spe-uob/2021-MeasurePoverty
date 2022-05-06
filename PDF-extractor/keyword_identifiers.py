@@ -70,8 +70,7 @@ questionIDs={
     32:"An outdoor space in the neighbourhood where they can play safely?"
 }
 
-
-keyword_identifiers = {
+translator_dict = {
     "afrikaans": "af",
     "albanian":"sq",
     "amharic":"am",

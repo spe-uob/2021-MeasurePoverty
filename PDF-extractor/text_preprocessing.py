@@ -11,6 +11,7 @@ def remove_whitespace(text):
 
 ## new remove brackets function
 def remove_brackets(input_dictionary):
+    print("removing brackets")
     tidied_dictionary = defaultdict()
     for keyword_question in input_dictionary.keys():
         tidied_dictionary[re.sub("[\(\[].*?[\)\]]", "", keyword_question)] = input_dictionary[keyword_question]
@@ -21,6 +22,7 @@ def remove_brackets(input_dictionary):
 
 ## new def check keywords
 def check_keywords(input_dictionary):
+    print("Checking keywrods")
     relevant_questions =  defaultdict()
     array_of_keywords = ["holiday","vacation","holiday residence","residence","vegetarian","expense","costs",
                          "telephone","phone","colour TV","colour television","washing machine", "van", "dwelling","lodging","warm",
