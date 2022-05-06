@@ -39,8 +39,16 @@ http://2021-measure-poverty.vercel.app/
 
 The user is able to choose a country, and see the matched questions for the 2009 questionnaires, as well as the 2014 questionnaires if it was not run in 2009.
 
+Currently, we have only populated 2009 or 2014. To obtain the list of questions for different year, you would have to run on Anaconda terminal yourself. For countries with multiple questionnaires per year, please merge them before running it through the terminal.
 
 
+## Populated Countries
+
+Countries without 2009/2014: Croatia, Romania, Finland, Norway
+
+Countries with 2009: Bulgaria, Czechia, Denmark, Germany, Estonia, Greece, Spain, France, Italy, Cyprus, Latvia, Lithuania, Luxembourg, Hungary, Malta, Netherlands, Austria, Poland, Portugal, Slovenia, Slovakia, Sweden, Iceland, Switzerland, United Kingdom
+
+Countries with 2014: Belgium, Ireland, 
 
 ## Developer/Contribution Guide 
 
