@@ -68,8 +68,12 @@ python3 question_extraction.py
 
 
 the following prompts will allow you to choose the pdf and the language you would like to run the code on:
+
+
 ![userflow](user1.png)
 
+
+The matched questions will output to the screen
 
 ## Developer/Contribution Guide 
 
