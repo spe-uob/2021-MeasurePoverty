@@ -1,9 +1,7 @@
-'''
-from matching_functions import bleu_implementation
+#from matching_functions import bleu_implementation
 from text_preprocessing import *
-from translators import *
-from question_extraction import *
-'''
+#from translators import *
+#from question_extraction import *
 from BLEU_matching import *
 
 #functions from main.py
