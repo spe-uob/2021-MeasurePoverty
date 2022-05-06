@@ -20,8 +20,8 @@ def test_checkkeywords():
         assert check_keywords({"How are you?":["you"],"Can your whole household afford to go for a week's annual holiday, away from home?":["vacation","holiday","holiday residence","residence"]})=={"Can your whole household afford to go for a week's annual holiday, away from home?": ['vacation', 'holiday', 'holiday residence', 'residence']}
 
 #functions from translators.py
-def test_translatorintoenglish():
-        assert translator_into_english("Ich möchte diesen Text übersetzen!") == "I want to translate this text!"
+#def test_translatorintoenglish():
+        #assert translator_into_english("Ich möchte diesen Text übersetzen!") == "I want to translate this text!"
 
 #no functions from keyword_identifiers.py need to be tested
 
