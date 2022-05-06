@@ -3,7 +3,7 @@ from deep_translator import MicrosoftTranslator
 #translator function - given an array of lines, translate each line in the array, add to array of translated lines,
 #and return
 import keyword_identifiers
-language = input("input lanuage")
+language = input("input language")
 
 
 def translator_into_english(sentence):
