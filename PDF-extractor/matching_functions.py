@@ -1,12 +1,16 @@
 from collections import defaultdict
+
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.bleu_score import SmoothingFunction
-#import question_extraction
+import question_extraction
 import keyword_identifiers
-import pyrebase
 
 
-#translated_questions_to_check = question_extraction.find_and_preprocess_questions()
+
+
+
+
+translated_questions_to_check = question_extraction.find_and_preprocess_questions()
 
 
 def bleu_implementation(original_question,array_of_questions_to_compare):
@@ -61,9 +65,10 @@ def main():
 
 
 
-def upload():
 
-    firebase_config ={
+
+'''
+firebase_config ={
         "apiKey": "AIzaSyASZ59fobXr6ovy8QQUX2mogFso22v5nQM",
         "authDomain": "measuredb.firebaseapp.com",
         "databaseURL": "https://measuredb-default-rtdb.firebaseio.com",
@@ -73,32 +78,41 @@ def upload():
         "appId": "1:298611251603:web:0d236cfa7d1926a552f066"
     }
 
-    firebase = pyrebase.initialize_app(firebase_config)
-    database = firebase.database()
+firebase = pyrebase.initialize_app(firebase_config)
+database = firebase.database()
 
 
 
 
 
-    foreign_dictionary = main()
+foreign_dictionary = main()
 
 
     ##IF THE COUNTRY HAS ONE LANGUAGE
-    list_of_english_questions = list(foreign_dictionary.keys())
-    print(list_of_english_questions)
-    for i in range(len(list_of_english_questions)):
-        english = list_of_english_questions[i]
+list_of_english_questions = list(foreign_dictionary.keys())
+print(list_of_english_questions)
+for i in range(len(list_of_english_questions)):
+    english = list_of_english_questions[i]
 
         #CHANGE "FRENCH" TO THE FOREIGN LANGUAGE WE ARE TRANSLATING INTO
-        upload = {
+    upload = {
         #need language names here
-            "french":foreign_dictionary[english],
-            "english":english,
-        }
+        "french":foreign_dictionary[english],
+        "english":english,
+    }
 
-        database.child("Belgium_2014").child("BelgiumQ"+str(i)).set(upload)
+    database.child("Belgium_2014").child("BelgiumQ"+str(i)).set(upload)
 
-    print("completed upload")
+print("completed upload")
+
+'''
+
+
+
+
+
+
+
 
 '''
 ADDING FIRST  LANGUGAE WITH ENGLISH QUESTIONS 

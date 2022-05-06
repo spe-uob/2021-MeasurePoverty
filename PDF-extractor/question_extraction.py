@@ -2,25 +2,23 @@ from collections import defaultdict
 import nltk
 import pdfplumber
 import re
-#import input_functions
 import keyword_identifiers
 import translators
 import text_preprocessing
 
 
-'''
-input = input("OPTION A: upload questionnaire /n OPTION B: experiment with translator ")
-if input.upper() == "A" :
-    filename = input("Please enter the name of the questionnaire PDF:\n")
-    print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
-    pdf = pdfplumber.open(filename)
-elif input.upper() == "B":
-    print('you chose option b')
-else:
-    print("invalid, A or B")
-'''
 
-pdf = pdfplumber.open("france.pdf")
+
+#MAIN TERMINAL FUNCTIONALITY
+filename = input("Please enter the name of the questionnaire PDF:\n")
+print(f'You entered {filename} and please import the pdf file into the folder if its later than 2009 ')
+pdf = pdfplumber.open(filename)
+language = input("please enter the language of the quetsionnaire")
+
+
+
+
+
 
 def translate_keywords():
     translated_keywords_dict = defaultdict()
@@ -52,6 +50,7 @@ def filter_non_words(input_dictionary):
     return new_dictionary
 
 def find_and_preprocess_questions():
+    print("running")
     translated_keywords = translate_keywords().keys()
     pages = set()
     for word in translated_keywords:

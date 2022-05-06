@@ -26,7 +26,7 @@ def test_translatorintoenglish():
 #no functions from keyword_identifiers.py need to be tested
 
 #functions from question_extraction.py
-#def test_filter_non_words():
-       # assert filter_non_words(({"Do you have a fanzhaoyang":["car"],"Do you have a car":["car"],"DO you have a car":["car"]})) \
-        # == {'do you have a': ['car'], 'do you have a car': ['car']}
+def test_filter_non_words():
+        assert filter_non_words(({"Do you have a fanzhaoyang":["car"],"Do you have a car":["car"],"DO you have a car":["car"]})) \
+         == {'do you have a': ['car'], 'do you have a car': ['car']}
 

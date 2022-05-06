@@ -1,5 +1,6 @@
 from deep_translator import GoogleTranslator
-
+from deep_translator import MicrosoftTranslator
+from deep_translator import DeepL
 
 #translator function - given an array of lines, translate each line in the array, add to array of translated lines,
 #and return
@@ -14,9 +15,14 @@ def translator_into_foreign(sentence):
     return GoogleTranslator(source = 'en',target = 'fr').translate(sentence)
 
 
-def choose_translator(input,sentence):
+def choose_translator (translator,language,sentence):
+    target = keyword_identifiers.language_dict[language.lower()]
+    if translator.lower() == "A":
 
-    target = keyword_identifiers.language_dict[input.lower()]
-    return GoogleTranslator(source = 'en', target = target).translate(sentence)
+        return GoogleTranslator(source = 'en', target = target).translate(sentence)
+    elif translator.lower() == "B":
+        return MicrosoftTranslator(source = 'en', target = target).translate(sentence)
 
+    elif translator.lower() == "C":
+        return DeepL(source = 'en', target = target).translate(sentence)
 
