@@ -114,9 +114,6 @@ The results from our backend matching functions are stored in the following NoSq
 
 
 
-For developers wanting to upload more results to the database, the code is commented out at the bottom of question_extraction.py, as the results have been uploaded for 2009 and 2014.
-In order to change the connection of the database for any country, simply change the connection code on the JavaScript code on the country. 
-![measurepoverty_firebaseconnection](firebase.png)
 
 
 
