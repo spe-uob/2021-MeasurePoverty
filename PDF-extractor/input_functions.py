@@ -13,7 +13,7 @@ def option_A():
 
 def option_B():
     # do all logic with choice of translator
-    output_dict = main.main()
+    output_dict = matching_functions.main()
     df = pd.DataFrame.from_dict(output_dict, orient="index")
     print(" translation complete, check folder for output spreadsheet")
     df.to_csv("experiment_translation.csv")

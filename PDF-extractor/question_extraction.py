@@ -2,17 +2,13 @@ from collections import defaultdict
 import nltk
 import pdfplumber
 import re
-
-import input_functions
+#import input_functions
 import keyword_identifiers
 import translators
 import text_preprocessing
 
 
-
-
 '''
-
 input = input("OPTION A: upload questionnaire /n OPTION B: experiment with translator ")
 if input.upper() == "A" :
     filename = input("Please enter the name of the questionnaire PDF:\n")
@@ -24,22 +20,14 @@ else:
     print("invalid, A or B")
 '''
 
-
-
-
-
+pdf = pdfplumber.open("france.pdf")
 
 def translate_keywords():
-
-
     translated_keywords_dict = defaultdict()
     for key in keyword_identifiers.questions_to_keywords.values():
         for item in key:
             translated_keywords_dict[translators.translator_into_foreign(item)] = []
     return (translated_keywords_dict)
-
-
-
 
 
 def tokenize_and_translate_questions(pages):
@@ -54,9 +42,6 @@ def tokenize_and_translate_questions(pages):
     return translated_questions
 
 
-
-
-
 def filter_non_words(input_dictionary):
     words = set(nltk.corpus.words.words())
     new_dictionary = defaultdict()
@@ -65,8 +50,6 @@ def filter_non_words(input_dictionary):
                          if w.lower() in words or not w.isalpha()))
         new_dictionary[item] = input_dictionary[question]
     return new_dictionary
-
-
 
 def find_and_preprocess_questions():
     translated_keywords = translate_keywords().keys()

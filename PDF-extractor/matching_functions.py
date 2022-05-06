@@ -1,12 +1,12 @@
 from collections import defaultdict
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.bleu_score import SmoothingFunction
-import question_extraction
+#import question_extraction
 import keyword_identifiers
 import pyrebase
 
 
-translated_questions_to_check = question_extraction.find_and_preprocess_questions()
+#translated_questions_to_check = question_extraction.find_and_preprocess_questions()
 
 
 def bleu_implementation(original_question,array_of_questions_to_compare):
@@ -16,7 +16,6 @@ def bleu_implementation(original_question,array_of_questions_to_compare):
         scores[score] = item
     max_score = max(scores.keys())
     return scores[max_score]
-
 
 
 def group_questions_by_keyword(ungrouped_dictionary):
