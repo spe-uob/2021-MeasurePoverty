@@ -31,7 +31,7 @@ jobs:
         pip install nltk
         pip install pdfplumber
         pip install pandas
-        pip install deep_translator
+        pip install deep-translator
         pip install deepl
         pip install numpy
         pip install regex
