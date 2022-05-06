@@ -1,5 +1,4 @@
 from collections import defaultdict
-
 from nltk.translate.bleu_score import sentence_bleu
 from nltk.translate.bleu_score import SmoothingFunction
 import question_extraction
